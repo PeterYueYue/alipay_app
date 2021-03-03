@@ -1,0 +1,183 @@
+.page {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding-bottom: 50rpx;
+}
+.bag {
+  width: 100%;
+  text-align: center;
+}
+.bag image {
+  width: 100%;
+  margin-top: 18rpx;
+}
+.choose {
+  display: flex;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+  align-items: center;
+}
+
+.bag-name {
+  font-size: 36rpx;
+  color: #1A1A1A;
+  margin-top: 40rpx;
+  line-height: 40rpx;
+}
+.bag-p {
+  font-size: 26rpx;
+  color: #999;
+  line-height: 40rpx;
+  margin-top: 10rpx;
+}
+.tianjia {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 0 0 120rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+.tianjia input {
+  width: 80rpx;
+  height: 52rpx;
+  text-align: center;
+  color: #000;
+  padding: 0;
+}
+.tianjia image {
+  width: 30rpx;
+  vertical-align: middle;
+}
+
+.p3 {
+  font-size: 40px;
+  margin-top: 30rpx;
+  color: #666;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+}
+
+.p3 text:nth-child(1) {
+  font-size: 40rpx;
+  color: rgba(57, 166, 255, 1);
+}
+.p3 text:nth-child(2) {
+  text-decoration: line-through;  
+}
+/* 
+.money-wrap {
+  margin-top: 22rpx;
+}
+.money {
+  color: #3AA5FF;
+  font-size: 30rpx;
+  text-indent: 34rpx;
+  width: 50%;
+}
+.money text {
+  font-size: 56rpx;
+}
+.number {
+  width: 50%;
+  font-size: 26rpx;
+  color: #CCCCCC;
+}
+.number input {
+  float: left;
+  width: 110rpx;
+  height: 52rpx;
+  background-color: #F2F2F2;
+  text-align: center;
+  color: #000;
+  padding: 0;
+}
+.number view {
+  float: left;
+  height: 52rpx;
+}
+.count {
+  width: 60rpx;
+  box-sizing: border-box;
+  padding-top: 13rpx;
+}
+.rdu, .add {
+  width: 80rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #1A1A1A;
+} */
+/* 收货地址 */
+.address {
+  margin: 40rpx 34rpx 0;
+  background-color: rgb(251, 251, 251);
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+}
+.address image {
+  width: 30rpx;
+  margin: 0 25rpx;
+}
+.address view { 
+  display: inline-block;
+  width: 80%;
+  font-size: 34rpx;
+  color: #4D4D4D;
+}
+.address text {
+  font-size: 40rpx;
+  float: right;
+  margin-right: 0;
+}
+.btn {
+  width: 640rpx;
+  margin: 120rpx auto 0;
+}
+.btn button {
+  border-radius: 8rpx;
+}
+
+
+/* 选择地址后 */
+.address1 {
+  width: 681rpx;
+  height: 160rpx;
+  margin: 50rpx auto 0;
+  background: rgba(250, 250, 250, 1);
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.address1>view:nth-child(1) {
+  width: 100rpx;
+  text-align: center;
+}
+.address1>view:nth-child(2) {
+  min-width: 500rpx;
+}
+.address1 image:nth-child(1) {
+  width: 36rpx;
+}
+
+.address1 image:nth-child(2) {
+  width: 26rpx;
+  margin-right: 54rpx;
+}
+
+.word view:nth-child(1) {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 1);
+}
+.nickname {
+  margin-right: 42rpx;
+}
+.word view:nth-child(2) {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-top: 27rpx;
+}

@@ -1,0 +1,756 @@
+.index_page .swiper-wrap {
+  overflow: hidden;
+  padding-bottom: 20rpx;
+  border-radius: 10rpx;
+  margin-top: -220rpx;
+}
+
+.index_page {
+  position: relative;
+}
+
+.index_page swiper {
+  width: 686rpx;
+  margin: 20rpx auto 0;
+  border-radius: 10rpx;
+  height: 300rpx;
+  overflow: hidden;
+  transform: translateY(0);
+}
+
+.index_page .swiper-item {
+  display: block;
+  height: 300rpx;
+  width: 100%;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.index_page .swiper-item image {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 10rpx;
+}
+
+/* 导航区域 */
+
+.index_page .nav-wrap {
+  background-color: #fff;
+  overflow: hidden;
+  padding-top: 60rpx;
+  box-sizing: border-box;
+}
+
+.index_page .nav {
+  width: 100%;
+  display: flex;
+  align-content: space-between;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.index_page .nav_qiye image {
+  max-width: 150rpx;
+}
+.index_page .item {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex: 1;
+  text-align: center;
+}
+
+.index_page .item view {
+  margin-top: -20rpx;
+  font-size: 20rpx;
+  line-height: 36rpx;
+}
+
+.index_page .nav .nav-img {
+  width: 226rpx;
+  height: 165rpx;
+}
+
+.index_page .nav .tiXian {
+  width: 210rpx;
+}
+
+.nav .item {
+  position: relative;
+}
+
+.nav .t1box {
+  width: 227rpx;
+  height: 47rpx;
+  background: url("http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/index/t2.png") no-repeat;
+  position: absolute;
+  left: 10rpx;
+  top: -22rpx;
+  background-size: 100% 100%;
+  font-size: 20rpx;
+  color: #fff;
+}
+
+.nav .t2box {
+  width: 227rpx;
+  height: 47rpx;
+  background: url("http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/index/t1.png") no-repeat;
+  position: absolute;
+  left: 0rpx;
+  top: -22rpx;
+  background-size: 100% 100%;
+  font-size: 20rpx;
+  color: #fff;
+}
+
+/* 生活号 */
+
+.lifestyle {
+  height: 75rpx;
+  width: 689rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 1rpx 1rpx 6rpx 0rpx rgba(60, 107, 255, 0.34);
+  border-radius: 75rpx;
+  margin: 28rpx auto 0;
+  overflow: hidden;
+}
+
+lifestyle {
+  margin-top: -14rpx;
+}
+
+/* 换量平台插件 */
+
+.change {
+  width: 90%;
+  margin: 20rpx 5% 0;
+}
+
+/* 企业机构排行 */
+
+.index_page .rank-wrap {
+  margin-top: 20rpx;
+}
+
+.index_page .rank {
+  margin: 40rpx 0;
+  text-align: center;
+}
+
+.index_page .rank image {
+  width: 684rpx;
+}
+
+/* 环保体验站 */
+
+.index_page .protection {
+  padding: 40rpx 32rpx 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.index_page .pro-left, .pro-right {
+  width: 336rpx;
+}
+
+.index_page .pro-left image {
+  display: block;
+  width: 100%;
+}
+
+.index_page .pro-right image {
+  width: 100%;
+}
+
+.index_page .pro-right>view:nth-child(2)>image {
+  margin-top: 4rpx;
+}
+
+/* 媒体报道 */
+
+.index_page .media {
+  margin-top: 40rpx;
+  background-color: #fff;
+  margin-bottom: 50rpx;
+}
+
+.index_page .media .list {
+  position: relative;
+  height: 292rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.index_page .list .mediaImg {
+  width: 100%;
+}
+
+.index_page .media .list view {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 70rpx;
+  background: rgba(0, 0, 0, 0.27);
+  font-size: 36rpx;
+  color: rgba(255, 255, 255, 1);
+  line-height: 70rpx;
+  text-indent: 23rpx;
+}
+
+.index_page .media-head {
+  font-size: 40rpx;
+  color: #1a1a1a;
+  text-indent: 33rpx;
+  font-weight: 600;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.index_page .list {
+  height: 260rpx;
+  margin: 0 34rpx;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.index_page .list-head {
+  font-size: 34rpx;
+  color: #1a1a1a;
+  margin-top: 40rpx;
+}
+
+.index_page .list-p {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #999;
+  margin-top: 44rpx;
+  width: 400rpx;
+  height: 80rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.index_page .list-l {
+  width: 380rpx;
+}
+
+.index_page .list-r {
+  width: 260rpx;
+}
+
+.index_page .list-r image {
+  width: 260rpx;
+  height: 260rpx;
+  border-radius: 10rpx;
+}
+
+.index_page .mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index_page .box {
+  width: 605rpx;
+  height: 728rpx;
+  text-align: center;
+}
+
+.index_page .popup {
+  width: 60%;
+}
+
+.index_page .close {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 15rpx;
+  margin-left: 268rpx;
+}
+
+/* 整点登录 */
+
+.zddl {
+  width: 690rpx;
+  height: 186rpx;
+  background: url("http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/index/banner1.png") no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 1px 2rpx 28rpx 4rpx rgba(249, 147, 68, 0.09);
+  border-radius: 10rpx;
+  margin: 0 auto;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+  padding-right: 26rpx;
+  flex-direction: column;
+}
+
+.zddl .timeBox {
+  display: flex;
+  flex-direction: row;
+  font-size: 22rpx;
+  color: #fff;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 90rpx;
+}
+
+.timeBox .timeitem {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  font-size: 11px;
+  color: #ffa720;
+  background-color: #fff;
+  border-radius: 2rpx;
+}
+
+.timeBox .title2 {
+  margin-right: 13rpx;
+}
+
+.timeBox .mh {
+  margin: 0 6rpx;
+}
+
+.hotbox {
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  color: #000;
+  padding-left: 40rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.hotbox image {
+  width: 22rpx;
+  height: 30rpx;
+  margin-right: 12rpx;
+}
+
+.zddl .btn {
+  width: 301rpx;
+  height: 28px;
+  background: rgba(255, 167, 32, 1);
+  border-radius: 28rpx;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 28px;
+  padding-left: 32rpx;
+  box-sizing: border-box;
+  margin-left: 303rpx;
+  margin-top: 15rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.zddl .btn image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+}
+
+.zddl .tips {
+  font-size: 22rpx;
+  color: #fff;
+  margin-left: 300rpx;
+  margin-top: 20rpx;
+}
+
+
+/* 改版样式 */
+
+.headbgbox {
+  width: 100%;
+  height: 530rpx;
+  background: linear-gradient(163deg, rgba(94, 182, 255, 1), rgba(11, 144, 255, 1));
+  position: relative;
+}
+
+.headbgbox .img1 {
+  width: 202rpx;
+  height: 165rpx;
+}
+
+.headbgbox .img2 {
+  width: 220rpx;
+  height: 100rpx;
+}
+
+.headbgbox .imgbox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+  align-items: flex-end;
+  position: absolute;
+  left: 0;
+  top: 163rpx;
+}
+
+.headbgbox .img3 {
+  font-size: 16rpx;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.guangbo {
+  width: 100%;
+  height: 50rpx;
+  /* overflow: hidden; */
+  display: flex;
+  font-size: 22rpx;
+  align-items: center;
+  color: #333;
+  /* justify-content: center; */
+}
+
+.guangbo .lb {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 37rpx;
+  margin-right: 16rpx;
+}
+
+.guangbo swiper {
+  width: 85%;
+  height: 50rpx;
+  margin: 0;
+  line-height: 50rpx;
+}
+
+.gzh {
+  width: 689rpx;
+  height: 75rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 1px 1px 6rpx 0px rgba(60, 107, 255, 0.34);
+  border-radius: 38rpx;
+  display: flex;
+  margin-top: 22rpx;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 10rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gzh image {
+  width: 103rpx;
+  height: 40rpx;
+  margin-left: 54rpx;
+}
+
+.gzh text {
+  color: #000;
+  font-size: 26rpx;
+  margin-left: 36rpx;
+}
+
+.gzh .chakan {
+  width: 50px;
+  height: 22px;
+  border: 1px solid rgba(58, 165, 255, 1);
+  border-radius: 11px;
+  color: #3aa5ff;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+  margin-left: 188rpx;
+}
+
+.tyz {
+  padding: 0 30rpx;
+}
+
+.tyz .shang {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tyz .shang view {
+  width: 340rpx;
+  height: 180rpx;
+  background: rgba(94, 182, 255, 0.15);
+}
+
+.tyz image {
+  width: 100%;
+}
+
+.tyz .xia {
+  width: 690rpx;
+  height: 210rpx;
+  background: rgba(94, 182, 255, 0.15);
+  margin-top: 16rpx;
+}
+
+.mrbd {
+  width: 90%;
+  margin: 20rpx 5% 0;
+}
+
+.mrbd image {
+  width: 100%;
+}
+
+.marginTop40 {
+  margin-top: 40rpx;
+}
+
+/* 530版本热门活动 */
+
+.c_activity {
+  display: flex;
+  width: 690rpx;
+  height: 186rpx;
+  margin: 20rpx auto;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.c_activity>view {
+  width: 330rpx;
+  height: 204rpx;
+  background: linear-gradient(-19deg, rgba(111, 0, 210, 1), rgba(186, 107, 255, 1));
+  box-shadow: 1rpx 2rpx 28rpx 4rpx rgba(249, 147, 68, 0.09);
+  border-radius: 10rpx;
+}
+
+.c_activity>view:nth-child(1) {
+  background: url("http://image.shishangbag.vip/upload/img/web/yy/index/c_index_activity2.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.c_activity>view:nth-child(2) {
+  background: url("http://image.shishangbag.vip/upload/img/web/yy/index/c_index_activity1.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.c_activity .begin {
+  text-align: right;
+  margin: 15rpx 31rpx 0 0;
+  font-size: 22rpx;
+}
+
+.c_activity .begin text:nth-child(1) {
+  display: inline-block;
+  margin-right: 10rpx;
+}
+
+.c_activity .begin .timeitem {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 2rpx;
+  color: #FFA720;
+  text-align: center;
+  line-height: 36rpx;
+}
+
+.c_activity .ontime {
+  width: 263rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background: rgba(255, 167, 32, 1);
+  border-radius: 28rpx;
+  border: none;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  margin: 13rpx 0 0 59rpx;
+}
+.c_activity .desc {
+  font-size:22rpx;
+  line-height: 30rpx;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  text-align: right;
+  margin: 13rpx 18rpx 0 0;
+}
+.part {
+  position: relative;
+}
+.part image {
+  position: absolute;
+  top: 5rpx;
+  right: -5rpx;
+  width: 79rpx;
+}
+.part .bepart {
+  width: 263rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background: #FF7531;
+  border-radius: 28rpx;
+  border: none;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  margin: 53rpx 0 0 59rpx;
+}
+.part .desc {
+  font-size:24rpx;
+  line-height: 30rpx;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  text-align: right;
+  margin: 13rpx 18rpx 0 0;
+}
+.part .desc text {
+  color: #FF7531;
+}
+/* 上门券不足 */
+.mask_  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.mask_ .close {
+  width: 60rpx;
+  margin-top: 20rpx;
+}
+/* 签到中心 */
+/* signIn start */
+
+.signIn {
+  width:690rpx;
+  height:140rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 0px 5rpx 0px rgba(59,107,255,0.28);
+  border-radius:70rpx;
+  margin: 10rpx auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.signIn .rili {
+  width: 114rpx;
+  height: 97rpx;
+  margin-left: 54rpx;
+  margin-right: 22rpx;
+}
+
+.signIn .title {
+  font-size: 24rpx;
+  color: #333333;
+}
+
+.signIn .title image {
+  width: 142rpx;
+  height: 35rpx;
+  margin-bottom: 10rpx;
+}
+
+.signBtn {
+  width: 110rpx;
+  height: 112rpx;
+  margin-right: 36rpx;
+}
+
+.pointList {
+  flex: 1;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pointList .point {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #EEEEEE;
+}
+
+.pointList .hasSign {
+  background-color: #129BFE;
+}
+.changeBtn {
+  width: 60%;
+  margin-top: 20rpx;
+  border-radius: 50rpx;
+}
+
+
+.bufa .box2{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.deleteIcon{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+
+}
+.check_doorPIc{
+  width: 600rpx;
+  /* height: 690rpx; */
+}
+
+
+/* 悬浮按钮 */
+.content-bg {
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+ 
+.content-bg .content-block {
+  pointer-events: auto;
+  width: 136rpx;
+  height: 144rpx;
+  background: url("https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/dnActivity/suspension.png") no-repeat;
+  background-size: 100% 100%;
+  animation-name:myfirst1;
+  animation-duration:0.8s;
+  animation-iteration-count:infinite;
+  animation-direction:alternate;
+}
+
+@keyframes myfirst1
+{
+from {background-size:100% 100%;top:-60rpx;}
+to {background-size:95% 95%;top:-50rpx;}
+}
+
+/* 年度账单 */
+.billbox {
+  text-align: center;
+}
+.billbox .deleteIcon {
+  width: 60rpx;
+  height: 60rpx;
+}

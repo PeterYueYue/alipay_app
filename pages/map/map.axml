@@ -1,0 +1,23 @@
+<!-- 小程序收藏组件，更多高级用法请参考文档：https://docs.alipay.com/mini/component/component-favorite -->
+<!-- 购买拾尚包 -->
+<view class="page">
+  <map
+    id="map"
+    longitude="{{longitude}}"
+    latitude="{{latitude}}"
+    scale="{{scale}}"
+    controls="{{controls}}"
+    onControlTap="controltap"
+    markers="{{markers}}"
+    onMarkerTap="markertap"
+    polyline="{{polyline}}"
+    polygon="{{polygon}}"
+    circles="{{circles}}"
+    onRegionChange="regionchange"
+    onTap="tap"
+    onCalloutTap="callouttap"
+    show-location style="width: 100%; height: 100vh;"
+    include-points="{{includePoints}}"
+    ground-overlays="{{ground-overlays}}">
+  </map>
+</view>

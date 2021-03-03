@@ -1,0 +1,135 @@
+.page {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  /* background-image: url(/image/Top/bg.png); */
+  background-size: 750rpx 100vh;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 70rpx;
+}
+
+.title view {
+  margin-top: 12rpx;
+}
+
+.title image {
+  width: 158rpx;
+  margin-left: 8rpx;
+}
+
+.btn {
+  width: 705rpx;
+  height: 156rpx;
+  /* background-image: url(/image/Top/btn.png); */
+  background-size: 100%;
+  position: absolute;
+  left: 20rpx;
+  bottom: 31rpx;
+}
+
+.toplist {
+  height: calc(100vh - 129rpx - 187rpx - 40rpx);
+  padding: 35rpx 58rpx 0;
+}
+
+.topitem {
+  display: flex;
+  align-items: center;
+  padding: 13rpx 0;
+  border-bottom: 1rpx solid rgba(0,107,235,0.54);
+}
+
+.ranking {
+  width: 22rpx;
+  height: 59rpx;
+}
+
+.t1bg {
+  width: 131rpx;
+  height: 140rpx;
+  /* background-image: url(/image/Top/t1.png); */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 42rpx;
+  margin-right: 19rpx;
+}
+
+.t1 {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  margin-top: 12rpx;
+  margin-left: 3rpx;
+}
+
+.name {
+  font-size: 26rpx;
+  color: #fff;
+  width: 180rpx;
+}
+
+.prize {
+  font-family: PingFangSC-Semibold;
+  font-weight: bold;
+  font-size: 37rpx;
+  color: #ffda2d;
+  font-style: italic;
+}
+.oneself{
+  color: #ffda2d !important;
+}
+.t2bg {
+  width: 131rpx;
+  height: 140rpx;
+  /* background-image: url(/image/Top/t2.png); */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 42rpx;
+  margin-right: 19rpx;
+}
+.t3bg {
+  width: 131rpx;
+  height: 140rpx;
+  /* background-image: url(/image/Top/t3.png); */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 42rpx;
+  margin-right: 19rpx;
+}
+.t3 {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  margin-top: 9rpx;
+  margin-left: 3rpx;
+}
+.mingci{
+  font-size: 51rpx;
+  color: #fefefe;
+  font-style: italic;
+  width: 64rpx;
+}
+.tou {
+  width: 131rpx;
+  height: 139rpx;
+  /* margin-left: 42rpx; */
+  margin-right: 19rpx;
+  font-family: "PingFangSC-Regular";
+}
+.no{
+  height: calc(100vh - 129rpx - 187rpx - 40rpx);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #fff;
+}

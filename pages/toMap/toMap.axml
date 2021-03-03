@@ -1,0 +1,15 @@
+<view class="page">
+  <map id="map" setting="{{setting}}" include-points="{{orderInfo.includePoints}}" include-padding="{{includePadding}}" longitude="{{orderInfo.longitude}}" latitude="{{orderInfo.latitude}}" style="width:100%;height:100%;display:block;" scale="{{scale}}" markers="{{orderInfo.markers}}">
+  </map>
+  <cover-view class="order_box">
+    <cover-view class="order_title">
+      <cover-view class="order_num">订单编号：{{orderInfo.orderCode}}</cover-view>
+      <cover-view class="order_flag">待回收</cover-view>
+    </cover-view>
+    <cover-view class="time">创建时间：{{orderInfo.createDate}}</cover-view>
+    <cover-view class="clear">
+      <cover-view class="btn" onTap="cancel">取消预约</cover-view>
+      <cover-view class="btn" style="margin-right:16rpx" onTap="call">联系小哥</cover-view>
+    </cover-view>
+  </cover-view>
+</view>

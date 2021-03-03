@@ -1,0 +1,64 @@
+<view class="top">
+  <view class="box">
+    <view class="topImg-box">
+      <image mode="widthFix" src="{{imgUrl+'earnings/4.png'}}" class="topImg" />
+    </view>
+    <view class="middle">
+      <text class="bigNum">{{totalData.totalMoney}}</text>
+      <!-- <text class="smallNum">.{{totalData.totalMoney2}}</text> -->
+      <text class="unit">拾尚币</text>
+    </view>
+    <view class="bottom">累计收益</view>
+  </view>
+  <view class="box">  
+    <view class="topImg-box">
+      <image mode="widthFix" src="{{imgUrl+'earnings/3.png'}}" style="margin-top: 10rpx;" class="topImg" />
+    </view>
+    <view class="middle">
+      <text class="bigNum">{{totalData.totalWeight1}}</text>
+      <text class="smallNum">.{{totalData.totalWeight2}}</text>
+      <text class="unit">公斤</text>
+    </view>
+    <view class="bottom">累计重量</view>
+  </view>
+  <view class="box">
+    <view class="topImg-box">
+      <image mode="widthFix" src="{{imgUrl+'earnings/2.png'}}" style="margin-top: 20rpx;" class="topImg" />
+    </view>
+    <view class="middle">
+      <text class="bigNum">{{totalData.sendNumber}}</text>
+      <text class="unit">次</text>
+    </view>
+    <view class="bottom">投递次数</view>
+  </view>
+</view>
+<!-- li -->
+<view class="hint" a:if="{{status == 1}}">
+  <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+  <text>没有回收订单</text></view>
+<scroll-view scroll-y="{{true}}" a:else onScrollToLower="lower">
+  <!--<view class="page" a:for="{{user}}" key="{{index}}">{{item.recycleState==1?"待分拣":item.recycleState==2?"已分拣":"完成"}}</view></view> -->
+  <view class="order" a:for="{{user}}" data-status='{{item.earningFlag}}' data-id='{{item.id}}'>
+    <view>
+      <image mode="widthFix" src="{{imgUrl+'order/25.png'}}" class="order_img" />
+    </view>
+    <view class="amount">{{item.money}}拾尚币</view>
+    <view class="name_box">
+      <view class="earnings_name" a:if="{{item.earningFlag == 1}}">拾尚包收益</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 2}}">活动获取</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 3}}">联名卡返现</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 4}}">红包获取</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 5}}">团队收益</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 6}}">签到获取</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 7}}">买30送30</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 8}}">商品兑换</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 9}}">取消订单</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 10}}">补偿拾尚币</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 11}}">答题赠送</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 12}}">评价送积分</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 13}}">打包认证</view>
+      <view class="earnings_name" a:if="{{item.earningFlag == 14}}">捐赠</view>
+      <view class="date">{{item.createDate}}</view>
+    </view>
+  </view>
+</scroll-view>

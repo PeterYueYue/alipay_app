@@ -1,0 +1,31 @@
+<view class="page" style="background-image: url({{bg}})">
+  <view class="btns">
+    <view onTap="goRecord">抽奖记录</view>
+    <view onTap="goRule">规则说明</view>
+  </view>
+  <view class="wheelBg" style="background-image: url({{wheelBg}})">
+    <!--<image class="wheel" mode="widthFix" src="{{imgUrlNew}}yy/activity/wheel.png" animation="{{animation}}"/> -->
+    <view animation="{{animation}}" class="wheel" style="background-image: url({{wheel}})"></view>
+    <image class="button" mode="widthFix" src="{{imgUrlNew}}yy/activity/rightnow.png" onTap="goWheel"/>
+    <image class="go" mode="widthFix" src="{{imgUrlNew}}yy/activity/go.png" />
+    <image class="choose" mode="widthFix" src="{{imgUrlNew}}yy/activity/choose.png" onTap="playReward"/>
+  </view>
+  <view class="residue">
+    剩余
+    <text>{{num}}</text>
+    次抽奖机会
+  </view>
+</view>
+<view a:if={{ruleMask}} class="mask" onTap="goRule">
+  <view class="content">
+    <view>
+       1.Lv2至Lv6专有权益，各个等级享有不同数量的抽奖机会。
+    </view>
+    <view>
+        2.Lv2回收完成享1次抽奖机会、Lv3回收完成享2次抽奖机会、Lv4回收完成享3次抽奖机会、Lv5回收完成享4次抽奖机会、Lv6回收完成享5次抽奖机会。
+    </view>
+    <view>
+        3.抽奖机会不可累计，请在回收完成后立即使用。
+    </view>
+  </view>
+</view>

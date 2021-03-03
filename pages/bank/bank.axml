@@ -1,0 +1,20 @@
+<view class="page">
+  <view class="hint" a:if="{{status == 1}}">
+    <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+    <text>没有账户信息</text>
+  </view>
+  <view a:else class="box" a:for="{{list}}">
+    <view>
+      <image mode="widthFix" src="{{imgUrl+'bank/3.png'}}" class="head"/></view>
+    <view class="right">
+      <view class="title">{{item.cardName}}</view>
+      <text class="num">{{item.cardNo}}</text>
+    </view>
+    <view catchTap="delete" class="delete" data-id="{{item.id}}">
+      <image mode="widthFix" src="{{imgUrl+'address/del.png'}}" />
+    </view>
+  </view>
+  <view class="btn">
+    <button class="new-add" onTap="push">添加账户</button>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="bag">
+    <image src="{{imgUrlNew}}yy/member/already_get.png" mode="widthFix" />
+  </view>
+  <view class="thanks">领取成功，请进入小程序查看</view>
+  <view class="list">
+    <view>
+      <image src="{{imgUrlNew}}yy/vouchers/xzicon.png" mode="widthFix" />
+      <text>拾尚包（回收袋）一个</text>
+    </view>
+    <view>
+      <image src="{{imgUrlNew}}yy/vouchers/xzicon.png" mode="widthFix" />
+      <text>上门回收券3张</text>
+    </view>
+    <view>
+      <image src="{{imgUrlNew}}yy/vouchers/xzicon.png" mode="widthFix" />
+      <text>全品类加价券2张</text>
+    </view>
+  </view>
+  <image class="open"  mode="widthFix" src="{{imgUrlNew}}yy/vouchers/duihuan.png" onTap="open" />
+</view>

@@ -1,0 +1,221 @@
+<view class="page">
+  <view class="tabs">
+    <view class="{{activeTab==0?'tab_active':''}}" data-index=0 onTap="tab">全部订单</view>
+    <view class="{{activeTab==1?'tab_active':''}}" data-index=1 onTap="tab">待付款</view>
+    <view class="{{activeTab==2?'tab_active':''}}" data-index=2 onTap="tab">待发货</view>
+    <view class="{{activeTab==3?'tab_active':''}}" data-index=3 onTap="tab">待收货</view>
+    <view class="{{activeTab==4?'tab_active':''}}" data-index=4 onTap="tab">已完成</view>
+  </view>
+  <view class="swiper-wrap">
+    <swiper
+        indicator-dots = "{{false}}" class="swiper" current="{{current}}" onChange="onChange" previousMargin="0px" nextMargin="0px" autoplay="{{false}}" vertical="{{false}}" circular="{{false}}">
+      <!-- 全部订单 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+          <view>
+            <view a:if="{{list1Length== 1}}" class="hint">
+              <image mode="widthFix" src="{{imgUrlNew}}yy/shop/noshoporder.png"></image>
+              <text>您还没有相关订单信息</text>
+            </view>
+            <view a:else class="order" a:for="{{list1}}" catchTap="Detail" data-orderId="{{item.id}}" data-userId="{{userId}}">
+              <view class="flex">
+                <view>
+                  <image class="head" mode="scaleToFill" src="{{item.orderDetail.pic}}"></image></view>
+                <view class="flex_right">
+                  <view class="desc">
+                    <view class="title">{{item.orderDetail.productName}}</view>
+                    <!-- state  0 待付款 1 待发货 2待收货 3 已完成  4已取消 为空时全部 -->
+                    <text a:if="{{item.state==0}}">待付款</text>
+                    <text a:if="{{item.state==1}}">待发货</text>
+                    <text a:if="{{item.state==2}}">待收货</text>
+                    <text a:if="{{item.state==3}}">已完成</text>
+                    <text a:if="{{item.state==4}}">已取消</text>
+                  </view>
+                  <view class="p1">订单编号
+                    <text>{{item.sn}}</text></view>
+                  <view class="p1">创建时间
+                    <text>{{item.createDate}}</text></view>
+                  <view class="p1">总价：
+                    <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{item.totalShishangBagAmount}}</view>
+                  <view class="p1">抵扣：
+                    <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{item.shishangBagAmount}}</view>
+                </view>
+              </view>
+              <view class="total" a:if="{{item.state!=0&&item.state!=4}}">实付款：¥{{item.cashAmount}}</view>
+              <view class="btns">
+                <button catchTap="del" a:if="{{item.state==3}}" data-id="{{item.id}}">删除订单</button>
+                <!-- 待付款订单修改地址/立即兑换/取消订单 -->
+                <button class="go_sure" catchTap="lookDetail" a:if="{{item.state==3 &&item.orderDetail.productType==1}}" data-item="{{item}}">查看券码</button>
+                <button catchTap="cancel" a:if="{{item.state==0}}" data-id="{{item.id}}">取消订单</button>
+                <button class="go_sure" a:if="{{item.state==0}}" catchTap="goSure" data-item="{{item}}">立即兑换</button>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 待付款 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+          <view>
+            <view a:if="{{list2Length == 1}}" class="hint">
+              <image mode="widthFix" src="{{imgUrlNew}}yy/shop/noshoporder.png"></image>
+              <text>您还没有相关订单信息</text>
+            </view>
+            <view a:else class="order" a:for="{{list2}}" catchTap="Detail" data-orderId="{{item.id}}" data-userId="{{userId}}">
+              <view class="flex">
+                <view>
+                  <image class="head" mode="scaleToFill" src="{{item.orderDetail.pic}}"></image></view>
+                <view class="flex_right">
+                  <view class="desc">
+                    <view class="title">{{item.orderDetail.productName}}</view>
+                    <text a:if="{{item.state==0}}">待付款</text>
+                  </view>
+                  <view class="p1">订单编号
+                    <text>{{item.sn}}</text></view>
+                  <view class="p1">创建时间
+                    <text>{{item.createDate}}</text></view>
+                  <view class="p1">总价：
+                    <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{item.totalShishangBagAmount}}</view>
+                  <view class="p1">抵扣：
+                    <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{item.shishangBagAmount}}</view>
+                </view>
+              </view>
+              <view class="total" a:if="{{item.state!=0}}">实付款：¥{{item.cashAmount}}</view>
+              <view class="btns">
+                <button catchTap="del" a:if="{{item.state==3}}" data-id="{{item.id}}">删除订单</button>
+                <button catchTap="cancel" a:if="{{item.state==0}}" data-id="{{item.id}}">取消订单</button>
+                <button class="go_sure" a:if="{{item.state==0}}" catchTap="goSure" data-item="{{item}}">立即兑换</button>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 待发货 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+          <view>
+            <view a:if="{{list3Length == 1}}" class="hint">
+              <image mode="widthFix" src="{{imgUrlNew}}yy/shop/noshoporder.png"></image>
+              <text>您还没有相关订单信息</text>
+            </view>
+            <view a:else class="order" a:for="{{list3}}" catchTap="Detail" data-orderId="{{item.id}}" data-userId="{{userId}}">
+              <view class="flex">
+                <view>
+                  <image class="head" mode="scaleToFill" src="{{item.orderDetail.pic}}"></image></view>
+                <view class="flex_right">
+                  <view class="desc">
+                    <view class="title">{{item.orderDetail.productName}}</view>
+                    <!-- state  0 代付款 1 待发货 2待收货 3 已完成  4已取消 为空时全部 -->
+                    <text a:if="{{item.state==0}}">待付款</text>
+                    <text a:if="{{item.state==1}}">待发货</text>
+                    <text a:if="{{item.state==2}}">待收货</text>
+                    <text a:if="{{item.state==3}}">已完成</text>
+                    <text a:if="{{item.state==4}}">已取消</text>
+                  </view>
+                  <view class="p1">订单编号
+                    <text>{{item.sn}}</text></view>
+                  <view class="p1">创建时间
+                    <text>{{item.createDate}}</text></view>
+                  <view class="p1">总价：
+                    <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{item.totalShishangBagAmount}}</view>
+                  <view class="p1">抵扣：
+                    <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{item.shishangBagAmount}}</view>
+                </view>
+              </view>
+              <view class="total" a:if="{{item.state!=0}}">实付款：¥{{item.cashAmount}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 待收货 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+          <view>
+            <view a:if="{{list4Length == 1}}" class="hint">
+              <image mode="widthFix" src="{{imgUrlNew}}yy/shop/noshoporder.png"></image>
+              <text>您还没有相关订单信息</text>
+            </view>
+            <view a:else class="order" a:for="{{list4}}" catchTap="Detail" data-orderId="{{item.id}}" data-userId="{{userId}}">
+              <view class="flex">
+                <view>
+                  <image class="head" mode="scaleToFill" src="{{item.orderDetail.pic}}"></image></view>
+                <view class="flex_right">
+                  <view class="desc">
+                    <view class="title">{{item.orderDetail.productName}}</view>
+                    <text a:if="{{item.state==2}}">待收货</text>
+                  </view>
+                  <view class="p1">订单编号
+                    <text>{{item.sn}}</text></view>
+                  <view class="p1">创建时间
+                    <text>{{item.createDate}}</text></view>
+                  <view class="p1">总价：
+                    <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{item.totalShishangBagAmount}}</view>
+                  <view class="p1">抵扣：
+                    <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{item.shishangBagAmount}}</view>
+                </view>
+              </view>
+              <view class="total" a:if="{{item.state!=0}}">实付款：¥{{item.cashAmount}}</view>
+              <view class="btns">
+                <button catchTap="del" a:if="{{item.state==3}}" data-id="{{item.id}}">删除订单</button>
+                <!-- 待付款订单修改地址/立即兑换/取消订单 -->
+                <button catchTap="cancel" a:if="{{item.state==0}}" data-id="{{item.id}}">取消订单</button>
+                <button class="go_sure" a:if="{{item.state==0}}" catchTap="goSure" data-item="{{item}}">立即兑换</button>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 已完成 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+          <view>
+            <view a:if="{{list5Length == 1}}" class="hint">
+              <image mode="widthFix" src="{{imgUrlNew}}yy/shop/noshoporder.png"></image>
+              <text>您还没有相关订单信息</text>
+            </view>
+            <view a:else class="order" a:for="{{list5}}" catchTap="Detail" data-orderId="{{item.id}}" data-userId="{{userId}}">
+              <view class="flex">
+                <view>
+                  <image class="head" mode="scaleToFill" src="{{item.orderDetail.pic}}"></image></view>
+                <view class="flex_right">
+                  <view class="desc">
+                    <view class="title">{{item.orderDetail.productName}}</view>
+                    <text a:if="{{item.state==3}}">已完成</text>
+                  </view>
+                  <view class="p1">订单编号
+                    <text>{{item.sn}}</text></view>
+                  <view class="p1">创建时间
+                    <text>{{item.createDate}}</text></view>
+                  <view class="p1">总价：
+                    <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{item.totalShishangBagAmount}}</view>
+                  <view class="p1">抵扣：
+                    <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{item.shishangBagAmount}}</view>
+                </view>
+              </view>
+              <view class="total" a:if="{{item.state!=0}}">实付款：¥{{item.cashAmount}}</view>
+              <view class="btns">
+                <button catchTap="del" a:if="{{item.state==3}}" data-id="{{item.id}}">删除订单</button>
+                <button class="go_sure" catchTap="lookDetail" a:if="{{item.state==3 &&item.orderDetail.productType==1}}" data-item="{{item}}">查看券码</button>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+<!-- 券码兑换蒙版 -->
+<view class="mask" a:if="{{cpuponType}}" >
+  <view class="content">
+    <image mode="scaleToFill" src="{{imgUrlNew}}yy/vouchers/gbicon.png" catchTap="close"/>
+    <view class="couHead">电子券详情</view>
+    <view class="contentScroll">
+      <view class="coup">卡号: <text>{{cpuponDetail.orderDetail.voucherNumber}}</text>   <text onTap="setClipboard" data-a="{{cpuponDetail.orderDetail.voucherNumber}}">复制</text></view>
+      <view class="coup">密码: <text>{{cpuponDetail.orderDetail.voucherPassword}}</text> <text onTap="setClipboard" data-a="{{cpuponDetail.orderDetail.voucherPassword}}">复制</text></view>
+      <view class="coup">使用说明: </view> 
+      <view class="coupDesc">
+        {{cpuponDetail.orderDetail.useInstructions}}
+      </view>
+    </view>
+  </view>
+</view>

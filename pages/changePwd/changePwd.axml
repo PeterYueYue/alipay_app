@@ -1,0 +1,22 @@
+<view class="page">
+  <view class="form">
+    <text class="form-name">原密码</text>
+    <view class="form-inp">
+      <input class="input" type="text" password="true" placeholder="请输入原密码" maxlength="6" placeholder-class="placeholder" onInput="change" data-id="1"  />
+    </view>
+  </view>
+  <view class="form">
+    <text class="form-name">新密码</text>
+    <view class="form-inp">
+      <input class="input" type="number" password="true" placeholder="请输入新密码" maxlength="6" placeholder-class="placeholder" onInput="change" data-id="2"/>
+    </view>
+  </view>
+  <view class="form">
+    <text class="form-name">确认密码</text>
+    <view class="form-inp">
+      <input class="input" type="number" password="true" placeholder="请输入确认密码" maxlength="6" placeholder-class="placeholder" onInput="change" data-id="3"/>
+    </view>
+  </view>
+  <button class="new-add" onTap="push" a:if="{{status}}">修改密码</button>
+  <button class="new-add" loading a:else>修改密码</button>
+</view>

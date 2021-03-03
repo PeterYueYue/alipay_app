@@ -1,0 +1,21 @@
+<view class="page">
+  <image class="img1" src="{{imgUrlNew}}yy/family/img1.png" alt="" />
+  <image class="img2" src="{{imgUrlNew}}yy/family/img2.png" alt="" />
+  <view class="p1">
+    <text>脉动重“塑”新生之旅</text>，回收身边的每一个饮料废塑料瓶（任意品牌）,
+    通过环保科技赋予它们二次生命，践⾏可持续更健康的生活方式。快来跟我们一起，
+    用实际行动来助力绿色发展，共同参与这场崭新的环保革命吧！
+  </view>
+  <image class="img3" src="{{imgUrlNew}}yy/family/img3.png" alt="" />
+  <image class="img4" onTap="toIotSitList" src="{{imgUrlNew}}yy/family/img4.png" alt="" />
+  <image class="img5" src="{{imgUrlNew}}yy/family/img5.png" alt="" />
+  <image class="img6" src="{{imgUrlNew}}yy/family/img6.png" alt="" />
+  <image class="img7" src="{{imgUrlNew}}yy/family/img7.png" alt="" />
+  <view class="info">
+    <view>1、 优惠券有效期为：2021/1/16-2021/12/31，过期作废。</view>
+    <view>2、优惠券使用范围：限（上海、苏州、无锡、杭州、嘉兴）已开通集享卡业务且有销售该商品的全家门店兑换使用（部分特殊门店除外，如机场店等，具体使用信息请咨询门店店员）。</view>
+    <view>3、每人每日限兑1张，每张优惠券为：以3元/瓶的优惠价格购买上述全家门店内在售的任一口味脉动600ML产品。</view>
+    <view>4、每年优惠券数量限量10万张。</view>
+  </view>
+</view>
+   

@@ -1,0 +1,78 @@
+.page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F5F5F5;
+  
+}
+.typeList{
+  margin: 25rpx;
+  
+  flex: 1;
+}
+.typeItem{
+  margin-top: 20rpx;
+  
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  padding: 30rpx  40rpx;
+  box-sizing: border-box;
+}
+.typeItem .head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.head .title{
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  color: #343434;
+
+}
+.line{
+  width: 6rpx;
+  height: 32rpx;
+  background: #3AA6FF;
+  border-radius: 3rpx;
+  margin-right: 20rpx;
+}
+.all{
+  color: #3AA6FF;
+  font-size: 26rpx;
+}
+.subItem{
+  width: 100%;
+  /* height: 182rpx; */
+  background: #FFFFFF;
+  box-shadow: 2rpx 1px 16rpx 0px rgba(89, 89, 89, 0.17);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+  padding: 0 20rpx 20rpx 20rpx;
+  box-sizing: border-box;
+}
+.subItem .picBox{
+  width: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10rpx;
+}
+.subItem .picBox .img{
+  width: 120rpx;
+}
+.subItem .title2{
+  color: #FF9727;
+  font-size: 34rpx;
+  margin-top: 22rpx;
+
+}
+.subItem .title3{
+  color: #666666;
+  font-size: 22rpx;
+  margin-top: 5rpx;
+
+}

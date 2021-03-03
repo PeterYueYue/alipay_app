@@ -1,0 +1,48 @@
+<view class="timelogin">
+  <view class="head">
+    <swiper indicator-dots="{{false}}"  previousMargin="0px" nextMargin="0px" autoplay="{{true}}" vertical="{{false}}" interval="{{3000}}" circular="{{true}}">
+      <swiper-item >
+        <image onTap="goH5" data-name="ailand" class="bannerImg" src="{{imgUrlNew}}yy/vouchers/banner1.png"></image>
+      </swiper-item>
+      <swiper-item >
+        <image onTap="goH5" data-name="zc" class="bannerImg" src="{{imgUrlNew}}yy/vouchers/banner2.png"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="content">
+    <view class="inviteFriend">
+      <view class="title">
+        <view>没有抢到上门券？</view>
+        <view>邀请
+          <text> 3</text> 位好友助力即可获取</view>
+      </view>
+      <view onTap="goFriendHelp" class="btns">立即邀请</view>
+    </view>
+    <view class="list">
+      <view a:for="{{list}}" a:key="index" class="item">
+        <image class="pic" src="{{item.typePic}}"></image>
+        <view class="right">
+          <view class="info">
+            <view class="title {{item.typeName !== '上门券'?'yellow':''}}  ">{{item.typeName}}</view>
+            <view class="subtitle">{{item.description}}</view>
+            <view class="progressBox" a:if="{{item.percent !== '0%'}}">
+              <view class="line" style="width:{{item.percent}}"></view>
+              <view class="tips">已抢{{item.percent}}</view>
+            </view>
+          </view>
+          <!-- 活动未开始 -->
+          <view a:if="{{showTime}}" data-data="{{item}}" class="btns bgGary">
+          {{timeObj.h+':'+timeObj.m+':'+timeObj.s}}
+          </view>
+          <!-- 活动开始 -->
+          <view a:else onTap="{{item.percent == '100%'?'':'submit'}}" data-data="{{item}}" class="btns {{item.percent == '100%'?'bgGary':item.typeName !== '上门券'?'bgyellow':''}}">
+          {{item.percent == '100%'?'已领完':'立即领取'}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 新手教程蒙版 -->
+<!--<view class="mask_" onTap="closemask_" a:if="{{newUser.timelogin}}"><image class="invite" mode="widthFix" src="{{imgUrlNew}}yy/newUser/invite.png" /><view class="dialog_index">
+    每日还可以通过好友助力获得<text>\n</text>2张上门券</view><view class="know" onTap="closemask_">开启新版本</view></view> -->

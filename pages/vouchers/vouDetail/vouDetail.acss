@@ -1,0 +1,92 @@
+.page{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 33rpx;
+}
+.card{
+  width: 690rpx;
+  /* height: 944rpx; */
+  box-shadow: 2rpx 1rpx 16rpx 0px rgba(7, 84, 190, 0.2);
+  border-radius: 10rpx;
+  padding: 45rpx;
+  box-sizing: border-box;
+
+}
+.main{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+  position: relative;
+  align-items: center;
+}
+.main .pic{
+  width: 88rpx;
+  height: 88rpx;
+  margin-right: 40rpx;
+}
+.status{
+  
+  width: 100rpx;
+  height: 46rpx;
+  background: #FFFFFF;
+  border: 1px solid #3AA5FF;
+  border-radius: 23rpx;
+  font-size: 24rpx;
+  color: #3AA5FF;
+  line-height: 46rpx;
+  
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  margin-top: 10rpx;
+  
+
+}
+.main .title{
+  color: #3AA5FF;
+  font-size: 34rpx;
+}
+.main .title2{
+  font-size: 22rpx;
+  color: #666666;
+  line-height: 40rpx;
+}
+.codebox{
+  display: flex;
+  width: 280rpx;
+  height: 280rpx;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70rpx;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.codebox .img{
+  width: 280rpx;
+  height: 280rpx;
+}
+.detail{
+  margin-top: 60rpx;
+  font-size: 24rpx;
+  color: #333333;
+}
+.detail .title{
+  font-size: 32rpx;
+  line-height: 80rpx;
+}
+.statusIcon{
+  width: 146rpx;
+  height: 148rpx;
+  position: absolute;
+  right: -78rpx;
+  bottom: -20rpx;
+}
+.ysy{
+  border: 1px solid #999999 !important;
+  color: #999999 !important;
+}

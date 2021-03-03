@@ -1,0 +1,166 @@
+.vouchers {
+  width: 100%;
+  height: 100vh;
+  background: url("http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/freePost/061503.png") no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  text-align: center;
+}
+
+.union image {
+  width: 160rpx;
+  margin-top: 20rpx;
+}
+.c1 {
+  width: 668rpx;
+}
+.c2 {
+  width: 100%;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  padding-top: 700rpx;
+  position: relative;
+}
+
+.c2 .c3 {
+  width: 622rpx;
+}
+
+.c2 .gift {
+  width: 622rpx;
+  margin: 180rpx auto 0;
+  display: block;
+}
+
+.c2 .address {
+  width: 626rpx;
+  height: 144rpx;
+  line-height: 144rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 1rpx 4rpx 12rpx 1rpx rgba(0, 0, 0, 0.22);
+  border-radius: 20rpx;
+  font-size: 36rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  z-index: 10;
+  margin: -60rpx auto 0;
+  text-align: left;
+  text-indent: 50rpx;
+}
+/* 选择地址后 */
+
+.add1 {
+  background: #fafafa;
+  width: 626rpx;
+  height: 200rpx;
+  margin: auto;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  padding: 10rpx 45rpx 10rpx 92rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+  margin-top: 100rpx;
+  text-align: left;
+  box-shadow: 1rpx 4rpx 12rpx 1rpx rgba(0, 0, 0, 0.22);
+}
+
+.add1>image {
+  position: absolute;
+  top: 88rpx;
+  left: 34rpx
+}
+
+.fl1>text {
+  font-size: 40rpx;
+  float: right;
+  margin-right: 0;
+}
+
+.fl2 {
+  font-weight: 600;
+  font-size: 34rpx;
+  color: #1A1A1A;
+  margin-top: 35rpx
+}
+
+.fl3 {
+  font-weight: 600;
+  font-size: 34rpx;
+  color: #1A1A1A;
+  margin-top: 14rpx
+}
+
+.fl2>text:nth-child(2) {
+  font-size: 30rpx;
+  padding-left: 68rpx
+}
+
+.fl2 .fa {
+  font-size: 40rpx
+}
+
+.adds {
+  margin-top: 20rpx;
+}
+
+.name {
+  width: 200rpx;
+  font-size: 34rpx;
+}
+
+.mobile {
+  font-size: 30rpx;
+}
+/* 按钮 */
+.get {
+  width: 640rpx;
+  margin: 43rpx auto 0;
+}
+
+.get view, .get button {
+  width:626rpx;
+  height:46px;
+  background:linear-gradient(-82deg,rgba(242,255,95,1),rgba(119,255,158,1));
+  box-shadow:6rpx 6rpx 46rpx 0px rgba(0,124,35,0.5);
+  border-radius:45rpx;
+  line-height: 46px;
+  font-size:16px;
+  color:#397D0F;
+  border: none;
+}
+
+.active1 {
+  background-color: #3AA5FF;
+}
+
+.active2 {
+  background-color: #9AE04F;
+}
+
+/* 蒙版 */
+.mask_>view {
+  margin: 400rpx auto;
+  width:  640rpx;
+  height: 200rpx;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 15rpx;
+}
+.btn {
+  margin-top: 60rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.btn button  {
+  width: 500rpx;
+  margin: 40rpx auto;
+  background-color: #3AA5FF;
+  color: #fff;
+  height: 94rpx;
+  border-radius: 15rpx;
+  border: none;
+}
+.btns{
+  margin-top: 44rpx
+}

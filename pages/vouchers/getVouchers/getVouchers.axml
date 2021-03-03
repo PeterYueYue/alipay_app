@@ -1,0 +1,38 @@
+<view class="pages">
+  <view class="head">
+    <image class="icon" src="{{details.icon}}"></image>
+    <view class="dhk">
+      <view class="text">送你一张{{details.name}}，收益激增，拿走不客气！</view>
+    </view>
+  </view>
+  <view class="carbag">
+    <image class="pic" src="{{details.pic}}"></image>
+    <view class="title1">{{details.name}}</view>
+    <!-- <view class="title2">{{details.description}}</view> -->
+    <view class="sysm">
+      <view class="item">
+        <view class="key">有 效 期：</view>
+        <view class="val">{{details.starDate}}至{{details.endDate}}</view>
+      </view>
+      <view class="item">
+        <view class="key">使用说明：</view>
+        <view class="val">{{details.description}} </view>
+      </view>
+    </view>
+    <view onTap="getVouchers" class="btn">立即领取</view>
+  </view>
+  <!-- 提示弹窗 -->
+  <view a:if="{{isMask}}" class="maskBox">
+    <view class="content">
+    <view class="title">{{message.code == 0?'领取成功':'来晚一步'}} </view>
+    <image a:if="{{message.code == 1}}" class="img" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/klh.png"></image>
+    <image a:if="{{message.code == 0}}" class="img" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/lh.png"></image>
+    <view class="remark">
+     {{message.message}}
+    </view>
+    <view onTap="goIndex" class="jumbtn">
+      跳转到首页
+    </view>
+    </view>
+  </view>
+</view>

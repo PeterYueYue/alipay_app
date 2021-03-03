@@ -1,0 +1,560 @@
+.sview {
+  height: 100vh;
+  width: 100%;
+}
+
+.page {
+  height: 2482rpx;
+  width: 100%;
+  background-color: #fff;
+  /* background-image: url(/image/carnival/bg.png); */
+  background-size: 750rpx 2482rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.rules {
+  width: 75rpx;
+  height: 39rpx;
+  position: absolute;
+  font-size: 19rpx;
+  color: #fff;
+  line-height: 39rpx;
+  text-align: center;
+  background-color: #1a75e5;
+  border-radius: 20rpx 0 0 20rpx;
+  top: 22rpx;
+  right: 0;
+}
+
+.information {
+  width: 690rpx;
+  margin-top: 382rpx;
+  font-size: 20rpx;
+  color: #ff7200;
+  margin-left: 30rpx;
+}
+
+.notice {
+  width: 400rpx;
+  height: 37rpx;
+  opacity: 0.68;
+  background-color: #fff;
+  border-radius: 19rpx;
+  display: flex;
+  align-items: center;
+}
+
+.notice image {
+  width: 21rpx;
+  margin-left: 18rpx;
+  margin-right: 12rpx;
+}
+
+.swiper-item {
+  font-size: 22rpx;
+  line-height: 38rpx;
+}
+
+.list {
+  height: 37rpx;
+  width: 122rpx;
+  background-color: #fff;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 19rpx;
+}
+
+.sign {
+  height: 288rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  margin-top: 11rpx;
+  box-sizing: border-box;
+  padding: 0 37rpx;
+  position: relative;
+  width: 690rpx;
+  margin-left: 30rpx;
+}
+
+.dayone {
+  font-size: 32rpx;
+  text-align: center;
+  padding-top: 28rpx;
+  color: #262626;
+  font-weight: 600;
+}
+
+.dayone text {
+  color: #fd7030;
+  font-size: 36rpx;
+}
+
+.daytwo {
+  font-size: 24rpx;
+  color: #262626;
+  margin-top: 16rpx;
+  text-align: center;
+}
+
+.daytwo text {
+  color: #fd7030;
+}
+
+.article {
+  margin-top: 90rpx;
+  /* background-image: url(/image/carnival/di.png); */
+  background-size: 100%;
+  height: 20rpx;
+  position: relative;
+}
+
+.progress {
+  display: block;
+  height: 20rpx;
+  border-radius: 20rpx;
+  width: 14%;
+}
+
+.point {
+  width: 12rpx;
+  height: 12rpx;
+  background-color: #ffa24e;
+  border-radius: 50%;
+  position: absolute;
+  top: 4rpx;
+}
+
+.one {
+  left: 141rpx;
+}
+
+.two {
+  left: 324rpx;
+}
+
+.three {
+  left: 415rpx;
+}
+
+.four {
+  left: 507rpx;
+}
+
+.box {
+  width: 38rpx;
+  position: absolute;
+  top: -12rpx;
+}
+
+.boxone {
+  left: 220rpx;
+}
+
+.boxtwo {
+  right: -9rpx;
+}
+
+.tipL {
+  width: 80rpx;
+  position: absolute;
+  top: 132rpx;
+  left: 235rpx;
+}
+
+.tipR {
+  width: 81rpx;
+  position: absolute;
+  top: 132rpx;
+  left: 573rpx;
+}
+
+.day {
+  padding-left: 46rpx;
+  font-size: 22rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.lucky {
+  height: 797rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-top: 19rpx;
+  width: 690rpx;
+  margin-left: 30rpx;
+  position: relative;
+}
+
+.number {
+  font-size: 40rpx;
+  color: #303030;
+  text-align: center;
+  padding-top: 33rpx;
+  font-weight: 600;
+}
+
+.number text {
+  color: #ff6600;
+}
+
+.tap {
+  text-decoration: underline;
+  color: #ff6600;
+  font-size: 24rpx;
+  text-align: center;
+  position: absolute;
+  top: 95rpx;
+  left: 217rpx;
+  z-index: 999;
+}
+
+.card {
+  position: absolute;
+  top: 840rpx;
+}
+
+.lt-item-list {
+  margin: 32rpx;
+}
+
+.lt-item {
+  margin: 0 12rpx 20rpx 0;
+}
+
+.record {
+  font-size: 24rpx;
+  color: #2b75ff;
+  text-align: center;
+  position: absolute;
+  top: 743rpx;
+  left: 259rpx;
+  z-index: 999;
+}
+
+.gold {
+  position: absolute;
+  width: 105rpx;
+  top: -16rpx;
+  right: -16rpx;
+}
+
+.task {
+  font-size: 40rpx;
+  color: #fefefe;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 27rpx;
+  margin-bottom: 10rpx;
+}
+
+.renwu {
+  width: 690rpx;
+  margin-left: 30rpx;
+  height: 132rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-top: 19rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tubiao {
+  flex: 1;
+}
+
+.renwu image {
+  width: 63rpx;
+  margin-left: 36rpx;
+}
+
+.renwu .wenzi {
+  flex: 2;
+}
+
+.wenzi>view {
+  font-size: 30rpx;
+  color: #313131;
+  font-weight: 600;
+  margin-bottom: 10rpx;
+}
+
+.wenzi>text {
+  font-size: 24rpx;
+  color: #4094ff;
+  margin-left: 2rpx;
+}
+
+.renwu .btn2 {
+  flex: 1;
+}
+
+.btn2>button {
+  width: 164rpx;
+  height: 54rpx;
+  border-radius: 27rpx;
+  border: solid 1px #ffc436;
+  font-size: 25rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-right: 26rpx;
+  color: #ffca4b;
+}
+
+.btn>view {
+  width: 164rpx;
+  height: 54rpx;
+  border-radius: 27rpx;
+  border: solid 1px #ab9d8d;
+  font-size: 25rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-right: 26rpx;
+  color: #ab9d8d;
+}
+
+.renwu .btn1 {
+  flex: 1;
+}
+
+.btn1>view {
+  width: 164rpx;
+  height: 54rpx;
+  border-radius: 27rpx;
+  border: solid 1px #ffc436;
+  font-size: 25rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-right: 26rpx;
+  color: #ffca4b;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.luckybg {
+  width: 556rpx;
+  height: 636rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.jixu {
+  width: 224rpx;
+  height: 71rpx;
+  border-radius: 36rpx;
+  /* background-image: url(/image/carnival/jixu.png); */
+  background-size: 100%;
+  position: absolute;
+  bottom: 34rpx;
+  left: 43rpx;
+}
+
+.chakan {
+  width: 224rpx;
+  height: 71rpx;
+  border-radius: 36rpx;
+  /* background-image: url(/image/carnival/jiangli.png); */
+  background-size: 100%;
+  position: absolute;
+  bottom: 34rpx;
+  right: 43rpx;
+}
+
+.close {
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+  background-size: 100%;
+  margin-left: 265rpx;
+  margin-top: 28rpx;
+}
+
+.luckyClose {
+  width: 72rpx;
+  height: 72rpx;
+  /* background-image: url(/image/carnival/X.png); */
+  background-size: 100%;
+  margin-top: 28rpx;
+  margin-left: 241rpx;
+}
+
+.recordbox {
+  width: 100%;
+  height: 917rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 40rpx 40rpx 0 0;
+}
+
+.li {
+  width: 59rpx;
+  position: absolute;
+  left: 94rpx;
+  top: -23rpx;
+  z-index: 9;
+}
+
+.ci {
+  width: 463rpx;
+  position: absolute;
+  left: 145rpx;
+  top: -30rpx;
+}
+
+.ri {
+  width: 94rpx;
+  position: absolute;
+  right: 71rpx;
+  top: -23rpx;
+}
+
+.closelist {
+  width: 76rpx;
+  height: 76rpx;
+  /* background-image: url(/image/carnival/X.png); */
+  background-size: 100%;
+  position: absolute;
+  right: 18rpx;
+  top: -107rpx;
+}
+
+.luckyList {
+  height: 837rpx;
+  box-sizing: border-box;
+  padding: 8rpx 52rpx 0 54rpx;
+  margin-top: 80rpx;
+}
+
+.no {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  height: 800rpx;
+}
+
+.listitem {
+  display: flex;
+  justify-content: space-between;
+  height: 128rpx;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 96, 255, 0.2);
+}
+
+.items {
+  font-size: 32rpx;
+  color: #f98915;
+  margin-bottom: 10rpx;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 24rpx;
+  color: #747474;
+}
+
+.state {
+  width: 203rpx;
+  font-size: 22rpx;
+  color: #7d7d7d;
+}
+
+.rulesbg {
+  box-sizing: border-box;
+  width: 610rpx;
+  height: 791rpx;
+  /* background-image: url(/image/carnival/rulesBg.png); */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 0 50rpx;
+}
+
+.huodong {
+  font-size: 50rpx;
+  font-weight: 1000;
+  color: #fff;
+  text-align: center;
+  padding-top: 18rpx;
+}
+
+.details {
+  margin-top: 40rpx;
+  height: 640rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  color: #3cb5ff;
+  font-weight: 600;
+}
+
+.content {
+  font-size: 24rpx;
+  line-height: 26rpx;
+  margin: 20rpx 0;
+  color: #5d5d5d;
+}
+
+.content>view {
+  margin-bottom: 20rpx;
+}
+
+.luckybg image {
+  width: 250rpx;
+  position: absolute;
+  left: 153rpx;
+  top: 50rpx;
+}
+
+.lifestyle {
+  height: 200rpx;
+  width: 686rpx;
+  border-radius: 27rpx;
+  position: absolute;
+  top: 500rpx;
+  left: 32rpx;
+  background-color: #fff;
+}
+
+lifestyle {
+  height: 100rpx;
+  /* width: 80%;
+  position: absolute;
+  top: 500rpx;
+  left: 75rpx; */
+  margin: 50rpx auto;
+}
+
+.notice1 {
+  border-radius: 19rpx;
+  opacity: 0.68;
+  background-color: #fff;
+  color: #ff7200;
+  font-size: 10rpx;
+  width: 347rpx;
+  transform: scaleY(0.7);
+}
+
+.finish {
+  text-align: center;
+  color: #fff;
+  margin-top: 100rpx;
+  font-size: 32rpx;
+}

@@ -1,0 +1,119 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  padding-top: 110rpx;
+  box-sizing: border-box;
+}
+
+.list {
+  margin: 0 116rpx 0;
+}
+
+.list view {
+  height: 80rpx;
+  margin-top: 40rpx;
+  border-bottom: 1px solid rgba(220,220,220,1);
+  display: flex;
+  align-items: center;
+}
+
+.list image {
+  width: 30rpx;
+}
+
+.list input {
+  width: 360rpx;
+  margin-left: 20rpx;
+}
+
+.get {
+  float: right;
+  width: 170rpx;
+  height: 80rpx
+}
+
+.btn {
+  margin-top: 60rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.btn button {
+  width: 640rpx;
+  margin: 0 auto;
+  background-color: #3AA5FF;
+  color: #fff;
+  height: 94rpx;
+  border-radius: 8rpx;
+  border: none;
+}
+
+.hiddlen {
+  display: none;
+}
+
+.personal {
+  text-align: center;
+  color: #1A1A1A;
+  font-weight: 600;
+  margin: auto;
+  margin-top: 160rpx;
+  margin-bottom: 42rpx;
+  width: 408rpx;
+  font-size: 42rpx;
+  height: 49rpx;
+}
+
+
+/* flex */
+
+.flex {
+  display: flex;
+  justify-content: center;
+  height: 100rpx;
+}
+
+.flex view {
+  width: 290rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: rgba(238, 238, 238, 1);
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  text-align: center;
+  margin: 0 18rpx;
+}
+
+.flex .choosed {
+  font-size: 36rpx;
+  height: 92rpx;
+  line-height: 80rpx;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  background: url("http://image.shishangbag.vip/upload/img/web/yy/index/choosed.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.btn {
+  margin-top: 143rpx;
+}
+
+.btns {
+  margin-top: 336rpx;
+}
+.btns button, .btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:520rpx;
+  height:90rpx;
+  background:rgba(38,131,252,1);
+  border-radius:45rpx;
+}
+.btns image {
+  width: 48rpx;
+  margin-right: 27rpx;
+}

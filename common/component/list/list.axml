@@ -1,0 +1,10 @@
+<view class="list">
+  <view class="list-left">
+    <image src="../../image/tp.png" mode="widthFix" />
+  </view>
+  <view class="list-right">
+    <view class="lr1"> <text>商品名称商店名称</text> <text>200m</text></view>
+    <view class="lr2">5元代金券</view>
+    <view class="lr3"> <text>免费</text> <text>1241人浏览</text>  <text>领取</text>  </view>
+  </view>
+</view>

@@ -1,0 +1,66 @@
+
+.page{
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.loveItem{
+  width: 700rpx;
+  height: 248rpx;
+  background: #FFFFFF;
+  box-shadow: -1px 4rpx 9rpx 0px rgba(115, 129, 165, 0.26);
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.love{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loveItem .pic{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+.loveItem .info{
+  flex: 1;
+  font-size: 24rpx;
+  color: #7A7A7A;
+}
+.loveItem .title{
+  font-size: 28rpx;
+  color: #333333;
+  margin-top:5rpx;
+  margin-bottom: 20rpx;
+  font-weight: 600;
+}
+.loveItem .progressBox{
+  width: 412rpx;
+  height: 12rpx;
+  background-color: #F5EDE8;
+  border-radius: 6rpx;
+  margin-top: 21rpx;
+  position: relative;
+}
+.loveItem .subTitle{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.progressBox .line{
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(173deg, #3AA5FF, #0066FF);
+  border-radius: 6rpx;
+}

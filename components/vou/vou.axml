@@ -1,0 +1,28 @@
+<!-- 选择权益优惠券 -->
+<view a:if="{{isShowVouList}}" class="voucherList">
+  <view class="main">
+    <image onTap="close" class="gbicon"
+      src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/gbicon.png"></image>
+    <view class="vouhead">
+      选择权益
+    </view>
+    <view class="content">
+      <view a:for="{{vou}}" a:key="index" class="vouItem" onTap="chooseVou" data-index="{{index}}"
+        data-id="{{item.id}}" data-ran="{{item.ran}}" data-item="{{item}}" data-selected="{{item.selected}}">
+        <view class="sign">
+          <image a:if="{{item.selected}}" class="stateIcon" src="{{imgUrlNew}}yy/vouchers/xzicon.png" />
+          <image a:else class="stateIcon" src="{{imgUrlNew}}yy/vouchers/wxzicon.png" />
+          <image class="pic" src="{{item.pic}}" />
+          <view class="info">
+            <view class="title">{{item.voucherName}}</view>
+            <!-- <view class="title2">·{{item.description}}</view> -->
+            <view class="title2">·{{item.remark}}</view>
+            <view class="title2">·{{item.endDate}} 过期</view>
+          </view>
+        </view>
+        <!-- <view class="tips" a:if="{{item.checked}}"><image mode="widthFix"  src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/th.png"/>已选择同同类型卡券,不可叠加使用</view> -->
+      </view>
+    </view>
+    <view onTap="closeVouList" class="footbtn">确认使用</view>
+  </view>
+</view>

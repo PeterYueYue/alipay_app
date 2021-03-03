@@ -1,0 +1,132 @@
+.bao_page{
+  width: 100%;
+  min-height: calc(100vh - 100rpx);
+  background: #f9f9f9;
+}
+.bao_page .main{
+  width: 100%;
+  height: 450rpx;
+  background: #ffffff;
+  margin-bottom: 20rpx
+}
+.bao_page .top,.tops{
+  width: 100%;
+  height: 240rpx;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 45rpx;
+  background-size: 100% 100% !important;
+}
+.bao_page .top>view{
+  font-size: 30rpx;
+  color: #4D4D4D;
+}
+.bao_page .top>view:nth-child(2){
+  margin-top: 30rpx;
+  font-weight: 600;
+  font-size: 38rpx;
+  color: #1A1A1A;
+}
+.bao_page .active{
+  position: relative;
+  font-size: 25rpx;
+  color: #1A1A1A;
+  box-sizing: border-box;
+  padding: 94rpx 40rpx 44rpx 106rpx;
+  line-height: 30rpx;
+}
+.bao_page .active text {
+  color: #999;
+
+}
+.bao_page .active>image{
+  position: absolute;
+  top:95rpx;
+  left: 60rpx;
+}
+.bao_page .btn{
+  /* position: absolute;
+  top: 200rpx; */
+  margin-top: -250rpx;
+  width: 100%;
+  height: 100rpx;
+}
+.bao_page .userBtn{
+  text-align: center;
+  width: 330rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 8rpx
+}
+.bao_page .l{
+  margin-left: 32rpx;
+  background: #3AA5FF;
+}
+.bao_page .gray{
+  background: #D9D9D9;
+}
+.bao_page .r{
+  margin-right: 32rpx;
+  background: #0EC988;
+}
+.bao_page .boss{
+  margin: auto;
+  width: 640rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #3AA5FF;
+  border-radius: 8px;
+  font-size: 34rpx;
+  color: #FFFFFF;
+}
+.bao_page .list{
+  width: 100%;
+  height: 200rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+  position: relative;
+  border-bottom: 1rpx solid #f9f9f9;
+  padding: 58rpx 36rpx 52rpx 144rpx;
+  margin: 0;
+}
+.bao_page .f1{
+  font-size: 34rpx;
+  color: #1A1A1A;
+  font-weight: 600
+}
+.bao_page .f2{
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #B3B3B3;
+}
+.bao_page .f2>text:nth-child(2){
+  float: right;
+  font-size: 28rpx;
+  color: #9AE04F;
+}
+.bao_page .list>image{
+  position: absolute;
+  top: 58rpx;
+  left: 34rpx
+}
+.bao_page .hint{
+  height: calc(100vh - 770rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bao_page .hint>image{
+  width: 108rpx;
+  margin-bottom: 10rpx;
+}
+
+.bao_page  .unbind {
+  color: rgb(58, 165, 255);
+  font-size: 28rpx;
+  float: right;
+}

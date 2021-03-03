@@ -1,0 +1,43 @@
+<!-- 小程序收藏组件，更多高级用法请参考文档：https://docs.alipay.com/mini/component/component-favorite -->
+<!-- 购买拾尚包 -->
+<view class="page">
+  <view class="bag">
+    <image src="{{imgUrl}}bag/10.png" mode="widthFix" />
+  </view>
+  <!-- 选择后地址 -->
+  <view class="add1" a:if="{{addressStatus}}" onTap="toAddress">
+    <!--<view class="fl1"><view>已选择上门地址</view><text class="fa fa-angle-right r" aria-hidden="true"></text></view> -->
+    <cover-image style="width:29.6rpx;height:35.6rpx" src="{{imgUrl}}15.png"/>
+    <view class="fl2">
+      <text class="name inlineBlock ell">{{add.userName}}</text>
+      <text class="fa fa-angle-right r" aria-hidden="true"></text>
+      <text class="mobile r">{{add.userMobile}}</text>
+    </view>
+    <view class="adds ell">{{add.provinceName + add.cityName + add.areaName + add.address}}</view>
+  </view>
+  <!-- 选择前地址 -->
+  <view a:else class="address clear" onTap="toAddress">
+    <image src="{{imgUrl}}bag/5.png" mode="widthFix" />
+    <view>输入收件地址</view>
+    <text class="fa fa-angle-right r" aria-hidden="true"></text>
+  </view>
+  <view class="bulletincd" a:if="{{flag}}">
+    <image class="countdown" mode="scaleToFill" src="{{imgUrl}}order/countdown.png"/>
+    <view class="time">
+      {{countdown}}
+    </view>
+    <view class="time_t">
+      限时免费即将截止！赶紧领取吧！
+    </view>
+    <image class="arrow" mode="scaleToFill" src="{{imgUrl}}order/arrow.png"/>
+  </view>
+  <view class="get">
+    <view a:if="{{userInfo.nickName!=''}}" onTap="freeGet" data-status="1" class="active1 {{!addressStatus ? 'unactive' : ''}}">现场领取</view>
+    <button a:else class="active1 {{!addressStatus ? 'unactive' : ''}}" data-status="1" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='userInfo'> 现场领取</button>
+    <view a:if="{{userInfo.nickName!=''}}" onTap="freeGet" data-status="2" class="active2 {{!addressStatus ? 'unactive' : ''}}">免费邮寄</view>
+    <button a:else class="active2 {{!addressStatus ? 'unactive' : ''}}" data-status="2" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='userInfo'> 免费邮寄</button>
+  </view>
+  <view class="banka" onTap="banka">
+    <image mode="widthFix" src="{{imgUrl}}bag/banka.png"/>
+  </view>
+</view>

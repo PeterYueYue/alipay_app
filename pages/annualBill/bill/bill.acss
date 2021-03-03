@@ -1,0 +1,133 @@
+.page{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 1624rpx;
+}
+.nav{
+  background-color: rgb(115,191,255);
+  height: 60rpx;
+}
+.content{
+  width: 686rpx;
+  height: 1264rpx;
+  margin-left: 43rpx;
+  padding: 0 90rpx 0 58rpx;
+  box-sizing: border-box;
+}
+.head{
+  margin-top: 240rpx;
+  display: flex;
+  color: #333333;
+  align-items: center;
+}
+.head image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.text_item{
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 76rpx;
+  border-bottom: 1px #FA9F00 dashed;
+}
+.text_item text{
+  font-size: 46rpx;
+  color: #FA9300;
+}
+.noborder{
+  border-bottom: none;
+}
+.chart .headbox{
+  display: flex;
+  align-items: center;
+  color: #333333;
+  font-size: 34rpx;
+  justify-content: space-between;
+}
+.headbox .line{
+  width: 6rpx;
+  height: 32rpx;
+  border-radius: 3rpx;
+  background-color: #3AA5FF;
+  margin-right: 14rpx;
+
+}
+.titlebox{
+  display: flex;
+  align-items: center;
+}
+
+/* ring */
+
+.ring {
+  width: 550rpx;
+  height: 400rpx;
+}
+.btns{
+  position: absolute;
+  bottom: 1rpx;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+  height: 230rpx;
+  z-index: 99999999;
+  background: url("https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/bill/btbg.png") no-repeat;
+  background-size: 100% 100%;
+
+}
+.btns .btn{
+  width: 320rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  margin: 0 15rpx;
+  background-size: 100% 100%;
+}
+.canvas{
+  position: absolute;
+  top: -1rpx;
+  left: 0;
+  z-index: 0;
+  width: 1500rpx;
+  height: 3248rpx;
+  /* transform: translateX(-100%); */
+  transform-origin: 0 0;
+  transform: scale(0.5);
+}
+.canvas_pic{
+  position: absolute;
+  top: -1rpx;
+  left: 0;
+  width: 1500rpx;
+  height: 3248rpx;
+  transform-origin: 0 0;
+  transform: scale(0.5);
+  opacity: 0;
+}
+.canvas_box{
+  position: relative;
+  overflow: hidden;
+  width: 750rpx;
+  height: 1624rpx;
+  background-color: rgb(18, 113, 255);
+  /* background: url("https://image.shishangbag.vip/upload/img/web/yy/bill/bg1.png") no-repeat;
+  background-size: 100% 100%; */
+}
+.show {
+  animation: fadenum 1s linear 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadenum {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

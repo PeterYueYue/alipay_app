@@ -1,0 +1,29 @@
+<!-- 服务商 -->
+<view class="page">
+  <view class="head"><text></text>可选择的服务商</view>
+  <view class="list" a:for="{{4}}" a:key="{{index}}" onTap="choose">
+    <image a:if="{{index==num}}" class="check" mode="scaleToFill" src="{{imgUrlNew}}image/provider/providerY.png"/>
+    <view class="list-head">
+      <image class="headimage" mode="scaleToFill" src="{{imgUrlNew}}image/provider/head.png"/>
+      <text>拾尚回收</text> 
+      <image class="star" mode="scaleToFill" src="{{imgUrlNew}}image/provider/star.png"/>
+      <text>5.0</text> 
+    </view>
+    <view class="middle">
+      - 支持回收品类 -
+    </view>
+    <view class="table">
+      <view class="item" a:for="{{list}}" a:key="{{index}}">
+        <view class="left">
+          {{item.name}}
+        </view>
+        <view class="right">
+           {{item.value}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn">
+    <button type="primary" onTap="goToNewAddress">下一步</button>
+  </view>
+</view>

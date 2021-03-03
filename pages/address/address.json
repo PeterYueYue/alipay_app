@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "地址簿",
+  "usingComponents":{
+    "modal": "mini-antui/es/modal/index"
+  },
+  "pullRefresh": true
+}

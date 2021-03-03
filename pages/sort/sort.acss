@@ -1,0 +1,86 @@
+.page {
+  padding-top: 20rpx;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.search-wrap {
+  width: 686rpx;
+  height: 90rpx;
+  border: 2rpx solid #E6E6E6;
+  border-radius: 90rpx;
+  margin: 0 auto 40rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.search-wrap input {
+  width: 500rpx;
+  margin-left: 50rpx;
+}
+
+.search-wrap image {
+  width: 32rpx;
+  float: right;
+  margin-right: 20rpx;
+}
+
+.cate_container {
+  height: calc(100vh - 150rpx);
+  display: flex;
+}
+
+.cate_container .left_menu {
+  /* 
+  子项 高度默认等于父项的高度
+   */
+  height: calc(100vh - 150rpx);
+  box-sizing: border-box;
+  border-top: 1rpx solid #f9f9f9;
+  flex: 1;
+  background-color: #F5F5F5;
+}
+
+.cate_container .left_menu .menu_item {
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.cate_container .left_menu .active {
+  border-left: 5rpx solid #3AA5FF;
+  background-color: #fff;
+  color: #3AA5FF;
+}
+
+.cate_container .right_content {
+  flex: 3;
+  box-sizing: border-box;
+  border-top: 1rpx solid #f9f9f9;
+  height: calc(100vh - 150rpx);
+}
+
+.detail {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 50rpx;
+  border-bottom: 1rpx solid #f9f9f9;
+}
+
+.detail>text {
+  font-size: 28rpx;
+  color: #1A1A1A;
+}
+
+.detail>text:nth-child(2) {
+  font-size: 20rpx;
+  color: #3AA5FF;
+  padding-left: 16rpx
+}

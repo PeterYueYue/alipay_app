@@ -1,0 +1,53 @@
+<!-- <view a:if="{{weightId == 1}}" class="page">
+  <view class="{{t_index == index? 'time':'time_n'}}" a:for="{{tabs}}" a:key="key" onTap="tap" data-item="{{item}}" data-index="{{index}}">
+    <view>
+      {{item.year}}
+    </view>
+    <view style="margin-left:40rpx">
+      {{item.week}}
+    </view>
+    <icon class="icon_s" color="white" size="20" type="success_no_circle"></icon>
+  </view>
+  <view class="note">
+    <view class="title">
+      备注
+    </view>
+    <view>
+      <textarea value="{{text}}" onInput="input" placeholder-style="placeholder" placeholder="如有上门时间或其他特殊要求，请在备注栏填写..." maxlength="200" />
+    </view>
+    <view class="instructions">
+      *我们会竭尽全力配合用户对上门时间的需求，但是由于实际路况、天气、运单量的影响，目前无法保证准时上门，感谢您的理解！
+    </view>
+  </view>
+  <view class="btn" onTap="btn">
+    确定
+  </view>
+</view> -->
+<!-- 30公斤以上显示 -->
+<view  class="page page2">
+  <view a:if="{{tabs.length>0}}" class="timeBox">
+    <view class="{{t_index == index? 'time':'time_n'}}" a:for="{{tabs}}" a:key="key" onTap="tap" data-item="{{item}}" data-index="{{index}}">
+      <view>
+        {{item.year}}
+      </view>
+      <view style="margin-left:40rpx">
+        {{item.week}}
+      </view>
+      <icon class="icon_s" color="white" size="20" type="success_no_circle"></icon>
+    </view>
+  </view>
+  <image a:if="{{userInfo.userFlag==1}}" class="card" src="{{imgUrlNew}}yy/date/card.png"></image>
+  <view a:else class="msg">
+    <textarea placeholder="备注" value="{{text}}" onInput="input"></textarea>
+  </view>
+  <view onTap="changeAgree" class="dyxxBox">
+    <image  class="icon" src="{{imgUrlNew}}{{isAgree?'yy/vouchers/xzicon.png':'yy/vouchers/wxzicon.png'}}  "></image>
+    <text>建议订阅称重信息，方便第一时间查看</text>
+  </view>
+  <form onReset="onReset" onSubmit="onSubmit" report-submit="true">
+    <button class="btn"  formType="submit" >
+      确定
+    </button>
+  </form>
+  
+</view>

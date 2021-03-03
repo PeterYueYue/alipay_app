@@ -1,0 +1,24 @@
+
+.page {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+.paragraph {
+  text-indent: 65rpx;
+  line-height: 45rpx;
+  font-size: 28rpx;
+}
+.blod {
+  font-weight: 600;
+}
+.h2 {
+  font-weight: 600;
+  font-size: 40rpx;
+  line-height: 80rpx;
+}
+.p {
+  color: gray;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}

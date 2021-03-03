@@ -1,0 +1,65 @@
+.page{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+}
+.head{
+  width: 686rpx;
+  height: 260rpx;
+  margin: 0 32rpx 20rpx;
+  box-sizing: border-box;
+  padding: 48rpx 32rpx;
+  position: relative;
+  background-size: 100% 100% !important
+}
+.headTop{
+  font-size: 28rpx;
+  color: #FFFFFF;
+}
+.headTop>text:nth-child(2){
+  font-size: 26rpx;
+  float: right
+}
+.orderNum{
+  font-weight: 600;
+  margin-top: 18rpx;
+  font-size: 38rpx;
+  color: #FFFFFF;
+}
+.head>cover-image{
+  position: absolute;
+  right: 32rpx;
+  bottom: 48rpx;
+}
+.steps{
+  font-size: 28rpx;
+  color: #1A1A1A;
+}
+.am-vertical-step-icon{
+  background-color: rgb(16, 142, 233) !important;
+}
+.foot{
+  width: 686rpx;
+  height: 200rpx;
+  margin: auto;
+  margin-top: 200rpx;
+  padding: 44rpx 50rpx;
+  box-sizing: border-box
+}
+.title{
+  font-size: 28rpx;
+  color: #4D4D4D;
+}
+.ways{
+  font-size: 38rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+  margin-top: 30rpx
+}
+
+ /* steps设置字体 */
+.am-vertical-step-title {
+  font-size: 28rpx
+}

@@ -1,0 +1,113 @@
+/* required by usingComponents */
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f9f9f9;
+  box-sizing: border-box
+}
+
+.tabClick {
+  font-weight: 600
+}
+
+.tabs {
+  font-size: 30rpx;
+  color: #1A1A1A;
+}
+
+.am-tabs-content-wrap {
+  margin-top: 20rpx
+}
+
+.tab-content {
+  height: calc(100vh - 95rpx);
+}
+
+.order {
+  background: #ffffff
+}
+
+.borderBottom {
+  border-bottom: 1rpx solid #f9f9f9
+}
+
+.orderTop {
+  box-sizing: border-box;
+  height: 212rpx;
+  padding: 38rpx 34rpx 40rpx 40rpx
+}
+
+.orderBottom {
+  width: 100%;
+  padding: 0 160rpx;
+  height: 92rpx;
+  font-size: 30rpx;
+  color: #999999;
+  box-sizing: border-box;
+  display: flex;
+  border-bottom: 1rpx solid #f9f9f9
+}
+
+.orderTopLeft {
+  float: left;
+  margin-right: 36rpx;
+  height: 180rpx
+}
+
+.tr1 {
+  font-weight: 600;
+  font-size: 34rpx;
+  color: #1A1A1A;
+}
+
+.tr1>text {
+  padding-left: 40rpx
+}
+
+.tr2 {
+  margin-top: 14rpx;
+  font-size: 26rpx;
+  color: #B3B3B3;
+  line-height: 40rpx
+}
+
+.tr2>text:nth-child(2) {
+  float: right;
+  font-size: 28rpx
+}
+
+.tr3 {
+  line-height: 40rpx;
+  margin-top: 6rpx;
+  font-size: 26rpx;
+  color: #B3B3B3;
+}
+
+.tr2>.blue {
+  color: #3AA5FF;
+}
+
+.tr2>.gray {
+  color: #B3B3B3;
+}
+
+.orderBottom>view {
+  margin: 0 auto;
+  flex: 1;
+  text-align: center;
+  line-height: 92rpx
+}
+
+.hint {
+  height: calc(100vh - 95rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hint>image {
+  width: 108rpx;
+  margin-bottom: 10rpx;
+}

@@ -1,0 +1,21 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: url('http://image.shishangbag.vip/upload/img/web/image/withdrawal/bgchange.png') no-repeat center center fixed;
+  background-size: cover;
+}   
+button {
+  width: 70%;
+  height: 120rpx;
+  border-radius: 60rpx;
+  line-height: 120rpx;
+  position: fixed;
+  left: 15%;
+  bottom: 12%;
+  border: none;
+  background: url('http://image.shishangbag.vip/upload/img/web/image/withdrawal/btn.png') no-repeat;
+  background-size: 100% 100%;
+  font-size:38rpx;
+  color:rgba(232,77,36,1);
+}

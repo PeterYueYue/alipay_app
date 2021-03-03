@@ -1,0 +1,70 @@
+<view class="friendsHelp">
+  <view class="content">
+    <view a:if="{{fdList.length <= 2}}" class="head">
+      <image class="lefticon" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/left.png"></image>
+      <text>剩余助力时间</text>
+      <image class="righticon" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/right.png"></image>
+    </view>
+    <view a:if="{{fdList.length <= 2}}" class="countDown">
+      
+      <view class="count">{{timeObj.h}}</view>
+      <view class="unit">时</view>
+      <view class="count">{{timeObj.m}}</view>
+      <view class="unit">分</view>
+      <view class="count">{{timeObj.s}}</view>
+      <view class="unit">秒</view>
+    </view>
+
+   
+    <view  a:if="{{!isYq && fdList.length <= 2}}" class="box1">
+      <view>已有<text>{{fdList.length}}</text>位好友助力，</view>
+      <view>再邀请<text>{{3-fdList.length}}</text>位好友即可助力成功！</view>
+    </view>
+
+     <view a:if="{{isYq && fdList.length <= 2}}" class="masgbox">
+      <image src="{{activInfo.headImgUrl}}"></image>
+      <view class="right">
+         我正在领取拾尚回收上门抵用券，还差<text>{{3-fdList.length}}</text>个人帮我助力，快来帮我吧～你也可以一起参与环保哦！
+         <view class="jiantou"></view>
+      </view>
+     
+    </view>
+
+    <view a:if="{{fdList.length >= 3}}" class="yqcg">
+        <image class="icon1" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/helpsucc.png"></image>
+        <image class="icon2" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/zlcg.png" ></image>
+    </view>
+    <view  class="box2">
+      <view  class="item">
+        <image src="{{fdList[0]?fdList[0].img:'http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/addicon.png'}}"></image>
+        <view>{{fdList[0]?fdList[0].name:'待邀请'}}</view>
+      </view>
+      <view  class="item">
+        <image src="{{fdList[1]?fdList[1].img:'http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/addicon.png'}}"></image>
+        <view>{{fdList[1]?fdList[1].name:'待邀请'}}</view>
+      </view>
+      <view  class="item">
+        <image src="{{fdList[2]?fdList[2].img:'http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/addicon.png'}}"></image>
+        <view>{{fdList[2]?fdList[2].name:'待邀请'}}</view>
+      </view>
+      
+      <!-- <view a:if="{{fdList.length == 0}}" class="item">
+        <image src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/addicon.png"></image>
+        <view>待邀请</view>
+      </view>
+      <view a:if="{{fdList.length == 0}}" class="item">
+        <image src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/addicon.png"></image>
+        <view>待邀请</view>
+      </view> -->
+    </view>
+    <view a:if="{{fdList.length <=2}}">
+      <button a:if="{{!isYq}}" open-type="share"   class="btn">邀请助力</button>
+      <button a:if="{{isYq}}" onTap="helpAction"  class="btn">帮TA助力</button>
+      <view a:if="{{isYq}}" onTap="goFdHp" class="wyy"> 我也要领回收券<text>></text></view>
+    
+    </view>
+    <button a:if="{{fdList.length >=3 }}"   class="btn">权益券已发放</button>
+    
+  
+  </view>
+</view>

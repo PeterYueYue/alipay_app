@@ -1,0 +1,277 @@
+
+<view class='nav {{navColorState?"bg-white":""}} ' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    <text a:if="{{navColorState}}" >预约下单</text>
+    <view onTap="goback" class="backBtn {{navColorState?'':'color-white'}} "></view>
+  </view>
+</view>
+<view class="head">
+  <image src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/appointment/stepBg.png" class="pic1">
+  </image>
+  <view a:if="{{stepBg}}" class="tips">
+
+    <view class="arrow_top"></view>
+    <view>上滑开启环保之旅</view>
+  </view>
+
+</view>
+<view animation="{{ani}}" class="page {{!isShowVouList?'':'height100'}}">
+
+
+  <view onTouchstart="touchstart" class="content">
+    <view onTap="touchHead" class="touchArea">
+      <view onTouchmove="touchmove" class="cb"></view>
+    </view>
+    <!-- 类型选择 -->
+    <view class="neartitle">
+      <view class="line"></view>
+      <view class="title">选择你想参与的爱心回收</view>
+    </view>
+
+    <!-- 选择后的地址 -->
+    <!-- <view class="add1" a:if="{{addressStatus}}" onTap="toAddress">
+      <image class="weizhi"
+             style="width:28rpx;height:37rpx" 
+             src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/appointment/weizhi.png"
+      />
+      <view class="fl2">
+        <text class="name ell inlineBlock">{{add.userName}}</text>
+        <text class="mobile">{{add.userMobile}}</text>
+        <image class="icon" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/appointment/jt.png"></image>
+      </view>
+      <view class="adds ell">{{add.provinceName + add.cityName + add.areaName + add.address}}</view>
+    </view> -->
+    <!-- 选择前的地址 -->
+    <view class="address" onTap="toAddress">
+      <image src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/appointment/weizhi.png"
+        mode="widthFix" />
+
+      <view a:if="{{addressStatus}}" class="adds ell">{{add.provinceName + add.cityName + add.areaName + add.address}}
+      </view>
+      <view a:else>请选择上门地址</view>
+      <text class="fa fa-angle-right r" aria-hidden="true"></text>
+    </view>
+
+
+    <view class="typeBox">
+      <view class="typeItem">
+        <image a:if="{{type == 'close'||householdList.isOpen == 'close'}}" src="{{imgUrlNew}}image//provider/notOpend3.png">
+        </image>
+        <image a:else onTap="changeType" data-data='household'
+          src="{{imgUrlNew}}image/provider/{{type=='household'?'householda':'householda_'}}.png"></image>
+
+        <!-- <image class="dficon" src="{{imgUrlNew}}image/provider/dficon.png"></image>  -->
+      </view>
+      <view class="typeItem">
+        <image a:if="{{type == 'close'||applianceList.isOpen == 'close'}}" src="{{imgUrlNew}}image/provider/notOpend2.png">
+        </image>
+        <image a:else onTap="changeType" data-data='appliance'
+          src="{{imgUrlNew}}image/provider/{{type=='appliance'?'appliance':'appliance_'}}.png"> </image>
+      </view>
+
+      <view class="typeItem">
+        <!-- <image src="{{imgUrlNew}}image/provider/notOpend1.png"></image> -->
+        <image  onTap="changeType" data-data='donations'
+          src="{{imgUrlNew}}image/provider/{{type=='donations'?'donations':'donations_'}}.png"> </image>
+      </view>
+
+    </view>
+
+
+    <view a:if="{{type == 'household'}}" class="typeBox2">
+      <view class="subTitle">一般可回收物：50拾尚币/kg</view>
+
+      <view class="list">
+        <view a:for="{{householdList.fwsCategories}}" a:key="index" class="typeItem">
+          <image src="{{item.iconImg}}"></image>
+          <view>{{item.name}}</view>
+        </view>
+      </view>
+      <view class="subTitle">低附加值物公益回收：0拾尚币/kg
+        <!-- <text class="red"> (用券后可获得拾尚币奖励)</text> -->
+      </view>
+
+      <view class="list">
+        <view a:for="{{householdList.fwsCategoriesNoValue}}" onTap="clickItem" data-data="{{item}}" a:key="index"
+          class="typeItem">
+          <image a:if="{{item.name == '衣物'&& hkObj.yf != 'Y' &&userInfo.userFlag == 1}}" class="redbag"
+            src="{{imgUrlNew}}yy/appointment/redbag.png" alt="" />
+          <image a:if="{{item.name == '复合纸包装'&& hkObj.fhzbz != 'Y'&&userInfo.userFlag == 1 }}" class="redbag"
+            src="{{imgUrlNew}}yy/appointment/redbag.png" alt="" />
+          <image a:if="{{item.name == '软塑包装'&& hkObj.rsbz != 'Y'&&userInfo.userFlag == 1 }}" class="redbag"
+            src="{{imgUrlNew}}yy/appointment/redbag.png" alt="" />
+          <image src="{{item.iconImg}}"></image>
+          <view>{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 大家电回收  START-->
+
+    <view a:if="{{type == 'appliance'}}" class="typeBox3">
+      <view onTap="handChange" data-data="{{item}}" data-index="{{index}}" a:for="{{applianceList.fwsCategories}}"
+        a:key="index" class="typeItem">
+        <image class="pic" src="{{item.checked?item.choosedIconImg:item.iconImg}}"></image>
+        <image class="settlement" src="{{imgUrlNew}}image/provider/{{item.checked?'settlement':'settlement_'}}.png"></image>
+      </view>
+
+
+    </view>
+    <view a:if="{{type == 'appliance'}}" class="appliance">
+      <image class="icon" style="width:32rpx;height:36rpx" src="{{imgUrlNew}}image/provider/yugu.png" />
+      <view class="right">
+        <view class="title">成交价格需上门实物评估！ </view>
+        <view class="title2">大件家电回收价格需专业回收人员现场评估。</view>
+      </view>
+    </view>
+    <!-- 大家电回收  END-->
+
+    <!-- 爱心捐赠  START-->
+
+    <view a:if="{{type =='donations'}}" class="love">
+      <view a:for="{{donationList}}" a:key="index" onTap="gobenefitDetail" data-data="{{item}}" class="loveItem">
+        <image src="{{item.miniMainUrl}}" class="pic"></image>
+        <view class="info">
+          <view class="title">{{item.projectName}}</view>
+          <view class="subTitle">{{item.synopsis}}</view>
+          <view class="progressBox">
+            <view style="width:{{item.schedule}}%;" class="line"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <!-- 爱心捐赠 END -->
+    <!-- 选择前的时间 -->
+    <view  a:if="{{type !='donations'}}" class="address  changeTime " onTap="toDate">
+      <image class="image" src="{{imgUrlNew}}yy/appointment/clock.png" mode="widthFix" />
+      <view a:if="{{!timeType}}">请选择上门时间</view>
+      <view a:if="{{timeType}}" class="{{timeType?'bold':''}}">{{timeData.year}} {{timeData.week}}</view>
+      <image class="icon" src="{{imgUrlNew}}yy/appointment/jt.png"></image>
+    </view>
+
+    <!-- 卡券 -->
+    <view a:if="{{userInfo.userFlag == 1 && type != 'appliance' && type !='donations'}}" class="vouchers">
+      <view class="address">
+        <image src="{{imgUrlNew}}yy/appointment/coupons.png" mode="widthFix" />
+        <view class="title">可用权益</view>
+        <view onTap="{{vou.length>0?'openVouList':''}}" class="usenum">
+          <text>{{vou.length>0?'您有权益可用':'无可用'}} </text>
+          <image a:if="{{vou.length>0}}" class="icon" src="{{imgUrlNew}}yy/appointment/jt.png">
+          </image>
+        </view>
+      </view>
+      <view class="line"></view>
+      <view class="yixuan">
+        <text>已选</text>
+        <view class="yxz">
+          <view class="smq">上门券</view>
+          <view class="smq" a:if="{{weightId==1}}">上门券</view>
+          <view class="smq2" a:for="{{vouChoosed}}" a:key="index" onTap="delVou" data-item="{{item.id}}">
+            <text>{{item.voucherName}}</text>
+            <image onTap="delVou" src="{{imgUrlNew}}/yy/appointment/closeicon.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="camera"  a:if="{{userInfo.userFlag == 1 && type == 'household'}}" >
+      <view a:if="{{!isShowCb}}" onTap="openCb" class="df">
+        <text>打包有礼</text>
+        <image class="icon" src="{{imgUrlNew}}yy/appointment/cameraicon.png"></image>
+      </view>
+      <!-- 展开拍照 -->
+      <view a:if="{{isShowCb}}" class="openCameraBox">
+        <view class="picBox">
+          <view class="box">
+            <image onTap="chooseImage" src="{{pic?pic:imgUrlNew+'yy/appointment/upPic.png'}} "></image>
+          </view>
+          <view class="box">
+            <image src="{{imgUrlNew}}yy/appointment/slPic.jpg"></image>
+            <view class="demoTitle">示例</view>
+          </view>
+          
+          
+        </view>
+        <view class="tip">
+          <text> *拍摄可回收物已打包至拾尚包的照片，</text>
+          <text class="difColor">可获得随机拾尚币奖励。</text>
+        </view>
+        <view onTap="closeCameraBox" class="arrow_top"></view>
+      </view>
+
+    </view>
+  </view>
+
+   <image class="mayi" onTap="closemayi" src="{{imgUrlNew}}yy/newIndex/mayibt.png" mode="widthFix"></image>
+</view>
+<view a:if="{{!showStatus && type !='donations'}}">
+  <button a:if="{{submitStatus&&type != 'close'}}" onTap="submit" class="btnNo blue">立即下单</button>
+  <button a:elif="{{!submitStatus&&type != 'close'}}" class="btnNo blue" loading>立即下单</button>
+  <button a:if="{{type == 'close'}}" class="btnNo">当前区域暂未开通服务</button>
+</view>
+
+
+
+<!-- 选择权益优惠券 -->
+<view a:if="{{isShowVouList}}" class="voucherList">
+  <view class="main">
+    <image onTap="closeVouList" class="gbicon"
+      src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/gbicon.png"></image>
+    <view class="vouhead">
+      选择权益
+    </view>
+    <view class="content">
+      <view a:for="{{vou}}" a:key="index" class="vouItem" onTap="chooseVou" data-index="{{index}}"
+        data-id="{{item.id}}" data-ran="{{item.ran}}" data-item="{{item}}" data-selected="{{item.selected}}">
+        <view class="sign">
+          <image a:if="{{item.selected}}" class="stateIcon" src="{{imgUrlNew}}yy/vouchers/xzicon.png" />
+          <image a:else class="stateIcon" src="{{imgUrlNew}}yy/vouchers/wxzicon.png" />
+          <image class="pic" src="{{item.pic}}" />
+          <view class="info">
+            <view class="title">{{item.voucherName}}</view>
+            <!-- <view class="title2">·{{item.description}}</view> -->
+            <view class="title2">·{{item.remark}}</view>
+            <view class="title2">·{{item.endDate}} 过期</view>
+          </view>
+        </view>
+        <!-- <view class="tips" a:if="{{item.checked}}"><image mode="widthFix"  src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/th.png"/>已选择同同类型卡券,不可叠加使用</view> -->
+      </view>
+    </view>
+    <view onTap="closeVouList" class="footbtn">确认使用</view>
+  </view>
+</view>
+
+<!-- 新用户引导提示 -->
+<view a:if="{{showStatus && userInfo.userFlag == 1}}" class="isMemberTips">
+  <view a:if="{{showSxs}}" class="sxsIcon">
+    <image src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/appointment/sxs.png" alt=""/>
+  </view>
+  <view class="left">
+    <view class="lt">
+      <text>回收行为可积累拾尚币</text>
+     <image class="icon" src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/appointment/wh.png" alt=""/>
+    </view>
+    <view class="lb">拾尚币可在福利中心兑换物品</view>
+  </view>
+  <view onTap="goGetBao" class="button">加入会员，开始回收</view>
+</view>
+
+<!-- 回馈红包弹窗  -->
+<view class="mask_" onTap="closemask_" a:if="{{isShowHk}}">
+  <view class="box2">
+    <image class="check_doorPIc" onTap="goGetDoor" mode="widthFix"
+      src="{{imgUrlNew}}yy/appointment/{{isShowHk}}.png" />
+    <image class="deleteIcon" onTap="closeHk" mode="widthFix" src="{{imgUrlNew}}yy/shop/signIn/delete.png" />
+    <view onTap="getRed" class="hkbtn"></view>
+  </view>
+</view>
+
+<!-- 蚂蚁森林介绍 -->
+<view class="mask bill" catchTap="closemayi" a:if="{{mayi}}">
+  <view class="billbox">
+    <image onTap="closeHk" mode="widthFix" src="{{imgUrlNew}}yy/newIndex/mayi.png" />
+    <view>
+      <image  class="deleteIcon" mode="widthFix" src="{{imgUrlNew}}yy/x.png" />
+    </view>
+  </view>
+</view>

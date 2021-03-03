@@ -1,0 +1,144 @@
+<view class="hh">
+</view>
+<view class="page">
+  <view class="head">
+    <view>
+      <image a:if="{{userInfo&&userInfo.headPortrait}}" class="headImg" src="{{userInfo&&userInfo.headPortrait}}"/>
+      <image class="head headImg" a:else mode="aspectFill" src="{{imgUrl}}home/12.png" />
+      <!--<image class="headImg" mode="widthFix" src="{{imgUrlNew}}yy/member/success2.png" alt="" /> -->
+    </view>
+    <view class="">
+      <text class="nickname">{{userInfo.nickName}}</text>
+      <image class="level_pic" mode="widthFix" src="{{imgUrlNew}}yy/member/L{{userInfoMore.carbonReducingLevel.level}}.png"/>
+      <view class="desc">
+         累计减少{{myInfo.carbonReducing}}kg碳排放，相当于种植{{myInfo.trees}}棵树
+      </view>
+    </view>
+  </view>
+  <view class="flex">
+    <view>
+      <view class="number">{{myInfo.days}}</view>
+      <view class="desc">加入拾尚回收(天)</view>
+    </view>
+    <view>
+      <view class="number">{{myInfo.sendNumber}}</view>
+      <view class="desc">累计投递(次)</view>
+    </view>
+    <view>
+      <view class="number">{{myInfo.totalWeight}}</view>
+      <view class="desc">累计重量(kg)</view>
+    </view>
+  </view>
+  <!-- 账单(有数据) -->
+  <view class="bill" a:if="{{open}}">
+    <view class="month" onTap="openOne">{{month}}
+      <image mode="widthFix" src="{{imgUrlNew}}yy/member/billdown.png" alt="" />
+    </view>
+    <view class="my">
+      <text></text>
+      <text>我的回收重量</text>
+      <text>{{myWeightData.mySumMonthTotalDeliveries}}(kg)</text>
+    </view>
+    <!-- canvas -->
+    <view class="ring">
+      <pie radius="{{radius}}" innerRadius="{{innerRadius}}" series="{{series}}" legend="{{legend}}" guide="{{guide}}" style="{{style}}" />
+    </view>
+    <view class="tan">
+      <text></text>减碳环保排名
+      <text></text></view>
+    <view class="month" onTap="openArea">
+      {{area}}
+      <image mode="widthFix" src="{{imgUrlNew}}yy/member/billdown.png" alt="" />
+    </view>
+    <view class="rank_me"> 我的排名:第{{rankIndex}}名</view>
+    <view class="my">
+      <text></text>
+      <text>TOP50</text>
+    </view>
+    <!-- 列表排名 -->
+    <view class="row">
+      <view a:if="{{topList.length>1}}">
+        <view class="rowhead">
+          <image class="rankhead" src="{{topList[1].user.headPortrait}}" alt="" />
+          <image class="bq" mode="widthFix" src="{{imgUrlNew}}yy/member/num2.png" alt="" />
+        </view>
+        <view class="ell">{{topList[1].user.nickName}}</view>
+        <image class="level_pic" mode="widthFix" src="{{imgUrlNew}}yy/member/L{{topList[1].user.carbonReducingLevel.level}}.png"/>
+        <view class="desc">减少{{topList[1].carbonReducingM}}kg碳排放</view>
+      </view>
+      <view>
+        <view class="rowhead">
+          <image class="rankhead" src="{{topList[0].user.headPortrait}}" alt="" />
+          <image class="bq" mode="widthFix" src="{{imgUrlNew}}yy/member/num1.png" alt="" />
+        </view>
+        <view class="ell">{{topList[0].user.nickName}}</view>
+        <image class="level_pic" mode="widthFix" src="{{imgUrlNew}}yy/member/L{{topList[0].user.carbonReducingLevel.level}}.png"/>
+        <view class="desc">减少{{topList[0].carbonReducingM}}kg碳排放</view>
+      </view>
+      <view a:if="{{topList.length>2}}">
+        <view class="rowhead">
+          <image class="rankhead" src="{{topList[2].user.headPortrait}}" alt="" />
+          <image class="bq" mode="widthFix" src="{{imgUrlNew}}yy/member/num3.png" alt="" />
+        </view>
+        <view class="ell">{{topList[2].user.nickName}}</view>
+        <image class="level_pic" mode="widthFix" src="{{imgUrlNew}}yy/member/L{{topList[2].user.carbonReducingLevel.level}}.png"/>
+        <view class="desc">减少{{topList[2].carbonReducingM}}kg碳排放</view>
+      </view>
+    </view>
+    <!-- list -->
+    <view class="tr" a:if="{{topList.length >=3}}">
+      <text></text>减少碳排放</view>
+    <view a:for="{{topList}}" a:if="{{index >=3}}" a:key="index" class="list">
+      <text>NO.{{index+1}}</text>
+      <text>{{item.user.nickName}}</text>
+      <image class="level_pic" mode="widthFix" src="{{imgUrlNew}}yy/member/L{{item.user.carbonReducingLevel.level}}.png"/>
+      <text class="r">{{item.carbonReducingM}}kg</text>
+    </view>
+    <button onTap="share" class="btn" size="default" type="primary">我要晒账单</button>
+    <button onTap="lookBill" class="btn lookbill" size="default" type="primary">查看2020年度成绩单</button>
+  </view>
+  <!-- 账单无数据 -->
+  <view class="bill" a:else>
+    <view class="month" onTap="openOne">
+      {{month}}
+      <image mode="widthFix" src="{{imgUrlNew}}yy/member/billdown.png" alt="" />
+    </view>
+    <view class="my">
+      <text></text>
+      <text>我的回收重量</text>
+      <text>{{myWeightData.mySumMonthTotalDeliveries}}(kg)</text>
+    </view>
+    <view class="ring">
+      <pie radius="{{radius}}" innerRadius="{{innerRadius}}" series="{{series}}" legend="{{legend}}" guide="{{guide}}" style="{{style}}" />
+      <view class="box">
+        <view></view></view>
+    </view>
+    <view class="tan">
+      <text></text> 减碳环保排名
+      <text></text></view>
+    <view class="norank">
+      <image mode="widthFix" src="{{imgUrlNew}}yy/member/rank_no.png" />
+    </view>
+    <view class="p1">暂无排名，快去投递吧</view>
+    <view class="p2">投递后即可查看环保排名</view>
+    <button onTap="lookBill" class="btn lookbill" size="default" type="primary">查看2020年度成绩单</button>
+  </view>
+  <view class="bill_bottom">
+  </view>
+  <!-- page -->
+</view>
+<!-- 分享弹出层 -->
+<view class="mask" onTap="close" a:if="{{share_mask}}">
+  <view class="mask_content">
+    <view class="canvaswrap">
+      <view class="canvas" style="transform:scale({{responsiveScale}});-webkit-transform:scale({{responsiveScale}});">
+        <image class="canvasimage" src="{{imgUUrr}}" mode="aspectFill" />
+      </view>
+      <canvas class="canvas2" id="myCanvas2"></canvas>
+    </view>
+    <view class="btns">
+      <button id="shareQ" catchTap="save">分享到朋友圈</button>
+      <button id ="share" open-type="share">分享给好友</button>
+    </view>
+  </view>
+</view>

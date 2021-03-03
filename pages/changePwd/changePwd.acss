@@ -1,0 +1,36 @@
+page{
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.form{
+  height: 120rpx;
+  line-height: 120rpx;
+  position:relative;
+  border-bottom: 1rpx solid #ededed;
+}
+.form-name{
+  font-size: 28rpx;
+  color: #1A1A1A;
+  height: 120rpx;
+  margin-left: 32rpx;
+}
+.form-inp{
+  position: absolute;
+  top: 20rpx;
+  right: 32rpx;
+  text-align: right;
+  
+}
+.placeholder{
+  font-size: 28rpx;
+  color: #ccc;
+  text-align: right;
+}
+.new-add{
+  background: #3AA5FF;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 34rpx;
+  margin:100rpx 54rpx; 
+}

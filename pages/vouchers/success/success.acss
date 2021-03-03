@@ -1,0 +1,45 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding-bottom: 56rpx;
+  text-align: center;
+}
+
+.bag {
+  width: 100%;
+  text-align: center;
+}
+
+.bag image {
+  width: 596rpx;
+  margin-top: 18rpx;
+}
+
+
+.thanks {
+  font-size: 32rpx;
+  color: rgba(11, 138, 255, 1);
+  margin-top: 60rpx;
+}
+.list {
+  font-size:26rpx;
+  color:rgba(51,51,51,1);
+  line-height:70rpx;
+  text-align: left;
+  text-indent: 30%;
+  margin-top: 37rpx;
+}
+.list image {
+  width: 22rpx;
+  margin-right: 28rpx;
+}
+.open {
+  width: 551rpx;
+  height: 120rpx;
+  margin: 86rpx auto 0;
+  background: url('http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/member/open.png') no-repeat;
+  background-size: 100% 100%;
+  border: none;
+}

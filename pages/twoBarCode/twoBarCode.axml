@@ -1,0 +1,5 @@
+<!-- 地推二维码 -->
+<view class="page">
+  <image class="qrcode" mode="widthFix" src="{{userInfoMore.qrCode}}"/>
+  <view>扫一扫上面的二维码,让更多人参与环保</view>
+</view>

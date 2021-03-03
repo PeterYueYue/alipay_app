@@ -1,0 +1,69 @@
+<view class="page">
+
+  <view class="head">
+    <view class="title">受助方信息</view>
+    <view class="headInfo">
+      <view class="headItem">
+        <text class="key">姓名：</text><text class="value">{{item.contactName}}</text>
+      </view>
+      <view class="headItem">
+        <text class="key">联系方式：</text><text class="value">{{item.contactPhone}}</text>
+      </view>
+      <view class="headItem">
+        <text class="key">详细地址：</text><text class="value">{{item.address}}</text>
+      </view>
+      <view class="headItem">
+        <text class="key">当时支持的物流公司：</text><text class="value">{{item.express}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class="content">
+    <view class="title">捐赠人信息</view>
+    <view class="fundraiser">
+      <view class="item">
+        <text>发件人：</text> <input onInput="changeuserName" placeholder="发件人名称" />
+      </view>
+      <view class="item">
+        <text>联系方式：</text> <input onInput="changeMobile" type="number" placeholder="+86" />
+      </view>
+      <view class="item">
+        <text>物流单号：</text> <input onInput="changeExpress" placeholder="请填写正确的物流单号" />
+      </view>
+    </view>
+    <view class="title">捐赠物资</view>
+    <view class="suppliesListing">
+      <view a:for="{{projectList}}" class="subItem">
+        <view class="product">
+          <view class="left">
+            <view class="point"></view>
+            <view class="productTitle">{{item.goodName}}</view>
+          </view>
+          <view class="right">
+            <text>所需{{item.total}}件/</text>
+            <text class="difCor">还差{{item.total - item.current <=0?0:item.total - item.current}}件</text>
+          </view>
+        </view>
+        <view class="item">
+          <text>您捐赠的数量：</text> <input onInput="changeInput" type="number" data-data="{{index}}"   value="{{item.count}}" placeholder="请填写数量" />
+        </view>
+      </view>
+      <!-- 按钮 -->
+      <view onTap="submit" hover-class="btnhover"  class="btn">确认捐赠到这里</view>
+
+
+    </view>
+
+
+
+
+
+  </view>
+
+
+
+
+
+
+
+</view>

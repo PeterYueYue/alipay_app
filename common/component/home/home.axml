@@ -1,0 +1,183 @@
+<view class="home_page">
+  <view style="height: 160rpx;background-color: #fff;"></view>
+  <view class="top">
+    <!--<image mode="widthFix" class="top_bg" src="{{imgUrl}}home/bao.png"/> -->
+    <view class="avatar">
+      <image a:if="{{userInfo&&userInfo.headPortrait}}" mode="aspectFill" class="head" src="{{userInfo&&userInfo.headPortrait}}"/>
+      <image a:else mode="aspectFill" class="head" src="{{imgUrl}}home/12.png"/>
+      <view a:if="{{logins}}" class="avatar_r">
+        <view class="name_box">
+          <text class="name" a:if="{{userInfo.userFlag == 1 || userInfo.userFlag ==2}}">{{userInfo.nickName!==""?userInfo.nickName:"拾小尚"}}</text>
+          <text class="name" a:if="{{userInfo.userFlag == 3}}">{{userInfo.companyName}}</text>
+          <text a:if="{{userInfo.userFlag == 1}}" class="editor" onTap="onClicks" data-name="编辑资料">
+            <image mode="widthFix" src="{{imgUrl}}home/editor.png" style="width:22rpx;margin-right:10rpx"/>
+            编辑资料
+          </text>
+        </view>
+        <view class="phone_num" a:if="{{userInfo.userFlag == 1}}">
+        {{userInfo.userMobile}}
+        </view>
+        <view class="phone_num" a:if="{{userInfo.userFlag == 2}}">
+        {{userInfo.userAccount}}
+        </view>
+        <view class="phone_num" a:if="{{userInfo.userFlag == 3}}">
+        {{userInfo.nickName}}
+        </view>
+      </view>
+      <view a:if="{{!logins}}" class="loginButton" onTap="gologin">
+      立即登录
+      </view>
+    </view>
+    <!-- <view class="expect" a:if="{{userInfoMore.thisMoney>0}}">
+      <view class="prompt">
+        <image mode="widthFix" class="gold" src="{{imgUrl}}home/gold.png"/>
+        <text style="font-size:22rpx;color:#fff;letter-spacing:2rpx;margin-left:10rpx;">本次交投预计增加:</text>
+        <text style="font-size:22rpx;color:#fbe945;letter-spacing:2rpx;">{{userInfoMore.thisMoney}}拾尚币</text>
+        <text style="font-size:18rpx;color:#fff;letter-spacing:1rpx;">(实际收益以分拣结果为准)</text>
+      </view>
+      <view class="triangle">
+      </view>
+    </view> -->
+    <view class="nav">
+      <view onTap="onClicks" data-name="收益">
+        <view>
+          <text style="color:#74d92b;font-size: 50rpx;fonst-weight:700;font-family: DINAlternate-Bold;">{{userInfoMore.residueMoney==undefined?"--":userInfoMore.residueMoney}}</text>
+        </view>
+        <view style="color:#999;font-size: 30rpx;margin-top:16rpx;">
+          拾尚币
+        </view>
+      </view>
+      <view onTap="onClicks" data-name="我的卡券" a:if="{{userInfo.userFlag == 1 }}">
+        <view>
+          <text style="color:#3ea7ff;font-size: 50rpx;fonst-weight:700;font-family: DINAlternate-Bold;">{{userInfoMore.voucherCount==undefined?'--':userInfoMore.voucherCount}}</text>
+          <text style="color:#b4b4b4;font-size: 24rpx;margin-left:12rpx;">张</text>
+        </view>
+        <view style="color:#999;font-size: 30rpx;margin-top:16rpx;">
+          我的卡券
+        </view>
+      </view>
+      <view onTap="onClicks" data-name="提现记录">  
+        <view>
+          <text style="color:#3ea7ff;font-size: 50rpx;fonst-weight:700;font-family: DINAlternate-Bold;">{{userInfoMore.totalDeposit==undefined?'--':userInfoMore.totalDeposit}}</text>
+          <text style="color:#b4b4b4;font-size: 24rpx;margin-left:12rpx;">拾尚币</text>
+        </view>
+        <view style="color:#999;font-size: 30rpx;margin-top:16rpx;">
+        提现记录
+        </view>
+      </view>
+      <view onTap="onClicks" data-name="错误投递">
+        <view>
+          <text style="color:#ff6c00;font-size: 50rpx;fonst-weight:700;font-family: DINAlternate-Bold;">{{userInfoMore.totalErrWeight==undefined?"--":userInfoMore.totalErrWeight}}</text>
+          <text style="color:#b4b4b4;font-size: 24rpx;margin-left:12rpx;">公斤</text>
+        </view>
+        <view style="color:#999;font-size: 30rpx;margin-top:16rpx;">
+        错误投递
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="width:100%;height:20rpx;background-color: #f3f3f3;">
+  </view>
+  <view class="bodys">
+    <view class="tool" onTap="onClicks" data-name="修改密码" a:if="{{userInfo.userFlag==2 || userInfo.userFlag==3 }}">
+      <view class="first">
+        <image mode="widthFix" style="width:33rpx" src="{{imgUrl}}home/15.png" />
+      </view>
+      <view class="second">修改密码</view>
+      <view class="third">
+        <text class="fa fa-angle-right" aria-hidden="true"></text></view>
+    </view>
+    <view class="tool" onTap="onClicks" data-name="提现">
+      <view class="first">
+        <image mode="widthFix" src="{{imgUrl}}home/99.png" />
+      </view>
+      <view class="second">提现</view>
+      <view class="third">
+        <text class="fa fa-angle-right" aria-hidden="true"></text></view>
+    </view>
+    <view class="tool" onTap="onClicks" data-name="地址簿">
+      <view class="first">
+        <image mode="widthFix" src="{{imgUrl}}home/9.png" />
+      </view>
+      <view class="second">地址簿</view>
+      <view class="third">
+        <text class="fa fa-angle-right" aria-hidden="true"></text></view>
+    </view>
+    <view class="tool" onTap="onClicks" data-name="拾尚包">
+      <view class="first">
+        <image mode="widthFix" src="{{imgUrl}}home/bao.png" />
+      </view>
+      <view class="second">拾尚包</view>
+      <view class="third">
+        <text class="fa fa-angle-right" aria-hidden="true"></text></view>
+    </view>
+    <view class="tool" onTap="onClicks" data-name="提现账户">
+      <view class="first">
+        <image mode="widthFix" src="{{imgUrl}}home/6.png" />
+      </view>
+      <view class="second">提现账户</view>
+      <view class="third">
+        <text class="fa fa-angle-right" aria-hidden="true"></text></view>
+    </view>
+    <view class="tool" onTap="onClicks" data-name="提现审核" a:if="{{userInfo.userFlag==2}}">
+      <view class="first">
+        <image mode="widthFix" src="{{imgUrl}}home/16.png" />
+      </view>
+      <view class="second">提现审核</view>
+      <view class="third">
+        <text class="fa fa-angle-right" aria-hidden="true"></text></view>
+    </view>
+    <view class="tool">
+      <view class="first">
+        <image mode="widthFix" src="{{imgUrl}}home/13.png" />
+      </view>
+      <view class="second">在线客服</view>
+      <view class="third">
+        <text class="fa fa-angle-right" aria-hidden="true"></text></view>
+      <contact-button title="客服" tnt-inst-id="Znh_YSFt" scene="SCE00045730" size="46" color="#e15151" />
+    </view>
+    <view class="tool" onTap="onClicks" data-name="关于拾尚包">
+      <view class="first">
+        <image mode="widthFix" src="{{imgUrl}}home/14.png" />
+      </view>
+      <view class="second">关于拾尚包</view>
+      <view class="third">
+        <text class="fa fa-angle-right" aria-hidden="true"></text>
+      </view>
+    </view>
+    <view class="tool" onTap="onClicks" data-name="地推二维码" a:if="{{userInfoMore.isPush==1&&logins}}">
+      <view class="first">
+        <image mode="widthFix" src="{{imgUrl}}home/33.png" />
+      </view>
+      <view class="second">地推二维码</view>
+      <view class="third">
+        <text class="fa fa-angle-right" aria-hidden="true"></text>
+      </view>
+    </view>
+  </view>
+  <view class="foots">
+    <button a:if="{{logins}}" onTap="onClicks" data-name="退出">退出</button>
+  </view>
+  <view class="buttoms" data-phoneNum="400-862-5686" onTap="tocall">客服电话：
+    <text class="call">400-862-5686</text>
+    <text>(服务时间：09:00-17:00)</text>
+  </view>
+  <view class="version">
+    版本号：1.3.0
+  </view>
+  <view class="mask" a:if="{{maskFlag}}" onTap="closermask">
+    <view class="box" a:if="{{redFlag}}" catchTap="openRed" style="background:url({{imgUrl+'home/close.png'}}) no-repeat;background-size: 100% 100%;">
+      <image class="close" mode="widthFix" catchTap="closermask" src="{{imgUrl+'home/x.png'}}" />
+    </view>
+    <view class="box1" a:else catchTap="showRed" style="background:url({{imgUrl+'home/open.png'}}) no-repeat;background-size: 100% 100%;">
+      <image class="close" mode="widthFix" catchtap="closermask" src="{{imgUrl+'home/x.png'}}" />
+      <view class="top_text">恭喜您获取兴业银行交投红包</view>
+      <view class="red_money">
+        <text class="symbol">￥</text>
+        <text>{{redMoney}}</text>
+      </view>
+      <view class="bottom_text">红包奖励将会在5个工作日发放到拾尚包账户中，请注意查收！
+      </view>
+    </view>
+  </view>
+</view>

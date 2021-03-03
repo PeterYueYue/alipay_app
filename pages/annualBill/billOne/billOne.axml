@@ -1,0 +1,53 @@
+<!-- 年度账单 -->
+<view class="page" onTouchStart="touchStart" onTouchEnd="touchEnd">
+  <view class="bg bg1 {{step==1?'show':''}}" a:if="{{step==1}}"  style="background-image: url({{bglist.bg1}})">
+    <view>Hi~</view>
+    <view>{{userInfo.nickName}}</view>
+    <view>请查收您的2020年拾尚回收成绩单</view>
+    <image onTap="open" class="openImg" src="{{imgUrlNew}}yy/bill/indexshare.png" mode="widthFix"/>
+  </view>
+
+  <view class="bg bg2 {{step==2?'show':''}}" a:if="{{step==2}}" style="background-image: url({{bglist.bg2}})">
+    <view class="word {{step==2?'animate':''}}" style="background-image: url({{bglist.bg2word}})">
+      <view>我们相见于 <text>{{myWeightData.year}}</text> 年 <text>{{myWeightData.month}}</text> 月 <text>{{myWeightData.day}}</text> 日，</view>
+      <view>您加入拾尚回收已有 <text>{{myWeightData.days}}</text> 天。</view>
+    </view>
+    <image class="img"  src="{{imgUrlNew}}yy/bill/bg2people.png" mode="widthFix"/>
+    <view class="next">
+      <view>上滑继续查看</view>
+      <image src="{{imgUrlNew}}yy/bill/next.png" mode="widthFix"/>
+    </view>
+  </view>
+
+  <view class="bg bg3 {{step==3?'show':''}}" a:if="{{step==3}}" style="background-image: url({{bglist.bg3}})">
+    <view class="word {{step==3?'animate':''}}" style="background-image: url({{bglist.bg3word}})">
+      <view>2020年您为地球资源循环共贡献可</view>
+      <view>回收物共计   <text>{{myWeightData.totalWeight}}</text>     公斤，</view>
+      <view>累计减碳排放量  <text>{{myWeightData.carbonReducing}}</text>    kg</view>
+    </view>
+    <image  class="img" src="{{imgUrlNew}}yy/bill/bg3people.png" mode="widthFix"/>
+    <view class="next">
+      <view>上滑继续查看</view>
+      <image src="{{imgUrlNew}}yy/bill/next.png" mode="widthFix"/>
+    </view>
+  </view>
+
+  <view class="bg bg4 {{step==4?'show':''}}" a:if="{{step==4}}" style="background-image: url({{bglist.bg4}})">
+    <view class="word {{step==4?'animate':''}}" style="background-image: url({{bglist.bg4word}})">
+      <view class="tips">您所投放的可回收物由这些品类组成哦</view>
+      <view class="title">
+        <text class="blue"></text>
+        <text class="mid">我的回收重量</text>
+        <text >{{myWeightData.totalWeight}}(kg)</text>
+      </view>
+      <view class="ring" >
+        <pie radius="{{radius}}" a:if="{{showSeries}}" innerRadius="{{innerRadius}}" series="{{series}}" legend="{{legend}}" guide="{{guide}}" style="{{style}}" />
+      </view>
+    </view>
+    <image  class="img" src="{{imgUrlNew}}yy/bill/bg4people.png" mode="widthFix"/>
+    <view class="next">
+      <view>上滑继续查看</view>
+      <image src="{{imgUrlNew}}yy/bill/next.png" mode="widthFix"/>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="flex">
+    <view class="{{choose?'choosed':''}}"  onTap="tab">个人账号</view>
+    <view class="{{!choose?'choosed':''}}" onTap="tab">企业账号</view>
+  </view>
+   <view class="btn btns" a:if="{{choose}}">
+    <!-- 编辑器专用 -->
+    <button size="default"  open-type="getAuthorize" onGetAuthorize="onGetAuthorize1" onError="onAuthError" scope='userInfo'  a:if="{{autoDisplay}}">支付宝自动登录</button>
+    <button size="default"  open-type="getAuthorize"  onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'  a:if="{{autoDisplay}}"><image mode="widthFix" src="{{imgUrlNew}}yy/index/alipay.png"/>支付宝自动登录</button>
+    <button size="default" loading  type="primary" a:if="{{!autoDisplay}}">支付宝自动登录</button>
+  </view>
+  <view class="list" a:if="{{!choose}}">
+    <view>
+      <image mode="widthFix" src="{{imgUrl}}bag/3.png"/>  
+      <input type="text" placeholder="请输入账号" value="{{userAccount}}" onInput="change" data-id="1"/>
+    </view>
+    <view>
+      <image mode="widthFix" src="{{imgUrl}}bag/8.png"/>
+      <input password placeholder="请输入密码" onInput="change" data-id="2"/>
+    </view>
+    <view>
+      <image mode="widthFix" src="{{imgUrl}}bag/1.png"/>
+      <input maxlength="4" placeholder="验证码" onInput="change" data-id="3" value="{{vCode}}"/>
+      <image onTap="changeCode" style="width:170rpx;height:80rpx" src="{{codeImg}}"></image>
+    </view>
+  </view>
+  <view class="btn" a:if="{{!choose}}">
+    <button size="default" type="primary" onTap="push" a:if="{{display}}">登录</button>
+    <button size="default" type="primary" loading a:if="{{!display}}">登录</button> 
+  </view> 
+</view> 

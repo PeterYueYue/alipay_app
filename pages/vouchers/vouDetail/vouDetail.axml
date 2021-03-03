@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="card">
+    <view class="main">
+      <image class="pic" src="{{det.pic}}" mode="scaleToFill" ></image>
+      <view class="info">
+        <view class="title">{{det.mainTitle}}</view>
+        <view class="title2">{{det.subtitle}}</view>
+        <view class="title2">{{det.validStart}}至{{det.validEnds}}</view>
+      </view>
+      <view class="status {{det.status !=1?'ysy':''}}">{{det.status == 1?'可使用':det.status == 2?'已使用':'已过期'}}</view>
+    </view>
+    <!-- 一维码展示 -->
+    <view class="codebox">
+      <canvas a:if="{{det.status == 1}}" class="img" id="barcode" />
+      <image a:if="{{det.status == 2||det.status == 3}}" class="img" src="{{imgUrlNew}}yy/dnActivity/deQrcode.png"></image>
+      <image class="statusIcon" a:if="{{det.status == 2||det.status == 3}}" src="{{imgUrlNew}}yy/dnActivity/statusicon.png"></image>
+    </view>
+    <view class="detail">
+      <view class="title">·详情描述</view>
+      <view a:for="{{item.describe}}">{{item}}</view>
+      <view a:if="{{item.scope}}" class="title">·使用范围</view>
+      <text a:if="{{item.scope}}">{{item.scope}}</text> 
+      <view a:if="{{item.beCareful}}" class="title">·注意事项</view>
+      <text a:if="{{item.beCareful}}">{{item.beCareful}}</text>
+    </view>
+  </view>
+</view>

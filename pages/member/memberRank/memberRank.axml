@@ -1,0 +1,67 @@
+<view class="page">
+  <view class="rank_head">
+    <image class="rank" mode="widthFix" src="{{imgUrl1}}yy/member/pai.png"/>
+    <image class="method" onTap="goMethod"  mode="widthFix" src="{{imgUrl1}}yy/index/rank_method.png"/>
+  </view>
+  <!-- 排行 -->
+   <view class="tabs">
+    <view class="{{activeTab==0?'tab_active':''}}" data-index=0 onTap="tab">积分排行</view>
+    <view class="{{activeTab==1?'tab_active':''}}" data-index=1 onTap="tab">减碳排行</view>
+  </view>
+  <view class="swiper-wrap">
+    <swiper
+        indicator-dots = "{{false}}" class="swiper" current="{{current}}" onChange="onChange" previousMargin="0px" nextMargin="0px" autoplay="{{false}}" vertical="{{false}}" circular="{{false}}">
+      <!-- 积分 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+         <view class="list" a:for="{{list1}}" a:key="{{index}}">
+            <image a:if="{{index ==0 || index ==1 ||index ==2}}" class="number" mode="widthFix" src="{{imgUrl1}}yy/member/a{{index+1}}.png"/>
+            <text  a:else class="number">{{index+1}}</text>
+            <image class="head"src="{{item.headPortrait}}"/>
+            <view class="name">
+              <view>{{item.groupName}}</view>
+              <view>{{item.memberNum}}人</view>
+            </view>
+            <image class="coin" mode="widthFix" src="{{imgUrl1}}yy/member/coin.png"/>
+            <view class="desc">
+              {{item.point}} 拾尚币
+            </view>
+         </view>
+        </scroll-view>
+      </swiper-item> 
+      <!-- 减碳排放 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+          <view class="list" a:for="{{list2}}" a:key="{{index}}">
+            <image a:if="{{index ==0 || index ==1 ||index ==2}}" class="number" mode="widthFix" src="{{imgUrl1}}yy/member/a{{index+1}}.png"/>
+            <text  a:else class="number">{{index+1}}</text>
+            <image class="head"  src="{{item.headPortrait}}"/>
+            <view class="name">
+              <view>{{item.groupName}}</view>
+              <view>{{item.memberNum}}人</view>
+            </view>
+            <image class="tree" mode="widthFix" src="{{imgUrl1}}yy/member/tree.png"/>
+            <view class="desc">减少{{item.carbonReducing}}kg碳排放 <text>\n</text>≈种植{{item.treeNum}}棵树</view>
+         </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <button class="sharebtn" onTap="share" >邀请环保推广人</view> 
+</view>
+<!-- 分享蒙版 -->
+<view a:if="{{share_mask}}" class="mask_" catchTap="guan">
+  <view class="show_content">
+    <image mode="widthFix" src="{{imgUrlNew}}yy/member/earth.png"/>
+    <view class="p1">
+      保护地球，拒绝污染 <text>\n</text>
+      少填埋，少焚烧，多回收
+    </view>
+    <view class="btns">
+      <button size="default" type="primary" onTap="shareQ">分享到朋友圈</button>
+      <button size="default" type="primary" open-type="share">分享给好友</button>
+    </view>
+  </view>
+</view>
+<!-- canvas -->
+<canvas-share onClose="close" userInfo="{{userInfo}}" visible="{{visible}}" onInfo="onInfo"  ref="canvasRef"/>

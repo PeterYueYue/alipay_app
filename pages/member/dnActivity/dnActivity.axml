@@ -1,0 +1,62 @@
+<view onTap="initAnimation" class="page">
+  <view class="head">
+    <!-- 轮播切换 -->
+    <swiper class='bannerSwiper' previous-margin="0rpx" next-margin='0rpx' autoplay="true" interval='3000'
+      duration='500' bindchange='onChange' current="{{current}}" circular='true'>
+      <block a:for="{{banner}}" a:key="index">
+        <swiper-item>
+          <image class="bg" data-index="{{index}}" data-item="item" src="{{item.url}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="info">
+      <view class="title">{{banner[current].title}}</view>
+      <view class="subTitle">{{banner[current].subTitle}}</view>
+      <view a:if="{{banner[current].tips}}" class="tips">
+        <view class="left">*</view>
+        <view class="right">{{banner[current].tips}}</view>
+      </view>
+    </view>
+
+  </view>
+  <view class="main">
+    <image mode="widthFix" class="bg1"
+      src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/dnActivity/bg1.png"></image>
+  </view>
+  <view class="foot">
+
+    <view id="btnTap" class="btn">立即获取</view>
+  </view>
+  <!-- 底部弹出框 -->
+  <view a:if="{{isShowBox}}" id="shade" class="shade">
+    <view animation="{{animationData}}" class="showBox">
+      <view class="address1" a:if="{{addressStatus}}" onTap="toAddress">
+        <view>
+          <image mode="widthFix" src="{{imgUrlNew}}yy/member/mark.png"></image>
+        </view>
+        <view class="word">
+          <view><text class="nickname ell">{{add.userName}}</text><text class="phone ell">{{add.userMobile}}</text>
+          </view>
+          <view class="detail ell">{{add.provinceName + add.cityName + add.areaName + add.address}}</view>
+        </view>
+        <view>
+          <image mode="widthFix" src="{{imgUrlNew}}yy/member/next.png"></image>
+        </view>
+      </view>
+      <!-- 选择地址 -->
+      <view a:else class="address clear" onTap="toAddress">
+        <image src="{{imgUrl}}bag/5.png" mode="widthFix" />
+        <view>请选择上门地址</view>
+        <text class="fa fa-angle-right r" aria-hidden="true"></text>
+      </view>
+      <view class="btn">
+        <button class="button gray" size="default" loading="{{status}}" type="primary" data-status="1"
+          onTap="buy">现场领取</button>
+        <button class="button" size="default" loading="{{status}}" type="primary" data-status="2"
+          onTap="buy">免费邮寄</button>
+      </view>
+    </view>
+  </view>
+
+
+</view>

@@ -1,0 +1,11 @@
+<view class="page">
+  <view class="site {{(item.sitFlag==2||item.sitFlag==4)&&item.fullState==1?'siteGray':''}}" a:for="{{list}}" key="{{item.id}}" onTap="toMap" data-fullState="{{item.fullState}}" data-item="{{item}}">
+    <view class="place"><text class="ell">{{item.provinceName+item.areaName+item.brancheName}}</text><text>{{item.distance}}km</text></view>
+    <view class="time">{{item.openTime}}</view>
+     <view class="name">负责人：<text>{{item.principal}}</text><text>{{item.principalMobile}}</text></view>
+    <view class="type">{{item.sitFlag==1?'体验站':item.sitFlag==2?'店面回收':item.sitFlag==3?'分拣中心':'自助交投点'}}</view>
+    <cover-image class="right" style="width:14rpx;height:24rpx" src="{{imgUrl+'site/4.png'}}"/>
+    <cover-image a:if="{{(item.sitFlag==2||item.sitFlag==4)&&item.fullState==1}}" class="right1" src="{{imgUrl+'site/6.png'}}"/>
+    <cover-image class="left" style="width:30.2rpx;height:38.8rpx" src="{{imgUrl+'site/3.png'}}"/>
+  </view>
+</view>

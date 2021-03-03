@@ -1,0 +1,128 @@
+<view class="page">
+  <!-- 等级卡 -->
+  <view class="lv" style="background-image: url({{BackgroundImg}})">
+    <image class="lvpng" mode="widthFix" src={{lvImage}}></image>
+    <view class="title">{{lvName}}</view>
+    <view class="desc" onTap="lookStep">成长体系</view>
+    <view class="express">环保经验: {{userInfoMore.carbonReducing}}/{{userInfoMore.carbonReducingLevel.levelPoint}}</view>
+    <view class="progressBox progressBox{{LV}}">
+      <view class="line" style="width:{{userInfoMore.carbonReducing/(userInfoMore.carbonReducingLevel.levelPoint*1)*100}}%"></view>
+    </view>
+  </view>
+  <!-- 答题 -->
+  <view class="question" a:if={{register &&  answerType==0}} onTap="goQA">
+    答题激活会员即可领取拾尚包预约回收
+    <view class="qa">
+      前往答题
+      <text class="fa fa-caret-right" aria-hidden="true"></text>
+    </view>
+  </view>
+  <!-- 权益列表 -->
+  <view class="now">当前等级权益</view>
+  <view class="flex">
+    <view class="box" a:for={{qlist}} a:key="index" onTap="look" data-index={{index}}>
+      <image class="icon" mode="widthFix" src="{{item.src}}"></image>
+      <view class="name">{{item.name}}</view>
+      <view class="num num{{LV}}" a:if={{item.num}}>{{item.num}}</view>
+    </view>
+  </view>
+  <!-- 报名企业 -->
+  <view class="already">这些企业已加入环保行动</view>
+  <scroll-view scroll-x="{{true}}" class="companys">
+    <view a:for="{{list}}" a:key="{{index}}" class="imagebox">
+      <image mode="scaleToFill" src="http://sbag.oss-cn-huhehaote.aliyuncs.com/upload/img/server/{{item.picPath}}"></image>
+    </view>
+  </scroll-view>
+  <!-- 成为会员按钮 -->
+  <!--  && !userInfoMore.hasSendDoorVoucher -->
+  <view class="bottom" a:if={{!register }}>
+    <view class="changeAgree" onTap="changeAgree">
+      <image class="agreeicon" mode="widthFix" src="{{imgUrlNew}}{{isAgree?'yy/vouchers/xzicon.png':'yy/vouchers/wxzicon.png'}}  " />
+      <view class="changeright">
+          您同意
+        <text onTap="goAgreeMent" class="agreement red">《拾尚回收用户回收协议》</text>
+        确认授权手机号、用户昵称、用户头像给拾尚回收并成为拾尚回收会员。
+      </view>
+    </view>
+    <view class="btns">
+      <button onTap="">暂不授权</button>
+      <button type="primary" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" scope='userInfo'>授权成为会员</button>
+    </view>
+  </view>
+</view>
+
+<!-- 当前等级 -->
+  <view class="mask" a:if="{{step}}">
+    <view class="level_content">
+      <image class="close" mode="scaleToFill" src="{{imgUrlNew}}yy/vouchers/gbicon.png" onTap="lookStep"/>
+      <view class="now1"><text></text>当前等级</view>
+      <image class="level_pic" onTap="lookStep" mode="widthFix" src="{{imgUrlNew}}yy/member/L{{userInfoMore.carbonReducingLevel.level}}.png"/>
+      <view class="progressBox1" >
+        <view class="line1" style="width:{{userInfoMore.carbonReducing/(userInfoMore.carbonReducingLevel.levelPoint*1)*100}}%"></view>
+      </view>
+      <view class="step"> 
+        <view>环保经验：{{userInfoMore.carbonReducing}}/{{userInfoMore.carbonReducingLevel.levelPoint}}</view>
+        <view>下一等级：环保达人</view>
+      </view>
+      <view class="now1"><text></text>成长体系</view>
+      <image class="level_img" mode="scaleToFill" src="{{imgUrlNew}}yy/member/{{userInfoMore.carbonReducingLevel.level}}.png"/>
+      <view class="p1">您可以通过回收行为获得减碳排放量～</view>
+      <view class="p2" onTap="lookTan">查看减碳排放量计算方式 ></view>
+    </view>
+  </view>
+  <!-- 节碳方式 -->
+  <view class="mask" a:if="{{tan}}">
+    <view class="level_content">
+      <image class="close" onTap="lookTan" mode="scaleToFill" src="{{imgUrlNew}}yy/vouchers/gbicon.png"/>
+      <view class="now1"><text></text>如何获得减碳排放量</view>
+      <view class="p3">以下回收行为可以帮助你获得:</view>
+      <view class="table">
+        <view>
+          <view class="title1">回收行为</view>
+          <view>1kg纸</view>
+          <view>1kg金属</view>
+          <view>1kg玻璃</view>
+          <view>1kg塑料</view>
+          <view>1kg织物</view>
+          <view>1kg电子废弃物</view>
+          <view>1kg复合纸包装</view>
+          <view>1kg混合物</view>
+          <view>1kg软塑纸包装</view>
+        </view>
+        <view>
+          <view class="title1">减碳排放量(kg)</view>
+          <view>0.1</view>
+          <view>0.013</view>
+          <view>0.04</view>
+          <view>0.144</view>
+          <view>0.158</view>
+          <view>0.04</view>
+          <view>0.04</view>
+          <view>0.04</view>
+          <view>0.04</view>
+        </view>
+        <view>
+          <view class="title1">种树(棵)</view>
+          <view>0.0001</view>
+          <view>0.000013</view>
+          <view>0.0004</view>
+          <view>0.0014</view>
+          <view>0.0016</view>
+          <view>0.0004</view>
+          <view>0.0004</view>
+          <view>0.0004</view>
+          <view>0.0004</view>
+        </view>
+      </view>
+      <view class="p4">
+        1.减碳排放量计算方式来源于万科公益基金会与蚂蚁森林能量
+        <text>\n</text>
+        2.碳排放与种树换算标准：一颗生长30年的冷杉树能吸收
+        <text>\n</text>
+        一颗生长30年的冷杉树能吸收
+        <text>111</text>
+        kg的碳
+      </view>
+    </view>
+  </view>
+</view>

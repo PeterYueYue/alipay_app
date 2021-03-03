@@ -1,0 +1,7 @@
+<view class="page">
+  <image class="success"  mode="widthFix" src="{{imgUrlNew}}yy/member/success.png" ></image>
+  <view class="thanks">感谢您加入环保行动！</view>
+  <!-- <button class="open" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='userInfo'> </button> -->
+  <image class="open"  onTap="goSuccess" mode="widthFix" src="{{imgUrlNew}}yy/member/open.png" ></image>
+  <!-- <image class="xingye"  mode="widthFix" src="{{imgUrl}}bag/banka.png" ></image> -->
+</view>

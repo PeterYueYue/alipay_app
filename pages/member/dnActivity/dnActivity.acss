@@ -1,0 +1,279 @@
+.page{
+  padding-bottom: 150rpx;
+}
+.head{
+  color: #333333;
+}
+.bannerSwiper{
+  width: 100%;
+  height: 470rpx;
+}
+.head .bg{
+  width: 100%;
+  height: 470rpx;
+}
+.info{
+  height: 200rpx;
+}
+.head .title{
+  font-size: 38rpx;
+  width: 100%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.head .subTitle{
+  font-size: 28rpx;
+  padding: 0 50rpx;
+}
+.head .tips{
+  color: #666666;
+  display: flex;
+  width: 100%;
+  padding: 0 50rpx;
+  font-size: 24rpx;
+  box-sizing: border-box;
+}
+.countBox{
+  font-size: 25rpx;
+  color: #FFFFFF;
+  position: absolute;
+  width: 161rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  left: 565rpx;
+  top: 370rpx;
+  background: linear-gradient(173deg, #FFC600, #F7A900);
+  border-radius: 29rpx;
+
+}
+.main .bg1{
+  width: 750rpx;
+  display: block;
+  margin: 0;
+  vertical-align: top;
+}
+.foot{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150rpx;
+  background-color: #0075CC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.foot .btn{
+  width: 580rpx;
+  height: 100rpx;
+  background: linear-gradient(173deg, #FFDD69, #FFAF23);
+  box-shadow: 4rpx 6rpx 21rpx 0px rgba(0, 54, 152, 0.28);
+  border-radius: 50rpx;
+  font-size: 48rpx;
+  color: #FFFFFF;
+  text-shadow: 3rpx 3rpx 3rpx #E08F00;
+  text-align: center;
+  line-height: 100rpx;
+}
+/* 底部弹出框 */
+.showBox{
+  height:0rpx;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+}
+.address1 {
+  width: 681rpx;
+  height: 160rpx;
+  margin: 50rpx auto 0;
+  background: rgba(250, 250, 250, 1);
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.address1>view:nth-child(1) {
+  width: 100rpx;
+  text-align: center;
+}
+.address1>view:nth-child(2) {
+  min-width: 500rpx;
+}
+.address1 image:nth-child(1) {
+  width: 26rpx;
+}
+
+.address1 image:nth-child(2) {
+  width: 26rpx;
+  margin-right: 54rpx;
+}
+
+.word view:nth-child(1) {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 1);
+}
+.nickname {
+  margin-right: 42rpx;
+}
+.word view:nth-child(2) {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-top: 20rpx;
+}
+
+/*  */
+
+.bag-name {
+  font-size: 38rpx;
+  color: #1A1A1A;
+  margin-top: 40rpx;
+  line-height: 40rpx;
+  text-indent: 34rpx;
+}
+
+.bag-p {
+  font-size: 26rpx;
+  color: #999;
+  line-height: 40rpx;
+  text-indent: 34rpx;
+  margin-top: 10rpx;
+}
+
+/* 收货地址 */
+
+.address {
+  margin: 40rpx 34rpx 0;
+  background-color: rgb(251, 251, 251);
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+}
+
+.address image {
+  width: 30rpx;
+  margin: 0 25rpx;
+}
+
+.address view {
+  display: inline-block;
+  width: 80%;
+  font-size: 34rpx;
+  color: #4D4D4D;
+}
+
+.address text {
+  font-size: 40rpx;
+  float: right;
+  margin-right: 0;
+}
+
+.btn {
+  width: 640rpx;
+  margin: 30rpx auto 40rpx;
+}
+
+.btn button {
+  border-radius: 8rpx;
+}
+
+/* 选择地址后 */
+
+.add1 {
+  background: #fafafa;
+  width: 686rpx;
+  height: 160rpx;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 26rpx 45rpx 50rpx 92rpx;
+  position: relative;
+  margin-bottom: 40rpx;
+  margin-top: 40rpx;
+}
+
+.add1 image {
+  position: absolute;
+  top: 88rpx;
+  left: 34rpx;
+  width: 30rpx;
+}
+
+.fl1>text {
+  font-size: 40rpx;
+  float: right;
+  margin-right: 0;
+}
+
+.fl2 {
+  font-weight: 600;
+  font-size: 34rpx;
+  color: #1A1A1A;
+  margin-top: 35rpx
+}
+
+.fl3 {
+  font-weight: 600;
+  font-size: 34rpx;
+  color: #1A1A1A;
+  margin-top: 14rpx
+}
+
+.fl2>text:nth-child(2) {
+  font-size: 30rpx;
+  padding-left: 68rpx
+}
+
+.fl2 .fa {
+  font-size: 40rpx
+}
+
+.adds {
+  margin-top: 20rpx;
+}
+
+.name {
+  display: inline-block;
+  width: 200rpx;
+  font-size: 34rpx;
+}
+
+.mobile {
+  font-size: 30rpx;
+}
+.red{
+  color: red;
+}
+
+.btn{
+  width: 100%;
+  text-align: center;
+ 
+}
+.btn .button{
+  width: 290rpx ;
+  height: 94rpx;
+  display: inline-block;
+  margin: 0 20rpx;
+  border-radius: 47rpx;
+  background-color: #3AA5FF;
+  font-size: 32rpx;
+  line-height: 94rpx;
+
+}
+.gray{
+  background-color: #A7E95F !important;
+  
+
+}
+.shade{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+}

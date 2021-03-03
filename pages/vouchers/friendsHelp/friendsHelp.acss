@@ -1,0 +1,153 @@
+
+.friendsHelp{
+  min-height: 100vh;
+  background: url("http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/fhbg.png") no-repeat;
+  background-size: 100% 100%;
+  padding-top: 446rpx;
+  box-sizing: border-box;
+}
+.content{
+  width: 680rpx;
+  /* height: 700rpx; */
+  min-height: 700rpx;
+  background-color: #ffffff;
+  border-radius:10rpx;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40rpx;
+}
+.head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35rpx;
+}
+.head image{
+  width: 27rpx;
+  height: 15rpx;
+}
+.head text{
+  color: #333333;
+  font-weight: bold;
+  font-size: 32rpx;
+  margin: 0 20rpx;
+}
+.countDown{
+  display: flex;
+  font-size: 16px;
+  color: #FFA719;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.countDown .count{
+  width: 28px;
+  height: 28px;
+  background-color: #FFA719;
+  color: #FFFFFF;
+  font-size: 16px;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 10rpx;
+  margin: 0 16rpx;
+}
+.box1{
+  color: #333333;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 48rpx;
+  margin-top: 30rpx;
+}
+.box1 text{
+  color: #FFA719;
+}
+.box2{
+  display: flex;
+  justify-content: center;
+  margin-top: 30rpx;
+}
+.box2 .item{
+  text-align: center;
+  margin: 0 33rpx;
+
+}
+.box2 image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+.btn{
+  width: 430rpx;
+  height: 46px;
+  background:linear-gradient(-9deg,rgba(54,170,255,1),rgba(24,214,255,1));
+  border-radius:45rpx;
+  text-align: center;
+  line-height: 46px;
+  color: #FEFEFE;
+  margin-top: 50rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+.masgbox{
+  display: flex;
+  margin-top: 40rpx;
+  align-items: center;
+}
+.masgbox image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-left: 38rpx;
+}
+.masgbox .right{
+  width: 470rpx;
+  height: 136rpx;
+  background-color: #F1EDF1;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  color: #3498FF;
+  padding:16rpx 20rpx 20rpx 20rpx;
+  box-sizing: border-box;
+  position: relative;
+  margin-left: 50rpx;
+  
+}
+.masgbox .jiantou{
+  width: 0;
+  height: 0;
+  border-top: 15rpx solid transparent;
+  border-right: 30rpx solid #f1edf1;
+  border-bottom: 15rpx solid transparent;
+  position: absolute;
+  left: -26rpx;
+  top: 60rpx;
+}
+.masgbox text{
+  color: #FFA719;
+}
+.wyy{
+  text-align: center;
+  font-size: 26rpx;
+  color: #3498FF;
+  margin-top: 20rpx;
+}
+.wyy text{
+  font-size: 34rpx;
+}
+.yqcg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.yqcg .icon1{
+  width: 200rpx;
+  height: 160rpx;
+  margin-top: 57rpx;
+}
+.yqcg .icon2{
+  width: 258rpx;
+  height: 28rpx;
+  margin-top: 20rpx;
+}

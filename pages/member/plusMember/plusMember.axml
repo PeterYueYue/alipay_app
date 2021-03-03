@@ -1,0 +1,41 @@
+<!-- 小程序收藏组件，更多高级用法请参考文档：https://docs.alipay.com/mini/component/component-favorite -->
+<!-- 购买拾尚包 -->
+<view class="page">
+  <view class="bag">
+    <image src="{{imgUrlNew}}yy/member/plusbag.png" mode="widthFix"  />
+  </view>
+  <view class="h5">拾尚PLUS会员</view>
+  <view class="p1">包含：拾尚包（回收袋）1个、拾尚包展示架1个、上门回收券3张、全品类30%加价券2张、各品类加价券5张。</view>
+  <view class="money">¥99元</view>
+
+  <!-- 选择后地址 -->
+  <view class="address1" a:if="{{addressStatus}}" nTap="toAddress">
+    <view><image mode="widthFix" src="{{imgUrlNew}}yy/member/mark.png"></image></view>
+    <view class="word">
+      <view><text class="nickname ell">{{add.userName}}</text><text class="phone ell">{{add.userMobile}}</text></view>
+      <view  class="detail ell">{{add.provinceName + add.cityName + add.areaName + add.address}}</view>
+    </view>
+    <view><image mode="widthFix" src="{{imgUrlNew}}yy/member/next.png"></image></view>
+  </view>
+   <!-- <view class="add1" a:if="{{addressStatus}}" onTap="toAddress">
+     <image mode="widthFix" src="{{imgUrl}}15.png"></image>
+     <view class="fl2">
+       <text class="name ell">{{add.userName}}</text>
+       <text class="fa fa-angle-right r" aria-hidden="true"></text>
+       <text class="mobile r">{{add.userMobile}}</text>
+     </view>
+     <view class="adds ell">{{add.provinceName + add.cityName + add.areaName + add.address}}</view>
+   </view> -->
+  <!-- 选择地址 -->
+  <view a:else class="address clear" onTap="toAddress">
+    <image src="{{imgUrl}}bag/5.png" mode="widthFix"  />
+    <view>请选择上门地址</view>
+    <text class="fa fa-angle-right r" aria-hidden="true"></text>
+  </view> 
+  <view class="btn">
+    <!-- 未授权用户先授权 -->
+    <button size="default" type="primary" a:if="{{status && userInfo.headPortrait==''}}" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='userInfo'> 确认</button>
+    <button size="default" type="primary" a:if="{{status && userInfo.headPortrait!=''}}" onTap="buy">确认</button>
+    <button size="default" loading type="primary" a:if="{{!status}}">确认</button>
+  </view>
+</view>

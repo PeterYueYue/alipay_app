@@ -1,0 +1,145 @@
+.timelogin{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+.head .bannerImg{
+  width: 750rpx;
+  height: 297rpx;
+  vertical-align: top;
+  z-index: -10;
+}
+.head image {
+  height: 297rpx;
+}
+.content{
+  background:#F5F5F5;
+  border-radius: 20rpx 20rpx 0 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  margin-top: -30rpx;
+  z-index: 100;
+}
+.inviteFriend{
+  width:690rpx;
+  height:140rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:2rpx 1rpx 16rpx 0px rgba(7,84,190,0.2);
+  border-radius:10rpx;
+  margin-top: -30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12rpx;
+}
+.inviteFriend .title{
+  color: #333333;
+  font-size: 32rpx;
+  line-height: 45rpx;
+  margin-left: 40rpx;
+
+}
+.inviteFriend text{
+  color: #2D90FF;
+  font-size: 32rpx;
+}
+.inviteFriend .btns{
+  width:137rpx;
+  height:28px;
+  background:rgba(58,165,255,1);
+  border-radius:14px;
+  font-size: 12px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  margin-right: 23rpx;
+}
+
+.list{
+  padding-left: 4rpx;
+}
+.list .item{
+
+  width:715rpx;
+  height:238rpx;
+  background:url('http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/cardbg.png') no-repeat;
+  border-radius:6rpx;
+  
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item .pic{
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 40rpx;
+}
+.item .right{
+  width: 500rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item .right .title{
+  font-size: 34rpx;
+  color: #0091F5;
+}
+.item .right .btns{
+
+  width:137rpx;
+  height:28px;
+  background:rgba(58,165,255,1);
+  border-radius:14px;
+  font-size: 12px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+  margin-right: 33rpx;
+}
+.item .subtitle{
+  font-size: 22rpx;
+  color: #666666;
+  margin-top: 25rpx;
+  
+}
+.item .progressBox{
+  width: 280rpx;
+  height: 10px;
+  line-height: 10px;
+  font-size: 8px;
+  color: #008A0E;
+  text-align: center;
+  position: relative;
+  margin-top: 20rpx;
+
+}
+.item .tips{
+  position: relative;
+  z-index: 2;
+  
+}
+.item .progressBox .line{
+  background:#4ED15B;
+  border-radius:10px;
+  height: 100%;
+  width: 150rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.item .yellow{
+  color: #FF9626 !important;
+}
+.item .bgyellow{
+  background-color: #FF9626 !important;
+}
+.item .bgGary{
+  background-color: #A0A0A0 !important;
+}
+

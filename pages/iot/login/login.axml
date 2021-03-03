@@ -1,0 +1,36 @@
+<!-- <view class="vouchers">
+  <view class="union">
+    <image  mode="widthFix" src="{{imgUrl1}}yy/vouchers/company1.png" alt=""/>
+	  <image  mode="widthFix" src="{{imgUrl1}}yy/vouchers/company2.png" alt=""/>
+  </view>
+  <image class="c1" mode="widthFix" src="{{imgUrl1}}yy/vouchers/c1.png" alt=""/>
+  <view class="c2">
+    <image class="c3" mode="widthFix" src="{{imgUrl1}}yy/vouchers/c3.png" alt=""/>
+    <button  open-type="getAuthorize"  onGetAuthorize="onGetAuthorize"  scope='phoneNumber'  a:if="{{autoDisplay}}">注册</button>
+    <button  loading  a:if="{{!autoDisplay}}">注册</button>
+  </view>
+</view> -->
+<view class="vouchers">
+  <view class="union">
+    <image mode="widthFix" src="{{imgUrl1}}yy/vouchers/company1.png" alt=""/>
+    <image mode="widthFix" src="{{imgUrl1}}yy/vouchers/company2.png" alt=""/>
+  </view>
+  <image class="c1" mode="widthFix" src="{{imgUrl1}}yy/vouchers/c1.png" alt=""/>
+  <view class="c2">
+    <image class="c3" mode="widthFix" src="{{imgUrl1}}yy/vouchers/c3.png" alt=""/>
+  </view>
+  <view class="get">
+    <button size="default"  open-type="getAuthorize"  onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'  a:if="{{autoDisplay}}">支付宝自动登录</button>
+    <button size="default" loading  type="primary" a:if="{{!autoDisplay}}">支付宝自动登录</button>
+  </view>
+</view>
+<!-- 开箱成功提示 -->
+<!-- 开箱成功提示 -->
+<view class="mask" a:if="{{success}}">
+    <view class="success_content">
+      <image class="bgmain" mode="widthFix" src="{{imgUrlNew}}yy/member/check_n.png" alt="" />
+      <view class="p1">{{marked}}</view>
+      <view class="p2">后续操作请在交投箱屏幕完成</view>
+      <!-- <button  lang="zh_CN"  bindtap="goHome" >返回首页</button> -->
+    </view>
+</view>

@@ -1,0 +1,12 @@
+.page {
+  background-color: #fff;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 1rpx 60rpx;
+  overflow: hidden;
+}
+rich-text{
+  padding: 0;
+  margin: 0
+}

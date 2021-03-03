@@ -1,0 +1,38 @@
+<view class="page">
+   <view class="tabs">
+    <view class="{{activeTab==0?'tab_active':''}}" data-index=0 onTap="tab">我邀请的人</view>
+    <view class="{{activeTab==1?'tab_active':''}}" data-index=1 onTap="tab">邀请我的人</view>
+  </view>
+  <view class="swiper-wrap ">
+    <swiper
+        indicator-dots = "{{false}}" class="swiper" current="{{current}}" onChange="onChange" previousMargin="0px" nextMargin="0px" autoplay="{{false}}" vertical="{{false}}" circular="{{false}}">
+      <!-- 我邀请的人 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+         <view class="list" a:for="{{list1}}" a:key="{{index}}">
+            <image  class="number"  mode="scaleToFill"  src="{{item.headPortrait}}"/>
+            <view class="name">
+              <view>{{item.nickName}}</view>
+              <view>{{item.createDate}}</view>
+            </view>
+            <view class="coin">+{{item.point}}拾尚币</view>
+         </view>
+        </scroll-view>
+      </swiper-item> 
+      
+      <!-- 邀请我的人 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+          <view class="list" a:for="{{list2}}" a:key="{{index}}">
+            <image  class="number"   mode="scaleToFill"  src="{{item.headPortrait}}"/>
+            <view class="name">
+              <view>{{item.groupName}}</view>
+              <view>{{item.createDate}}</view>
+            </view>
+            <view class="coin">团队收益 <text>\n</text>+{{item.point}}拾尚币</view>
+         </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

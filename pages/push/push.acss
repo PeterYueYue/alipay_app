@@ -1,0 +1,59 @@
+.page {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+.swiper-wrap {
+ background-color: white;
+ overflow: hidden;
+ padding: 32rpx;
+ box-sizing: border-box;
+}
+.swiper-wrap image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+.head {
+  text-align: center;
+  color: #1A1A1A;
+  font-weight: 600;
+  line-height: 150rpx;
+  font-size: 38rpx;
+}
+.list {
+  margin: 0 56rpx;
+}
+.list view {
+  height: 120rpx;
+  border-bottom: 1px solid #EBEBEB;
+  display: flex;
+  align-items: center;
+}
+.list image {
+  width: 30rpx;
+}
+.list input {
+  width: 360rpx;
+  margin-left: 20rpx;
+}
+.get {
+  float:right;
+  color: #3AA5FF;
+  text-align: right;
+  width: 200rpx;
+  font-size: 28rpx;
+  text-indent: 40rpx;
+}
+.btn {
+  margin: 60rpx 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+.btn button  {
+  width: 640rpx;
+  margin: 0 auto;
+}
+.gary{
+  color: gray;
+}

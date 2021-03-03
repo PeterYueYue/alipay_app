@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "flipdraw": "ant-mini-flip-draw/component/index",
+    "page-result": "mini-antui/es/page-result/index",
+    "notice": "mini-antui/es/notice/index"
+  },
+
+  "pullRefresh": true
+}

@@ -1,0 +1,32 @@
+<view class="page">
+  <view class="title">
+    <image mode="widthFix" src="{{imgUrl}}bag/cc.png"/>
+  </view> 
+  <!-- 领取 -->
+  <view class="li" onTap="freeGet"  a:if="{{flag}}">
+    <image mode="widthFix" src="{{imgUrl}}bag/c_3.png"/>
+    <view class="li-li">
+      <view class="li-title">领取拾尚包</view>
+      <view class="li-bottom">全上海已有<text class="li-blue">{{people}}</text>人加入环保活动</view>
+    </view>
+    <view class="right">立即领取</view>
+  </view>
+  <!-- 购买 -->
+  <view class="li" onTap="buyBag" a:if="{{flag2}}">
+    <image mode="widthFix" src="{{imgUrl}}bag/c_2.png"/>
+    <view class="li-li">
+      <view class="li-title">购买拾尚包</view>
+      <view class="li-bottom">获取更多绑定资格，每一次分类都看得见</view>
+    </view>
+    <view class="right blue">立即购买</view>
+  </view>
+  <!-- 邀请 -->
+  <view class="li" a:if="{{flag3}}">
+    <image mode="widthFix" src="{{imgUrl+'bag/c_1.png'}}"/>
+    <view class="li-li">
+      <view class="li-title">邀请加入</view>
+      <view class="li-bottom">邀请好友加入，免费领取一个拾尚包</view>
+    </view>
+    <view class="right yellow">立即邀请</view>
+  </view>
+</view>

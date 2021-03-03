@@ -1,0 +1,28 @@
+<!-- 小程序收藏组件，更多高级用法请参考文档：https://docs.alipay.com/mini/component/component-favorite -->
+
+<view class="page">
+  <view class="swiper-wrap">
+    <image mode="widthFix" src="{{imgUrl}}banner.png"/>
+  </view>
+  <view class="head">拾尚先锋申请</view>
+  <view class="list">
+    <view>
+      <image mode="widthFix" src="{{imgUrl}}bag/3.png"/>
+      <input type="text" placeholder="请输入姓名" onInput="change" data-id="1" />
+    </view>
+    <view>
+      <image mode="widthFix" src="{{imgUrl}}bag/2.png"/>
+      <input type="number" placeholder="请输入联系电话" onInput="change" data-id="2" maxlength="11" />
+    </view>
+    <view>  
+      <image mode="widthFix" src="{{imgUrl}}bag/1.png"/>
+      <input placeholder="验证码" onInput="change" data-id="3" />
+      <view  type="number" class="get" onTap="getCode" a:if="{{!getCode}}">获取验证码</view>
+      <view  class="get gary" a:if="{{getCode}}">{{sec}}秒后再次获得验证码</view>
+    </view>
+  </view>
+  <view class="btn">
+    <button size="default" type="primary" onTap="push" a:if="{{status}}">提交</button>
+    <button size="default" type="primary" loading a:else>提交</button>
+  </view>
+</view>

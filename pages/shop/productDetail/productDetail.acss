@@ -1,0 +1,242 @@
+.page{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 150rpx;
+}
+.bannerimg{
+  width: 100%;
+  height: 100%;
+}
+.swiper-item{
+  width: 100%;
+  height: 100%;
+}
+.infoBox{
+  width: 100%;
+  display: flex;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  background-color: #fff;
+}
+.iconBox .tag{
+  display: flex;
+  width:99rpx;
+  height:87rpx;
+  background:linear-gradient(163deg,rgba(94,182,255,1),rgba(11,144,255,1));
+  border-radius:0px 20rpx 20rpx 0px;
+  font-size: 28rpx;
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 0 0 20rpx;
+}
+.info{
+  flex: 1;
+  margin-left: 17rpx; 
+}
+.info .title{
+  width: 600rpx;
+  font-size: 32rpx;
+  color: #333333;
+}
+.info .tags{
+  width: 100%;
+  margin-top: 19rpx;
+  font-size: 26rpx;
+  color: #FF731F;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.fenxiang{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999999;
+  background-color: #F4F4F4;
+  width:113rpx;
+  height:54rpx;
+  border-radius:27rpx 0 0 27rpx;
+  position: relative;
+}
+.sharebtn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.fenxiang image{
+  width: 26rpx;
+  height: 18rpx;
+  margin-right: 10rpx;
+}
+.jifen{
+  font-size: 44rpx;
+  color: #FF7200;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.jifen image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 7rpx;
+}
+
+.zhichi{
+  display: flex;
+  font-size: 30rpx;
+  color: #333333;
+  align-items: center;
+  width: 100%;
+  padding: 30rpx 40rpx 30rpx 55rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.zhichi .left{
+  font-size: 28rpx;
+  color: #999999;
+  margin-right: 30rpx;
+}
+.zhichi .list{
+  display: flex;
+}
+.zhichi .item{
+  display: flex;
+  align-items: center;
+  margin-right: 40rpx;
+}
+.zhichi .point{
+  width:14rpx;
+  height:14rpx;
+  background:rgba(58,165,255,1);
+  border-radius:50%;
+  margin-right: 10rpx;
+}
+.arrow{
+  width: 8px;
+  height: 8px;
+  border-top: 2rpx solid #3AA5FF;
+  border-right: 2rpx solid #3AA5FF;
+  transform: rotate(45deg);
+}
+.detailImg{
+  width: 100%;
+
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  text-align: center;
+  line-height: 56px;
+  font-size: 17px;
+  color: #FFFFFF;
+  background-color: #3AA5FF;
+}
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+}
+.popActive{
+  visibility: visible;
+}
+
+.popup .box{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background:rgba(255,255,255,1);
+  border-radius:20rpx 20rpx 0px 0px;
+  transform: translateY(150%);
+  transition: all 0.2s ease;
+}
+.popup .active{
+  transform: translateY(0);
+}
+.contentTitle{
+  width: 100%;
+  font-size: 34rpx;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30rpx;
+ 
+
+}
+.contentTitle .line{
+  font-size: 40rpx;
+  color: #3AA5FF;
+  margin: 0 20rpx;
+}
+.popup .item{
+  padding-left: 46rpx;
+  padding-right: 46rpx;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+}
+.popup .title{
+  display: flex;
+  align-items: center;
+}
+.popup .point{
+  width: 14rpx;
+  height: 14rpx;
+  background-color: #3AA5FF;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.popup .info{
+  color: #999999;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  margin-left: 25rpx;
+}
+
+.popup .list{
+  min-height:460rpx;
+  max-height: 600rpx;
+  overflow-y: scroll;
+}
+/* 使用说明 */
+.descHead {
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+.descHead text {
+  display: inline-block;
+  height: 30rpx;
+  width: 4rpx;
+  background-color: #3AA5FF;
+  margin-right: 20rpx;
+}
+.desc {
+  font-size: 24rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  line-height: 32rpx;
+  color: #333333;
+}

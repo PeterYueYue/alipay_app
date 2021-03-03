@@ -1,0 +1,73 @@
+<view class="page">
+  <!-- 头部轮播图 -->
+  <view class="head">
+    <view class="swiper-wrap">
+      <swiper indicator-dots="{{true}}" style="height:750rpx;width:750rpx;" class="swiper" previousMargin="0px" nextMargin="0px" autoplay="{{true}}" vertical="{{false}}" interval="{{3000}}" circular="{{true}}">
+        <swiper-item a:key="index" a:for="{{productDetails.productThumbList}}">
+          <view class="swiper-item" data-url="{{item.url}}" data-id="{{item.id}}" data-flag="{{item.bannerFlag}}">
+            <image class="bannerimg" src="{{item.pic}}" />
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <!-- info -->
+  <view class="infoBox">
+    <view class="iconBox">
+      <view class="tag">
+        {{productDetails.typeName}}
+      </view>
+    </view>
+    <view class="info">
+      <view class="title">{{productDetails.name}}</view>
+      <view class="tags">
+        <text>{{productDetails.remark}}</text>
+      </view>
+      <view class="jifen">
+        <image src="{{imgUrlNew+'yy/shop/bi2.png'}}" />
+        <text>{{productDetails.price}}</text>
+      </view>
+    </view>
+  </view
+  <!-- 支持 -->
+  <view onTap="onTopBtnTap" class="zhichi" a:if="{{productDetails.supports.length>0}}">
+    <view class="left">支持：</view>
+    <view class="list">
+      <view a:for="{{productDetails.supports}}" a:key="index" class="item">
+        <view class="point"></view>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view class="arrow"></view>
+  </view>
+  <!-- 详情图 -->
+  <image a:for="{{productDetails.descriptions}}" a:key="index" mode="widthFix" class="detailImg" src="{{item}}" />
+  <!-- 使用说明 -->
+  <view a:if="{{productDetails.useInstructions}}" class="descHead">
+    <text></text>使用说明
+  </view>
+  <view class="desc">
+    {{productDetails.useInstructions}}
+  </view>
+  <view class="btn" onTap="goOrder">立即兑换</view>
+</view>
+<!-- 支持 -->
+<view class="popup {{showTop?'popActive':''}}" onTap="onPopupClose">
+  <view class="box  {{showTop?'active':''}}">
+    <view class="contentTitle"> 
+      <view class="line">-</view>
+      <view>支持</view>
+      <view class="line">-</view>
+    </view>
+    <view class="list">
+      <!--<view class="item"><view class="title"><view class="point"></view><view>包邮</view></view><view class="info">该商品享受包邮服务</view></view> -->
+      <view a:for="{{productDetails.supports}}" a:key="index" class="item">
+        <view class="title">
+          <view class="point"></view>
+          <view>{{item.name}}</view>
+        </view>
+        <view class="info">{{item.remark}}</view>
+      </view>
+    </view> 
+  </view>
+</view>

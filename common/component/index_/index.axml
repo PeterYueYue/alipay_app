@@ -1,0 +1,240 @@
+<view class="index_page">
+  <view class="headbgbox">
+    <view class="imgbox">
+      <image class="img1" src="{{imgUrlNew}}yy/index/ch.png" />
+      <image class="img2" src="{{imgUrlNew}}yy/index/20205801.png" />
+      <view class="img3">
+        <view>回收鼓励金：50拾尚币/kg</view>
+        <view>低附加值物公益回收：0拾尚币/kg</view>
+      </view>
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="swiper-wrap">
+    <swiper indicator-dots="{{true}}" style="height:150px" class="swiper" previousMargin="0px" nextMargin="0px" autoplay="{{true}}" vertical="{{false}}" interval="{{3000}}" circular="{{true}}">
+      <!-- 脉动活动banner -->
+      <swiper-item  a:if="{{userInfo.userFlag==1 && bagCount > -1}}"  >
+        <view class="swiper-item" onTap="godnlog" >
+          <image mode="aspectFill" src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/dnActivity/banner.png" />
+        </view>
+      </swiper-item>
+
+      <swiper-item a:key="index" a:for="{{ background }}">
+        <view class="swiper-item" onTap="gobanner" data-url="{{item.url}}" data-id="{{item.id}}" data-flag="{{item.bannerFlag}}">
+          <image mode="aspectFill" src="{{item.picUrl}}" />
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--广播 -->
+  <view class="guangbo" a:if="{{userInfo.userFlag===1}}">
+    <image class="lb" src="{{imgUrlNew}}yy/index/20205802.png" />
+    <swiper indicator-dots="{{false}}" autoplay="{{true}}" vertical="{{true}}" circular="{{true}}" interval="2000" duration="500">
+      <block a:for="{{noticeList}}" a:key="{{index}}">
+        <swiper-item>
+          <view class="item">{{item.content}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!--导航区域 个人-->
+  <view class="nav-wrap" a:if="{{userInfo.userFlag===1}}">
+    <view class="nav">
+      <view class="item" onTap="appointment">
+        <image src="{{imgUrlNew+ 'yy/index/nav1.png'}}" class="nav-img" />
+        <view class="t1box">
+          最快1小时内上门
+        </view>
+        <!-- <view>预约</view> -->
+      </view>
+      <view class="item " onTap="tiXian">
+        <image src="{{imgUrlNew+ 'yy/index/nav2.png'}}" class="nav-img tiXian" />
+        <!-- <view>提现</view> -->
+      </view>
+      <view class="item" onTap="getBag">
+        <image src="{{imgUrlNew+ 'yy/index/nav3.png'}}" class="nav-img" />
+        <view class="t2box">
+          与世界名企共同参与
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--导航区域 企业-->
+  <view class="nav-wrap" a:if="{{userInfo.userFlag===2 || userInfo.userFlag===3}}">
+    <view class="nav nav_qiye">
+      <!-- <view class="item" onTap="scan">
+        <image src="{{imgUrl+ '4.png'}}" mode="widthFix" class="nav-img" />
+        <view>扫一扫</view>
+      </view> -->
+      <view class="item" onTap="appointment" a:if="{{ userInfo.userFlag !== 3 }}">
+        <image src="{{imgUrl+ '3.png'}}" mode="widthFix" class="nav-img" />
+        <view>预约</view>
+      </view>
+      <view class="item" onTap="gotiXian">
+        <image src="{{imgUrl+ '2.png'}}" mode="widthFix" class="nav-img" />
+        <view>提现</view>
+      </view>
+    </view>
+  </view>
+
+  <!--热门活动 -->
+  <view class="hotbox" a:if="{{userInfo.userFlag==1}}">
+    <image src="{{imgUrlNew}}yy/index/hotIcon.png" />
+    <view class="title">热门活动</view>
+  </view>
+   <!-- signIn start -->
+    <view onTap="onClick" data-name="签到中心" class="signIn" a:if="{{userInfo.userFlag==1}}">
+      <image class="rili" src="{{imgUrlNew+'yy/shop/rili.png'}}"/>
+      <view class="title">
+        <image src="{{imgUrlNew+'yy/shop/zi.png'}}" />
+        <view>每日签到领好礼</view>
+      </view>
+      <view class="pointList">
+        <view a:for="{{7}}" a:key="index" class="point {{signInData.count >= index+1?'hasSign':''}}"></view>
+      </view>
+      <image class="signBtn" src="{{imgUrlNew+'yy/shop/qiandao.png'}}" />
+    </view>
+    <!-- signIn end -->
+  <view class="c_activity" a:if="{{userInfo.userFlag==1}}">
+    <view  onTap="goZddlu">
+      <view class="begin" a:if="{{!isActivity}}">
+        <text>距开始:</text>
+        <text class="timeitem">{{ timeObj.h }}</text>
+        <text class="mh">:</text>
+        <text class="timeitem">{{ timeObj.m }}</text>
+        <text class="mh">:</text>
+        <text class="timeitem">{{ timeObj.s }}</text>
+      </view>
+      <view class="begin" a:else>活动正在进行中！</view>
+      <button class="ontime">整点登录领券</button>
+      <view class="desc">每日10点、20点整 <text>\n</text>登录抢上门抵用券</view>
+    </view>
+    <view class="part" onTap="goRank">
+      <image src="{{imgUrlNew}}yy/index/c_hot.png" mode = "widthFix" />
+      <button class="bepart">我的环保推广人</button>
+      <view class="desc"><text>{{totalGroupNo}}</text> 人已开团<text>\n</text>邀请伙伴共享收益</view>
+    </view>
+  </view>
+  <!-- 生活号  -->
+  <view class="lifestyle" catchTap="default" a:if="{{userInfo.userFlag===1}}">
+    <lifestyle publicId="2019091767448436" onFollow="onFollow"/>
+  </view>
+  <!--身边拾尚 -->
+  <view class="hotbox marginTop40" a:if="{{userInfo.userFlag==1}}">
+    <image src="{{imgUrlNew}}yy/index/202005083.png" />
+    <view class="title">身边拾尚</view>
+  </view>
+  <!-- 新体验站 -->
+  <view a:if="{{userInfo.userFlag==1}}" class="tyz">
+    <view class="shang">
+      <view class="zuo" onTap="sort">
+      <image src="{{imgUrl1}}yy/index/s1.png" mode = "widthFix" />
+      </view>
+      <view class="you" onTap="area">
+      <image src="{{imgUrl1}}yy/index/s2.png" mode = "widthFix" /></view>
+    </view>
+    <view class="xia" onTap="site">
+    <image src="{{imgUrl1}}yy/index/s3.png" mode = "widthFix" /></view>
+  </view>
+  <!--机构排行 企业-->
+  <view class="media clear rank-wrap" a:if="{{userInfo.userFlag===2 || userInfo.userFlag===3}}">
+    <view class="media-head">机构排行</view>
+    <view class="rank" onTap="rank">
+      <image mode="widthFix" src="{{imgUrl+'b/jigou.png'}}" style="border-radius:10rpx;" />
+    </view>
+  </view>
+
+  <!--每日必点 -->
+  <view class="hotbox marginTop40" a:if="{{userInfo.userFlag===1}}">
+    <image src="{{imgUrlNew}}yy/index/202005083.png" />
+    <view class="title">每日必点</view>
+  </view>
+  <!-- 领券插件 -->
+  <image  class="change"  onTap="getVou" mode="widthFix" src="{{imgUrl1}}yy/welfare.png" a:if="{{userInfo.userFlag===1}}"/>
+  <!--生活服务 -->
+  <!-- <view class="hotbox marginTop40" a:if="{{userInfo.userFlag===1}}">
+    <image src="{{imgUrlNew}}yy/index/202005083.png" />
+    <view class="title">生活服务</view>
+  </view> -->
+  <!-- <view class="mrbd" onTap="goYuejian" a:if="{{userInfo.userFlag===1}}">
+    <image mode="widthFix" src="{{imgUrl1}}yy/member/partner.png" />
+  </view> -->
+
+
+  <!--媒体报道 -->
+  <view class="hotbox marginTop40" a:if="{{userInfo.userFlag===1}}">
+    <image src="{{imgUrlNew}}yy/index/202005083.png" />
+    <view class="title">媒体报道</view>
+  </view>
+   <view class="media clear">
+    <view class="list" a:for="{{ media }}" data-url="{{ item.url }}" data-mediaFlag="{{ item.mediaFlag }}" data-id="{{ item.id }}" a:key="index" onTap="information">
+      <image class="mediaImg" mode="aspectFill" src="{{item.picUrl}}" />
+      <view class="detail">{{ item.title }}</view>
+    </view>
+  </view>
+</view>
+
+<!--无上门券提示 -->
+<view class="mask_" a:if="{{show_door}}">
+  <image onTap="getdoor"  class="img" mode="widthFix" src="{{imgUrlNew}}yy/shop/check_door.png" />
+  <image onTap="closemask_"  class="close" mode="widthFix" src="{{imgUrlNew}}yy/x.png" />
+</view>
+
+<!-- 公告通知 -->
+<view class="mask_" a:if="{{popWindowsBool}}">
+  <image onTap="getdoor"  class="img" mode="widthFix" src="{{popWindowsObj.pic}}" />
+  <image onTap="closePop"  class="close" mode="widthFix" src="{{imgUrlNew}}yy/x.png" />
+</view>
+<!-- 兑换通道关闭通知 -->
+<!-- <view class="mask_" a:if="{{check && userInfo}}">
+  <image onTap="getdoor"  class="img" mode="widthFix" src="{{imgUrlNew}}image/withdrawal/attention.png" />
+  <button class="changeBtn" type="primary" onTap="goChange"> 前往兑换</button>
+</view> -->
+
+<!-- 补发优惠券 -->
+<view class="mask bufa" onTap="closemask_a" a:if="{{isHasVou}}">
+  <view class="box2">
+    <image onTap="useVou"  class="check_doorPIc" mode="widthFix" src="{{imgUrlNew}}yy/index/hasVou.png" />
+    <image onTap="closeVou"  class="deleteIcon" mode="widthFix" src="{{imgUrlNew}}yy/x.png" />
+  </view>
+</view>
+
+<!-- <movable-area a:if="{{bagCount}}"  class="content-bg">
+  <movable-view 
+    damping='20'
+    x="600rpx"
+    y="600rpx"
+    animation="true" 
+    class='content-block' 
+    onTap='goMdActivity' 
+    direction="all">
+  </movable-view>
+</movable-area> -->
+
+<vou  
+a:if="{{ orderId }}"
+userInfo = "{{userInfo}}"
+isShowVouList="{{isShowVouList}}"
+on:closeVou="closeVou"
+orderId="{{orderId}}"
+></vou>
+
+<!-- 年度账单c端 -->
+<view class="mask bill" onTap="closebill" a:if="{{annualBill && userInfo.userFlag==1}}">
+  <view class="billbox">
+    <image onTap="gobill"  class="check_doorPIc" mode="widthFix" src="{{imgUrlNew}}yy/bill/indexshare.png" />
+    <view>
+      <image onTap="closebill"  class="deleteIcon" mode="widthFix" src="{{imgUrlNew}}yy/x.png" />
+    </view>
+  </view>
+</view>
+<!-- 年度账单b端 -->
+<view class="mask bill" onTap="closebill" a:if="{{annualBill && userInfo.userFlag==2}}">
+  <view class="billbox">
+    <image onTap="gobill"  class="check_doorPIc" mode="widthFix" src="{{imgUrlNew}}yy/bill/indexshareb.png" />
+    <view>
+      <image onTap="closebill"  class="deleteIcon" mode="widthFix" src="{{imgUrlNew}}yy/x.png" />
+    </view>
+  </view>
+</view>

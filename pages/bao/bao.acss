@@ -1,0 +1,129 @@
+.page{
+  width: 100%;
+  min-height: 100vh;
+  background: #f9f9f9;
+}
+.main{
+  width: 100%;
+  height: 450rpx;
+  background: #ffffff;
+  margin-bottom: 20rpx
+}
+.top,.tops{
+  width: 100%;
+  height: 240rpx;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 45rpx;
+  background-size: 100% 100% !important;
+}
+.top>view{
+  font-size: 30rpx;
+  color: #4D4D4D;
+}
+.top>view:nth-child(2){
+  margin-top: 30rpx;
+  font-weight: 600;
+  font-size: 38rpx;
+  color: #1A1A1A;
+}
+.active{
+  position: relative;
+  font-size: 25rpx;
+  color: #1A1A1A;
+  box-sizing: border-box;
+  padding: 94rpx 40rpx 44rpx 106rpx;
+  line-height: 30rpx;
+}
+.active text {
+  color: #999;
+
+}
+.active>image{
+  position: absolute;
+  top:95rpx;
+  left: 60rpx;
+}
+.btn{
+  position: absolute;
+  top: 200rpx;
+  width: 100%;
+  height: 100rpx;
+}
+.userBtn{
+  text-align: center;
+  width: 330rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 8rpx
+}
+.l{
+  margin-left: 32rpx;
+  background: #3AA5FF;
+}
+.gray{
+  background: #D9D9D9;
+}
+.r{
+  margin-right: 32rpx;
+  background: #0EC988;
+}
+.boss{
+  margin: auto;
+  width: 640rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #3AA5FF;
+  border-radius: 8px;
+  font-size: 34rpx;
+  color: #FFFFFF;
+}
+.list{
+  width: 100%;
+  height: 200rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+  position: relative;
+  border-bottom: 1rpx solid #f9f9f9;
+  padding: 58rpx 36rpx 52rpx 144rpx;
+}
+.f1{
+  font-size: 34rpx;
+  color: #1A1A1A;
+  font-weight: 600
+}
+.f2{
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #B3B3B3;
+}
+.f2>text:nth-child(2){
+  float: right;
+  font-size: 28rpx;
+  color: #9AE04F;
+}
+.list>image{
+  position: absolute;
+  top: 58rpx;
+  left: 34rpx
+}
+.hint{
+  height: calc(100vh - 470rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.hint>image{
+  width: 108rpx;
+  margin-bottom: 10rpx;
+}
+.unbind {
+  color: rgb(58, 165, 255);
+  font-size: 28rpx;
+  float: right;
+}

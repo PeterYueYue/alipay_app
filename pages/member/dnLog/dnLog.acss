@@ -1,0 +1,77 @@
+.page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000F9F;
+  background-size: 100% 100%;
+  position: relative;
+  padding-bottom: 120rpx;
+
+}
+
+.head{
+  width: 100%;
+  height: 426rpx;
+  position: relative;
+}
+.head .yuan{
+  width: 323rpx;
+  height: 145rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.head .logo{
+  width: 380rpx;
+  height: 96rpx;
+  position: absolute;
+  left: 192rpx;
+  top: 36rpx;
+}
+.head .ballL{
+  width: 86rpx;
+  height: 223rpx;
+  position: absolute;
+  left: 0;
+  top: 95rpx;
+}
+.head .title{
+  width: 524rpx;
+  height: 218rpx;
+  position: absolute;
+  left: 125rpx;
+  top: 165rpx;
+}
+
+
+
+image{
+  position: relative;
+  z-index: 2;
+}
+.pic1{
+  width: 704rpx;
+  height: 428rpx;
+  align-self: flex-start;
+}
+.pic2{
+  width: 701rpx;
+  height: 421rpx;
+  margin-top: 30rpx;
+  align-self: flex-end;
+}
+.pic3{
+  width: 704rpx;
+  height: 334rpx;
+  margin-top: 30rpx;
+  align-self: flex-start;
+}
+.ballR{
+  position: absolute;
+  right: 0;
+  top: 795rpx;
+  width: 135rpx;
+  height: 229rpx;
+  z-index: 0;
+}

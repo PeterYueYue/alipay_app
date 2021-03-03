@@ -1,0 +1,55 @@
+<view class="index_bar">
+  <view class="index_bar_main">
+    <!-- 首页 -->
+    <tab_index a:if="{{type == 'index'}}" userInfo="{{userInfo}}" maskFlag='{{maskFlag}}' media='{{media}}' background='{{background}}' onclosemask="onclosemask" onSwitchTab="onSwitchTab" ref="indexRef" />
+    <!-- 商城/拾尚包 -->
+    <tab_bao  a:if="{{type == 'bao' && userInfo.userFlag !==  1}}" onSwitchTab="onSwitchTab" userInfo="{{userInfo}}" ref="baoRef" />
+    <tab_shop a:if="{{type == 'bao' && userInfo.userFlag == 1}}" onSwitchTab="onSwitchTab" userInfo="{{userInfo}}" ref="shopRef" />
+    <!-- 订单 -->
+    <tab_order a:if="{{type == 'order'}}" onSwitchTab="onSwitchTab" userInfo="{{userInfo}}" id="order" ref="orderRef" />
+    <!-- 我的 -->
+    <tab_home a:if="{{type == 'home' && userInfo.userFlag !== 1}}" userInfo="{{userInfo}}" onSwitchTab="onSwitchTab" onclearStorage="onclearStorage" logins="{{logins}}" ref="homeRef" />
+    <tab_self a:if="{{type == 'home' && userInfo.userFlag == 1}}" userInfo="{{userInfo}}" onSwitchTab="onSwitchTab" onclearStorage="onclearStorage" logins="{{logins}}" ref="selfRef" />
+  </view>
+  <view class="tabBar {{isIphoneX?'bottom30':''}} ">
+    <view onTap="changePage" data-data='index' class="tabItem">
+      <image mode="scaleToFill" src="/image/nav/{{type=='index'?'index':'index_'}}.png"/>
+      <text class="{{type == 'index'?'active':''}}">首页</text>
+    </view>
+    <view onTap="changePage" data-data='bao' a:if="{{userInfo.userFlag == 1}}" class="tabItem">
+      <image mode="scaleToFill" src="/image/nav/{{type=='bao'?'bao':'bao_'}}.png"/>
+      <text class="{{type == 'bao'?'active':''}}">兑换中心</text>
+    </view>
+    <view onTap="changePage" data-data='bao' a:if="{{userInfo.userFlag !== 1}}" class="tabItem">
+      <image mode="scaleToFill" src="/image/nav/{{type=='bao'?'bao1':'bao1_'}}.png"/>
+      <text class="{{type == 'bao'?'active':''}}">拾尚包</text>
+    </view>
+    <!-- 扫一扫 -->
+    <view class="scan" onTap="scan">
+      <image mode="widthFix" onTap="scan" src="{{imgUrl1}}yy/index/ss.png"/>
+    </view>
+    <view class="tabItem"></view>
+    <view onTap="changePage" data-data='order' class="tabItem">
+      <image mode="scaleToFill" src="/image/nav/{{type=='order'?'order':'order_'}}.png"/>
+      <text class="{{type == 'order'?'active':''}}">订单</text>
+    </view>
+    <view onTap="changePage" data-data='home' class="tabItem">
+      <image mode="scaleToFill" src="/image/nav/{{type=='home'?'home':'home_'}}.png"/>
+      <text class="{{type == 'home'?'active':''}}">我的</text>
+    </view>
+  </view>
+</view>
+<!-- 减碳排放量达50kg送拾尚包弹窗 -->
+<!-- <view class="mask_" a:if="{{bagPopWindow}}">
+  <image class="pic" id="mide" mode="widthFix" catchTap="goSetAdd" src="{{imgUrlNew}}yy/index/0615.png"></image>
+  <image mode="widthFix" onTap="closebagPopWindow" src=" {{imgUrlNew}}yy/index/delete.png" class="btn"></image>
+</view> -->
+<!-- 分拣完成后送上门券通知弹窗 -->
+<view class="mask_" a:if="{{trueDeliverPopWindow}}">
+  <view class="picBox">
+    <image class="pic" onTap="closetrueDeliverPopWindow" mode="widthFix" src=" {{imgUrlNew}}yy/index/0927.png"></image>
+  </view>
+</view>
+
+
+

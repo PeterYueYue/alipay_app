@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="head">
+    <image class="pic" src="{{item.mainPic}}"/>
+  </view>
+  <view class="list">
+    <view a:for="{{productList.content}}" onTap="goDetails" data-item="{{item}}" a:key="index" class="subItem">
+      <view class="picBox">
+        <view class="tag" a:if="{{item.tag}}">{{item.tag}}</view>
+        <image class="pic" src="{{item.mainPic}}" />
+        <view class="titleBox" a:if="{{item.remark}}">
+          <view class="title">{{item.remark}}</view>
+        </view>
+        <image class="over"  a:if="{{item.stock==0}}" src="{{imgUrlNew+'yy/shop/over.png'}}" />
+      </view>
+      <view class="name">{{item.name}}</view>
+      <view class="jifen">
+        <image src="{{imgUrlNew+'yy/shop/bi2.png'}}" />
+        <text>{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="footer">- 已经到底了 -</view>
+</view>

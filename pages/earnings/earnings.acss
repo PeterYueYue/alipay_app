@@ -1,0 +1,169 @@
+.page {
+  height: 244rpx;
+  border-bottom: 1rpx solid #ededed;
+  position: relative;
+  background-color: #fff;
+}
+
+page {
+  background-color: #f5f5f5;
+}
+
+.img {
+  position: absolute;
+  width: 84rpx;
+  top: 80rpx;
+  left: 34rpx;
+}
+
+.text1 {
+  top: 44rpx;
+  left: 144rpx;
+  position: absolute;
+}
+
+.num {
+  font-size: 30rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+}
+
+.time {
+  font-size: 26rpx;
+  color: #B3B3B3;
+  margin-top: 12rpx;
+  margin-bottom: 26rpx;
+}
+
+.kg {
+  font-size: 26rpx;
+  color: #1A1A1A;
+}
+
+.more {
+  position: absolute;
+  font-size: 28rpx;
+  color: #3AA5FF;
+  top: 102rpx;
+  right: 32rpx;
+}
+
+/* 顶部 */
+
+.top {
+  height: 300rpx;
+  margin-bottom: 22rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  width: 250rpx;
+  text-align: center;
+  float: left;
+  flex: 1;
+}
+
+.topImg-box {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 52rpx 85rpx 34rpx;
+  text-align: center;
+  display: flex;
+  align-items: center
+}
+
+.topImg {
+  width: 100%;
+}
+
+.bigNum {
+  font-size: 40rpx;
+  color: #3AA5FF;
+}
+
+.smallNum {
+  font-size: 30rpx;
+  color: #3AA5FF;
+}
+
+.unit {
+  font-size: 30rpx;
+  color: #000;
+}
+
+.bottom {
+  font-size: 26rpx;
+  color: #808080;
+  margin-top: 6rpx;
+}
+
+/* 清除浮动 */
+
+.clearfix:after, .clearfix:before {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.hint {
+  height: calc(100vh - 322rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.hint>image {
+  width: 108rpx;
+  margin-bottom: 10rpx;
+}
+
+scroll-view {
+  height: calc(100vh - 322rpx);
+  background-color: #f5f5f5;
+}
+
+.order {
+  background: #ffffff;
+  margin-bottom: 20rpx;
+  width: 710rpx;
+  margin-left: 20rpx;
+  height: 200rpx;
+  box-sizing: border-box;
+  padding: 35rpx 28rpx;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order_img {
+  width: 84rpx;
+}
+
+.amount {
+  width: 300rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-left: 30rpx;
+}
+
+.name_box {}
+
+.earnings_name {
+  font-size: 30rpx;
+  font-weight: 600;
+  text-align: right;
+}
+
+.date {
+  text-align: right;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}

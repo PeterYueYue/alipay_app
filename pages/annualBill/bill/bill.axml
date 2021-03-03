@@ -1,0 +1,44 @@
+<view class="nav">
+</view>
+<!-- <view style="background:url({{imgUrl}}yy/bill/bg1.png) no-repeat;background-size: 100% 100%;" class="page">
+  <view style="background:url({{imgUrl}}yy/bill/cjd.png) no-repeat;background-size: 100% 100%;  margin-top: {{navH}}px;" class="content">
+    <view class="head">
+      <image  src="{{userInfo.headPortrait}}" alt=""/>
+      <view class="name">{{userInfo.nickName}}</view>
+    </view>
+    <view class="text_item">
+      加入拾尚回收已经 <text>211</text> 天
+    </view>
+    <view class="text_item">
+      这一年贡献了 <text>33</text> 公斤的可回收物
+    </view>
+    <view class="text_item">
+      为地球减少碳排放 <text>18</text> kg
+    </view>
+    <view class="text_item noborder">
+      2020年的可回收物由这些组成
+    </view>
+    <view class="chart">
+      <view class="headbox">
+        <view class="titlebox">
+          <view class="line"></view>
+          <view class="title">我的回收重量</view>
+        </view>
+        <view class="weight">33(kg)</view>
+      </view>
+      <view class="ring" >
+        <ff-canvas  a:if="{{showChart&&!share_mask}}"  id="guage-dom" id="guage" opts="{{opts}}"></ff-canvas>
+      </view>
+    </view>
+  </view>
+</view> -->
+
+<view class="canvas_box">
+  <canvas class="canvas" id="myCanvas" ></canvas>
+  <image  src="{{img}}" class="canvas_pic" ></image>
+  <view a:if="{{userInfo.userFlag == 1}}" class="btns">
+    <button  class="btn"  catchTap="save" style="background-image: url({{imgUrl+'yy/bill/pyq.png'}})"></button>
+    <button  class="btn" open-type="share" style="background-image: url({{imgUrl+'yy/bill/hy.png'}})"></button> 
+  </view>
+</view>
+

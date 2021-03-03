@@ -1,0 +1,5 @@
+<view class="exchange">
+  <input placeholder="请输入兑换码" type="text" placeholder-class="exInput" onInput="change"  />
+  <button size="default" type="primary" onTap="ex" a:if="{{click}}">兑换</button>
+  <button size="default" type="primary" loading a:else>兑换</button>
+</view>

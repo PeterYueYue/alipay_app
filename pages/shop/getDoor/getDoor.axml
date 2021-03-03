@@ -1,0 +1,58 @@
+<view class="page">
+  <view>
+    <image class="bg" mode="widthFix" src="{{imgUrlNew}}yy/shop/getDoorBG.png"></image>
+  </view>
+  <view class="new">
+    <view class="head">- 新手领券 -</view>
+    <view class="flex">
+      <view>
+        <view class="title"> 1.免费注册成为拾尚会员</view>
+        <view class="p1">赠送3张上门券</view>
+      </view>
+      <view>
+        <button  onTap="goMember">立即前往</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view>
+        <view class="title"> 2.关注生活号</view>
+        <view class="p1">赠送2张上门券</view>
+      </view>
+      <view>
+        <button>
+           立即前往 
+          <view class="lifestyle"> <lifestyle publicId="2019091767448436" onFollow="onFollow"/></view>
+        </button>
+      </view>
+    </view>
+  </view>
+  <!-- 老司机领券 -->
+  <view class="new old">
+    <view class="head">- 老司机领券 -</view>
+    <view class="flex">
+      <view>
+        <view class="title"> 1.参与每日10点、20点登录活动</view>
+        <view class="p1">每次可领取1张上门券</view>
+      </view>
+      <view>
+        <button  onTap="goZddlu">立即前往</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view>
+        <view class="title"> 2.好友助力</view>
+        <view class="p1">助力成功可领取1张上门券</view>
+      </view>
+      <view>
+        <button  onTap="goFriend">立即前往</button>
+      </view>
+    </view>
+    <view class="flex">
+      <view>
+        <view class="title"> 3.正确参与环保回收</view>
+        <view class="p1">赠送1张上门券，</view>
+        <view class="p1">分享小程序可再获得1张</view>
+      </view>
+    </view>
+  </view>
+</view>

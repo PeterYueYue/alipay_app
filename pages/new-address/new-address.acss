@@ -1,0 +1,126 @@
+page {
+  background-color: #fff;
+  height: 100%;
+}
+
+.form {
+  height: 120rpx;
+  line-height: 120rpx;
+  position: relative;
+  border-bottom: 1rpx solid #ededed;
+}
+
+.form-name {
+  font-size: 28rpx;
+  color: #1A1A1A;
+  height: 120rpx;
+  margin-left: 32rpx;
+}
+
+.form-inp {
+  position: absolute;
+  top: 20rpx;
+  right: 32rpx;
+  text-align: right;
+}
+
+.placeholder {
+  font-size: 28rpx;
+  color: #ccc;
+  text-align: right;
+}
+
+.addValue {
+  float: right;
+  margin-right: 60rpx
+}
+
+.form-choose {
+  position: absolute;
+  top: 0rpx;
+  right: 34rpx;
+}
+
+.right {
+  width: 20rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+}
+
+.new-add {
+  background: #3AA5FF;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 34rpx;
+  margin: 160rpx 54rpx;
+}
+
+/* 默认地址 */
+
+.checkbox {
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+shared-checkbox {
+  transform: scale(0.75);
+  vertical-align: top;
+}
+
+.checkbox-text {
+  float: right;
+  margin-top: 8rpx;
+}
+
+.checkbox-text {
+  font-size: 26rpx;
+  line-height: 1.2;
+  color: #808080;
+  margin-left: 12rpx;
+}
+
+/* checkbox{
+  width: 26rpx;
+  height: 26rpx;
+} */
+
+.defaultAdd {
+  float: right;
+  margin: 22rpx 36rpx 0 0;
+}
+
+.zhezhao {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.zhezhao .alibox {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.zhezhao .pvbox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 100rpx;
+}
+
+.zhezhao .pvbox .cancel {
+  margin-left: 30rpx;
+  color: #0091F5;
+}
+
+.zhezhao .pvbox .queding {
+  margin-right: 30rpx;
+}

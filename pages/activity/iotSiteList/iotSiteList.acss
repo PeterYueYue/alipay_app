@@ -1,0 +1,82 @@
+.list{
+  background-color: #F8F8F8;
+}
+.item{
+  padding: 0 56rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding-top: 36rpx;
+
+}
+.item .pic{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 10rpx;
+}
+.item .content{
+  display: flex;
+  width: 100%;
+  margin-bottom: 30rpx;
+
+}
+.item .content .title{
+  font-size: 32rpx;
+  color: #333333;
+}
+.item .content .time{
+  font-size: 26rpx;
+  color: #999999;
+}
+.item .content .distance{
+  color: #38A4FF;
+  font-size: 26rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+}
+.item .content .distance::before{
+  display: inline-block;
+  width: 18rpx;
+  height: 24rpx;
+  background: url("https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/family/loc.png") no-repeat;
+  background-size: 100% 100%;
+  content: "";
+  vertical-align: top;
+  margin-top: 6rpx;
+  margin-right: 10rpx;
+}
+.content .info{
+  flex: 1;
+  margin-left: 24rpx;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+}
+.content .info .time{
+  margin-top: 24rpx;
+}
+.item .foot {
+  font-size: 24rpx;
+  color: #756161;
+  display: flex;
+  align-items: center;
+  border-top: 1px dashed #E5E5E5;
+  height: 110rpx;
+}
+.foot .address{
+  flex: 1;
+}
+.item .arrow{
+  width: 16rpx;
+  height: 16rpx;
+  border-right: 2px solid #999999;
+  border-bottom: 2px solid #999999;
+  transform:rotate(-45deg);
+  margin-left: 60rpx;
+  margin-right: 25rpx;
+  
+
+
+}

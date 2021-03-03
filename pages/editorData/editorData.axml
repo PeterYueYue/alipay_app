@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="head">
+    <view class="head_box" onTap="upload">
+      <image class="head_img" mode="aspectFill" src="{{headUrl}}"/>
+      <image class="head_bg" mode="widthFix" src="{{imgUrl}}home/head.png"/>
+    </view>
+    <view class="head_text">点击更换头像</view>
+  </view>
+  <view class="editor">
+    <text class="editor_text">昵称：</text>
+    <input class="editor_input" value="{{name}}" maxlength="6" onInput="onInput" />
+  </view>
+  <view class="btn" onTap="submit">
+    保存
+  </view>
+</view>

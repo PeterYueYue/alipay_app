@@ -1,0 +1,37 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 0 40rpx 50rpx;
+}
+.send {
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.radio {
+  width: 100%;
+}
+.radio radio {
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.checkbox {
+  width: 100%;
+}
+.list {
+  margin-top: 40rpx;
+  font-size: 32rpx;
+}
+.question {
+  margin-bottom: 10rpx;
+  font-weight: 600;
+}
+.reason {
+  width: 100%;
+  border: 1rpx solid #aaa;
+  margin-top: 10rpx;
+}
+button {
+  margin-top: 60rpx;
+}

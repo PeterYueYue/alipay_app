@@ -1,0 +1,630 @@
+.self_page {
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding-bottom: 30rpx;
+}
+
+.self_page .self_head {
+  height: 390rpx;
+   background: url('http://image.shishangbag.vip/upload/img/web/yy/member/normalbg.png') no-repeat;
+   background-size: 100% 100%;
+}
+.self_page .self_head_plus {
+  height: 390rpx;
+  background: url('http://image.shishangbag.vip/upload/img/web/yy/member/plusbg.png') no-repeat;
+  background-size: 100% 100%;
+}
+
+.self_page .info {
+  width: 690rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 1px 1rpx 17rpx 1rpx rgba(2, 17, 54, 0.16);
+  border-radius: 20rpx;
+  margin: -240rpx auto 0;
+  position: relative;
+  padding: 20rpx 25rpx 0;
+  box-sizing: border-box;
+  padding-bottom: 30rpx;
+}
+.self_page  .info_flex {
+  display: flex;
+}
+.self_page .headImg {
+  width: 176rpx;
+  height: 176rpx;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 8rpx 8rpx;
+  position: relative;
+}
+.self_page .headImg_plus {
+  background: url('http://image.shishangbag.vip/upload/img/web/yy/member/plushead.png') no-repeat;
+  background-size: 100% 100%;
+} 
+
+.self_page .headImg .head {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 50%;
+  margin: 4rpx 8rpx 0 0;
+}
+.self_page .plus_icon{
+  width: 74rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50rpx;
+}
+
+.self_page .nickname {
+  color: #333;
+  font-size: 34rpx;
+  line-height: 45rpx;
+  margin-top: 44rpx;
+  text-indent: 10rpx;
+  max-width: 248rpx;
+}
+.self_page .info .level_pic {
+  width: 210rpx;
+  margin: 0 auto;
+  display: block;
+  margin-top: 15rpx;
+}
+.self_page .level {
+  text-align: center;
+  width: 172rpx;
+  height: 30rpx;
+  background: rgba(255, 185, 35, 1);
+  border-radius: 15px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 19rpx;
+  line-height: 35rpx;
+}
+
+.self_page .level image {
+  width: 17rpx;
+}
+
+.self_page .bill {
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: linear-gradient(179deg, rgba(107, 228, 254, 0.88), rgba(0, 139, 255, 0.88));
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  position: absolute;
+  color: #fff;
+  right: 0rpx;
+  top: 60rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-indent: 15rpx;
+}
+
+.self_page .bill image {
+  width: 36rpx;
+}
+/* 本次收益 */
+.self_page .expect {
+  height: 53rpx;
+  background-image: linear-gradient(175deg, rgba(255, 175, 4, 0.88) 0%, rgba(248, 116, 2, 0.88) 46%, rgba(240, 56, 0, 0.88) 100%), linear-gradient( #ffffff, #ffffff);
+  background-blend-mode: normal, normal;
+  margin: 10rpx auto 0;
+  border-radius: 26rpx;
+  position: relative;
+  font-size: 20rpx;
+}
+
+.self_page .triangle {
+  width: 0rpx;
+  height: 0rpx;
+  border-left: 8rpx solid transparent;
+  border-right: 8rpx solid transparent;
+  border-top: 22rpx solid #f88221;
+  position: absolute;
+  top: 53rpx;
+  left: 70rpx;
+}
+
+.self_page .gold {
+  width: 33rpx;
+  height: 32rpx;
+  animation: bounce-down 1.8s linear infinite;
+}
+
+.self_page .prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/* 收益信息 */
+.self_page .nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 20rpx 0 0rpx;
+  text-align: center;
+}
+
+.self_page .bodys {
+  margin-top: 20rpx;
+  background: #ffffff;
+}
+
+.self_page .tool {
+  width: 100%;
+  height: 100rpx;
+  position: relative;
+}
+
+.self_page .first {
+  margin-top: 32rpx;
+  width: 126rpx;
+  float: left;
+}
+
+.self_page .first image {
+  width: 16px;
+}
+
+.self_page .first>image {
+  display: block;
+  margin: auto
+}
+
+.self_page .second {
+  font-size: 28rpx;
+  color: #1A1A1A;
+  margin-top: 34rpx;
+  float: left
+}
+
+.self_page .third {
+  width: 14rpx;
+  height: 24rpx;
+  margin-top: 32rpx;
+  margin-right: 34rpx;
+  float: right;
+  font-size: 36rpx;
+  color: #ccc;
+}
+
+/* 我的环保推广人 */
+
+.self_page .extend {
+  width: 690rpx;
+  height: 472rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 1rpx 1rpx 17rpx 1rpx rgba(2, 17, 54, 0.16);
+  border-radius: 20rpx;
+  margin: 22rpx auto 0;
+  box-sizing: border-box;
+  padding: 42rpx 30rpx 0 42rpx;
+}
+
+.extend .extend_head {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 50rpx;
+  justify-content: space-between;
+}
+
+.extend .extend_head .h1 {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.extend .extend_head .h2 {
+  font-size: 32rpx;
+  color: #FCA522;
+}
+
+.extend .extend_head .tx {
+  max-width: 135rpx;
+  margin-right: 20rpx;
+}
+
+.extend .extend_head .tx image {
+  width: 34rpx;
+  height: 34rpx;
+  float: left;
+  margin-left: -10rpx;
+  border-radius: 50%;
+}
+.extend .extend_head .tx image:nth-child(1) {
+  margin-left: 0;
+}
+
+.extend .extend_head .tips {
+  width: 20rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+
+.extend .extend_head .rule {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.extend .p1 {
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 60rpx;
+}
+
+.extend .p2 {
+  font-size: 22rpx;
+  font-weight: 400;
+  color: rgba(171, 171, 171, 1);
+  line-height: 50rpx;
+}
+.extend .h5 {
+  width:100%;
+  height:53rpx;
+  line-height: 53rpx;
+  background-image: linear-gradient(to right, #fff 0%, rgba(254,102,72,1) 30%,rgba(254,102,72,1) 70%,#fff 100%);
+  background-image: -webkit-linear-gradient(to right, #fff 0%, rgba(254,102,72,1) 30%,rgba(254,102,72,1) 70%,#fff 100%);
+  text-align: center;
+  color: #fff;
+  text-shadow: 1rpx 1rpx 3rpx rgba(181,14,0,0.79);
+}
+.extend .score {
+  display: flex;
+  justify-content: space-around;
+  font-size:22rpx;
+  color: #ABABAB;
+  height: 80rpx;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 100rpx;
+}
+.extend .score text {
+  color: #FF7800;
+  font-size:42rpx;
+}
+.extend .progressBox {
+  width: 100%;
+  height: 26rpx;
+  line-height: 26rpx;
+  font-size: 18rpx;
+  color: #F98321;
+  text-align: center;
+  position: relative;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+.extend .tips {
+  position: relative;
+  z-index: 2;
+}
+
+.extend .progressBox .line {
+  background: linear-gradient(175deg, rgba(255, 175, 4, 0.88), rgba(240, 56, 0, 0.88));
+  border-radius: 20rpx;
+  height: 100%;
+  width: 150rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.extend button {
+  width: 484rpx;
+  height: 72rpx;
+  background: linear-gradient(175deg, rgba(253, 111, 29, 0.88), rgba(237, 47, 101, 0.88));
+  border-radius: 36rpx;
+  color: rgba(255, 255, 255, 1);
+  line-height: 72rpx;
+  border: none;
+  margin: 0 auto;
+}
+
+/* 我的服务 */
+
+.self_page .sevice_head {
+  margin: 37rpx 0 0;
+  text-align: center;
+  font-size: 34rpx;
+  color: #333;
+  line-height: 34rpx;
+}
+
+.self_page .sevice_head text {
+  display: inline-block;
+  width: 60rpx;
+  height: 7rpx;
+  border-radius: 4rpx;
+  vertical-align: middle;
+  margin: 0 25rpx;
+}
+
+.self_page .sevice_head text:nth-child(1) {
+  background-image: linear-gradient(to right, #fff, rgba(58, 165, 255, 1));
+  background-image: -webkit-linear-gradient(to right, #fff, rgba(58, 165, 255, 1));
+}
+
+.self_page .sevice_head text:nth-last-child(1) {
+  background-image: linear-gradient(to right, rgba(58, 165, 255, 1), #fff);
+  background-image: -webkit-linear-gradient(to right, rgba(58, 165, 255, 1), #fff);
+}
+
+.self_page .sevice {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: baseline;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 50rpx 30rpx 45rpx;
+}
+
+.self_page .sevice>view {
+  width: 25%;
+  font-size: 28rpx;
+  height: 160rpx;
+  position: relative;
+}
+
+.self_page .sevice image {
+  width: 65rpx;
+  height: 65rpx;
+  margin-bottom: 23rpx;
+}
+
+.self_page .buttoms {
+  text-align: center;
+  font-size: 22rpx;
+  color: #BFBFBF;
+  background: #ffffff;
+  box-sizing: content-box;
+}
+
+.self_page .call {
+  color: #74c0ff;
+  text-decoration: underline;
+  margin-right: 10rpx;
+}
+
+.self_page .foots {
+  width: 100%;
+  background: #ffffff;
+  padding: 32rpx 0 44rpx 0;
+  box-sizing: border-box;
+}
+
+.self_page .foots button {
+  border-style: none;
+  width: 310rpx;
+  height: 66rpx;
+  border-radius: 33rpx;
+  border: 1rpx solid #3ea7ff;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #58b1ff;
+  line-height: 70rpx;
+}
+
+/* 在线客服 */
+
+.self_page contact-button {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  /* background-color: red; */
+  z-index: 10;
+}
+
+.level_content {
+  width: 600rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 50rpx 50rpx 25rpx 40rpx;
+}
+
+.level_content .close {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 28rpx;
+  height: 30rpx;
+}
+
+.now {
+  font-size: 34rpx;
+  color: rgba(51, 51, 51, 1);
+  line-height: 70rpx;
+}
+
+.now text {
+  display: inline-block;
+  width: 6rpx;
+  height: 32rpx;
+  background: rgba(58, 165, 255, 1);
+  border-radius: 3rpx;
+  margin-right: 13rpx;
+}
+
+.mask .level {
+  margin-left: 0;
+}
+.mask .level_pic {
+  width: 172rpx;
+} 
+.progressBox {
+  max-width: 100%;
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 8px;
+  background-color: rgba(220, 220, 220, 1);
+  text-align: center;
+  position: relative;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+}
+
+.tips {
+  position: relative;
+}
+
+.progressBox .line {
+  background-color: rgba(255, 185, 35, 1);
+  border-radius: 20rpx;
+  height: 100%;
+  width: 150rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.step {
+  height: 20rpx;
+  font-size: 20rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  display: flex;
+  margin-top: 25rpx;
+}
+
+.step view:nth-child(2) {
+  text-align: right;
+}
+
+.level_img {
+  width: 100%;
+  height: 320rpx;
+}
+
+.level_content .p1 {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.level_content .p2 {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  text-decoration: underline;
+  color: rgba(62, 167, 255, 1);
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.level_content .p3 {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 70rpx;
+  text-indent: 15rpx
+}
+
+.level_content .p4 {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 36rpx;
+  margin-top: 25rpx;
+}
+
+.level_content .p4 text {
+  color: #3EA7FF;
+}
+
+.table {
+  display: flex;
+  line-height: 82rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+  font-weight: 400;
+  line-height: 70rpx;
+  color: rgba(58, 165, 255, 1);
+  border: 1rpx solid rgba(58, 165, 255, 1);
+  text-align: center;
+  overflow: hidden;
+}
+
+.table .title {
+  background: rgba(195, 222, 255, 1);
+  color: rgba(58, 165, 255, 1);
+}
+
+.table>view {
+  width: 33.3%;
+}
+
+.table>view:nth-child(2) {
+  border-left: 1rpx solid rgba(58, 165, 255, 1);
+  border-right: 1rpx solid rgba(58, 165, 255, 1);
+}
+/* 兴业银行红包 */
+.self_page .box {
+  width: 512rpx;
+  height: 648rpx;
+  text-align: center;
+  position: relative;
+}
+
+.self_page .box1 {
+  width: 568rpx;
+  height: 575rpx;
+  text-align: center;
+  position: relative;
+}
+
+.self_page .top_text {
+  color: #a96f41;
+  margin-top: 105rpx;
+}
+
+.self_page .red_money {
+  color: #f73c37;
+  font-size: 133rpx;
+  margin-top: 20rpx;
+}
+
+.self_page .symbol {
+  font-size: 31rpx;
+  font-weight: 600;
+}
+
+.self_page .bottom_text {
+  font-size: 24rpx;
+  color: #ffd899;
+  margin-top: 110rpx;
+  padding: 0 32rpx;
+}
+
+/* .popup {
+  width: 60%;
+  margin-top: 95%;
+} */
+.box .close,.box1 .close {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: -91rpx;
+  right: 10rpx;
+}
+

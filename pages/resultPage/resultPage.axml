@@ -1,0 +1,33 @@
+<view class="page" >
+
+  <image class="resultImg"  src="{{imgUrl}}provider/ordersuccess.png" ></image>
+  <view class="title">预约成功</view>
+  <view class="subTitleBox">
+    <text>-</text>
+    <text class="subtitle">回收小贴士</text>
+    <text>-</text>
+  </view>
+  <view class="content">
+    <view class="titel">折叠好纸板箱，踩扁易拉罐、塑料瓶，洗净衣物、牛奶盒的益处:</view>
+    <view class="list">
+      <view class="item">1.每次回收可增加回收量从而提高收益。</view>
+      <view class="item">2.有助于回收人员快速回收，节省您的的宝贵时间。</view>
+      <view class="item">3.不易在运输途中出现掉落、遗失等风险。</view>
+      <view class="item">4.洗净的回收物不易产生异味滋生细菌等，守护分拣人员人生安全。</view>
+    </view>
+  
+  </view>
+  <image class="thanks" src="{{imgUrl}}provider/thanks.png" ></image>
+  <view class="btnBox">
+    <view onTap="goDetail" class="detail btn">查看详情</view>
+    <view onTap="backHome" class="back btn">返回首页</view>
+  </view>
+
+
+</view>
+
+
+                                
+
+
+                            

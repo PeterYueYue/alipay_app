@@ -1,0 +1,42 @@
+<view class="page" style="background-image: url({{imgUrl}}carnival/t_bg.png);">
+  <view class="title">
+    <view>获奖排行</view>
+    <image mode="widthFix" src="{{imgUrl}}carnival/t_Top50.png"/>
+  </view>
+  <scroll-view scroll-y="{{true}}" class="toplist">
+    <view class="no" a:if="{{noList}}">暂无数据</view>
+    <view class="topitem" a:if="{{rankList.length>0}}">
+      <image mode="scaleToFill" class="ranking" src="{{imgUrl}}carnival/t_1.png"/>
+      <view class="t1bg" style="background-image: url({{imgUrl}}carnival/t_t1.png);">
+        <image mode="widthFix" class="t1" src="{{rankList[0].headPortrait?rankList[0].headPortrait:imgUrl+'carnival/t_t.png'}}"/>
+      </view>
+      <view class="name ell {{rankList[0].mine?'oneself':''}}">{{rankList[0].nickName}}</view>
+      <view class="prize">{{rankList[0].prizeName}}</view>
+    </view>
+    <view class="topitem" a:if="{{rankList.length>1}}">
+      <image mode="scaleToFill" class="ranking" src="{{imgUrl}}carnival/t_2.png"/>
+      <view class="t2bg" style="background-image: url({{imgUrl}}carnival/t_t2.png);">
+        <image mode="widthFix" class="t1" src="{{rankList[1].headPortrait?rankList[1].headPortrait:imgUrl+'carnival/t_t.png'}}"/>
+      </view>
+      <view class="name ell {{rankList[1].mine?'oneself':''}}">{{rankList[1].nickName}}</view>
+      <view class="prize">{{rankList[1].prizeName}}</view>
+    </view>
+    <view class="topitem" a:if="{{rankList.length>2}}">
+      <image mode="scaleToFill" class="ranking" src="{{imgUrl}}carnival/t_3.png"/>
+      <view class="t3bg" style="background-image: url({{imgUrl}}carnival/t_t3.png);">
+        <image mode="widthFix" class="t3" src="{{rankList[2].headPortrait?rankList[2].headPortrait:imgUrl+'carnival/t_t.png'}}"/>
+      </view>
+      <view class="name ell {{rankList[2].mine?'oneself':''}}">{{rankList[2].nickName}}</view>
+      <view class="prize">{{rankList[2].prizeName}}</view>
+    </view>
+    <view class="topitem" a:for="{{list}}">
+      <view class="mingci {{item.mine?'oneself':''}}">{{index+4}}</view>
+      <view class="tou">
+        <image mode="widthFix" class="t1" src="{{item.headPortrait?item.headPortrait:imgUrl+'carnival/t_t.png'}}"/>
+      </view>
+      <view class="name ell {{item.mine?'oneself':''}}">{{item.nickName}}</view>
+      <view class="prize">{{item.prizeName}}</view>
+    </view>
+  </scroll-view>
+  <view class="btn" onTap="tap" style="background-image: url({{imgUrl}}carnival/t_btn.png);"></view>
+</view>

@@ -1,0 +1,197 @@
+page {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bgc {
+  width: 750rpx;
+}
+
+.top {
+  position: relative;
+  color: #fff;
+}
+
+.num {
+  position: absolute;
+  left: 0;
+  top: 172rpx;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.num-num {
+  font-size: 54rpx;
+}
+
+.num-text {
+  font-size: 26rpx;
+}
+
+.earnings {
+  position: absolute;
+  top: 334rpx;
+  width: 300rpx;
+  text-align: center;
+}
+
+.earnings-num {
+  font-size: 30rpx;
+}
+
+.earnings-text {
+  font-size: 26rpx;
+  margin-top: 6rpx;
+}
+
+.kg {
+  right: 0;
+}
+
+.redBag {
+  position: absolute;
+  left: 0rpx;
+  top: 284rpx;
+  font-size: 22rpx;
+  width: 750rpx;
+  text-align: center;
+}
+
+.hint {
+  border-bottom: 20rpx solid #fafafa;
+}
+
+.hint-img {
+  width: 26rpx;
+  margin: 0 18rpx 0 34rpx;
+  vertical-align: top;
+}
+
+.hint-text {
+  font-size: 24rpx;
+  color: #808080;
+  width: 640rpx;
+  display: inline-block;
+  margin-bottom: 32rpx;
+}
+
+.money {
+  font-size: 28rpx;
+  color: #1a1a1a;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+}
+
+.money-text {
+  color: #999;
+  font-size: 22rpx;
+  font-weight: 400;
+  margin-left: 6rpx;
+}
+
+.withdraw {
+  padding: 40rpx 32rpx;
+  box-sizing: border-box;
+  width: 750rpx;
+}
+
+.flex {
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: flex-end; */
+  /* align-items: center; */
+  margin-top: 40rpx;
+}
+.flex_money_box{
+  box-sizing: border-box;
+  padding-top: 25rpx;
+}
+
+.flex_money {
+  font-size: 34rpx;
+  font-weight: 700;
+  margin-right: 24rpx;
+}
+
+.flex_money_num {
+  font-size: 64rpx;
+  font-weight: 700;
+}
+
+/* input {
+  flex: 1.5;
+  height: 80rpx;
+  font-size: 64rpx;
+  font-weight: 700;
+} */
+
+.withdraw-but {
+  flex: 0.5;
+  width: 112rpx;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 28rpx;
+  color: #3AA5FF;
+  margin-top: 20rpx;
+}
+
+/* 提现按钮 */
+
+.defaultAdd {
+  width: 100%;
+  font-size: 30rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+  margin-top: 50rpx;
+}
+
+radio-group {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+/* .zfb .yhk {
+  flex: 1;
+} */
+
+/* #zfb, #card {
+  margin-top: 4rpx;
+  float: left;
+  transform: scale(0.75);
+} */
+
+.yhk {
+  margin-left: 45rpx;
+}
+
+.defaultAdd label {
+  vertical-align: middle;
+}
+
+/* button */
+
+#new-add {
+  background: #3AA5FF;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 34rpx;
+  margin: 140rpx 54rpx;
+}
+
+.gary {
+  opacity: 0.5
+}
+
+.fanxian {
+  width: 351rpx;
+  position: absolute;
+  right: 95rpx;
+  top: 942rpx;
+}
+
+.fanxian image {
+  width: 100%;
+}

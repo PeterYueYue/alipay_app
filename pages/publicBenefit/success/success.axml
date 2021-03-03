@@ -1,0 +1,35 @@
+<view class="page">
+  <view class="bg1"></view>
+  <view class="content">
+
+    <view a:if="{{item.projectType == '0'}}" class="text">
+      拾尚币捐赠将在每个月月底由上海睿斯科环保科技有限公司进行统一公对公转账，转账记录可在项目追踪栏查看。捐赠将扣除手续费，最终捐赠比例为1比0.8。
+    </view>
+    <view a:if="{{item.projectType == '1'}}" class="text">
+      感谢您的爱心捐赠！为了方便拾尚回收及时校对和跟踪捐赠情况，请您如实填写捐赠数量及快递运单号，为感谢您对拾尚回收工作的支持和理解，后续我们会对优质用户的捐赠行为给予一定的运费补助。
+    </view>
+    <text a:if="{{item.projectType == '1'}}" class="tips">注：捐赠物品必须经过清洗消毒处理，保持物品干净整洁，如收到虚假捐赠、不当捐赠的反馈，拾尚回收有权对您的账号进行锁定。</text>
+
+  </view>
+  
+  
+  <view class="bg2">
+    <view onTap="backHome" class="btn1">返回首页</view>
+    <view onTap="generate_certificate" class="btn2">生成证书</view>
+  </view>
+
+
+
+</view>
+
+<!-- 捐赠积分证书展示 -->
+<view class="mask_" a:if="{{msak}}">
+  <view class="mainbox">
+    <view class="canvasBox">
+      <canvas class="canvas-hide" id="myCanvas" style="width:{{canvasWidth*2}}rpx;height:{{canvasHeight*2}}rpx" />
+      <image class="canvasimage" src="{{imageFile}}" mode="aspectFill" />
+    </view>
+    <view class="tips">下载证书传递爱心</view>
+    <view class="btn" onTap="handleSave" >保存图片</view>
+  </view>
+</view>

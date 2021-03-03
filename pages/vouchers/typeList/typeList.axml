@@ -1,0 +1,72 @@
+<view class="page">
+  <view class="typeList">
+    <!-- 下单 -->
+    <view class="typeItem">
+      <view class="head">
+        <view class="title">
+          <view class="line"></view>
+          <view>回收券</view>
+        </view>
+        <view onTap="goVouList" data-data="voucherList" class="all">查看全部（{{voucherList.totalElements}}张）</view>
+      </view>
+      <view class="subList">
+        <view a:for="{{voucherList.content}}" a:key="{{index}}" class="subItem">
+          <view class="picBox">
+            <image class="img" mode="widthFix" src="{{item.pic}}"></image>
+          </view>
+          <view class="voucherInfo">
+            <view class="title2">{{item.voucherName}}</view>
+            <view class="title3">·{{item.remark}}</view>
+            <view class="title3">·{{item.description}}</view>
+            <view class="title3">·{{item.endDate}} 过期</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 商城 -->
+    <view class="typeItem" a:if="{{couponList.content.length>0}}">
+      <view class="head">
+        <view class="title">
+          <view class="line"></view>
+          <view>福利中心券</view>
+        </view>
+        <view onTap="goVouList" data-data="couponList" class="all">查看全部（{{couponList.totalElements}}张）</view>
+      </view>
+      <view class="subList">
+        <view a:for="{{couponList.content}}" a:key="{{index}}" class="subItem">
+          <view class="picBox">
+            <image class="img" mode="widthFix" src="{{item.pic}}"></image>
+          </view>
+          <view class="voucherInfo">
+            <view class="title2">{{item.couponName}}</view>
+            <view class="title3">·{{item.remark}}</view>
+            <!--<view class="title3">·{{item.description}}</view>  -->
+            <view class="title3">·{{item.endDate}} 过期</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 卡券 3 -->
+    <view a:if="{{cardCodeList.length}}" class="typeItem">
+      <view class="head">
+        <view class="title">
+          <view class="line"></view>
+          <view>优惠券</view>
+        </view>
+        <view onTap="goCardCodeList" data-data="cardCodeList" class="all">查看全部（{{caerCodeTotal}}张）</view>
+      </view>
+      <view class="subList">
+        <view a:for="{{cardCodeList}}" a:key="{{index}}" class="subItem" onTap="goCardCodeList">
+          <view class="picBox">
+            <image class="img" mode="widthFix" src="{{item.pic}}"></image>
+          </view>
+          <view class="voucherInfo">
+            <view class="title2">·{{item.mainTitle}}</view>
+            <view class="title3">·{{item.subtitle}}</view>
+            <view class="title3">·{{item.validStart}}至{{item.validEnds}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

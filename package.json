@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@antv/my-f2": "^1.1.6",
+    "ant-mini-flip-draw": "^1.0.2",
+    "mini-antui": "^0.4.31",
+    "mini-html-parser2": "^0.1.4"
+  }
+}

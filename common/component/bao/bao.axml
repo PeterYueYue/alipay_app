@@ -1,0 +1,39 @@
+<view class="bao_page">
+  <view style="height: 160rpx;background-color: #fff;"></view>
+  <view class="main">
+    <!-- 用户头部 -->
+    <view class="top" a:if="{{type == 1}}" style="background: url({{imgUrl}}bao/9.png) no-repeat;background-size:100% 100%">
+      <view>前往获取更多绑定资格</view>
+      <view>当前可绑定数量：{{bagCount}}</view>
+    </view>
+    <!-- 企业头部 -->
+    <view class="tops" a:else style="background: url({{imgUrl}}bao/1.png) no-repeat;background-size:100% 100%">
+    </view>
+    <view class="active">
+      <text>{{active}}</text>
+      <image style="width:28rpx;height:28rpx" src="{{imgUrl+'bao/4.png'}}"></image>
+    </view>
+    <view class="btn" a:if="{{type == 1}}">
+      <view class="userBtn l gray" a:if="{{bagCount==0}}">立即绑定</view>
+      <view class="userBtn l " a:else onTap="toBind">立即绑定</view>
+      <view class="userBtn r" onTap="getBag">成为会员</view>
+    </view>
+    <view class="btn" a:else>
+      <view class="boss" onTap="toBind">立即绑定</view>
+    </view>
+  </view>
+  <!-- 袋子列表 -->
+  <view class="hint" a:if="{{status == 1}}">
+    <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+    <text>没有绑定拾尚包，请去绑定</text>
+  </view>
+  <view class="list" a:else a:for="{{list}}" key="{{index}}">
+    <view class="f1">拾尚包：{{item.bagCode}} <text class="unbind" onTap="unbind" data-id="{{item}}">解除绑定</text></view> 
+    <view class="f2">
+      <text>绑定时间：{{item.createDate}}</text>
+      <text>{{item.state==1?"已绑定":item.state==2?"待回收":item.state==3?"待分拣":item.state==4?"已分拣":"完成"}}</text>
+    </view>
+    <image style="width:84rpx;height:84rpx" src="{{imgUrl+'bao/7.png'}}"></image>
+  </view>
+
+</view>

@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="love">
+    <view a:for="{{donationList}}" a:key="index" onTap="gobenefitDetail" data-data="{{item}}" class="loveItem">
+      <image src="{{item.miniMainUrl}}" class="pic"></image>
+      <view class="info">
+        <view class="title">{{item.projectName}}</view>
+        <view class="subTitle">{{item.synopsis}}</view>
+        <view class="progressBox">
+          <view style="width:{{item.schedule}}%;" class="line"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

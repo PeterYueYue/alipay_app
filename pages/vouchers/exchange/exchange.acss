@@ -1,0 +1,38 @@
+.exchange {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.exchange input {
+  display: block;
+  width: 690rpx;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1rpx solid rgba(191, 191, 191, 1);
+  border-radius: 10rpx;
+  margin: 40rpx auto 0;
+  text-align: center;
+  font-size: 40rpx;
+}
+.exchange .exInput {
+  color: rgba(191, 191, 191, 1);
+  font-size: 32rpx;
+  font-weight: 400;
+  text-align: left;
+  text-indent: 40rpx;
+}
+
+.exchange button {
+  width: 400rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  background: rgba(58, 165, 255, 1);
+  border-radius: 40rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  margin: 52rpx auto;
+  text-align: center;
+}

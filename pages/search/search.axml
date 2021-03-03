@@ -1,0 +1,14 @@
+<view class="page">
+  <!--<search-bar value="{{value}}" placeholder="搜索" onInput="handleInput" onClear="handleClear" onFocus="handleFocus" onBlur="handleBlur" onCancel="handleCancel" showCancelButton="{{false}}" /> -->
+  <view class="search-wrap" onTap="search">
+    <input placeholder="搜索垃圾  查看分类" placeholder-class="placeholder" onInput="handleInput" focus="{{true}}" enableNative="{{false}}"/>
+    <image mode="widthFix" src="{{imgUrl}}bag/search.png" />
+  </view>
+  <scroll-view scroll-y="{{true}}" class="list">
+    <view class="detail ell" a:for="{{list}}" key="{{index}}">
+      <text>{{item.categoryName}}</text>
+      <text>{{item.parentId == 1?"湿垃圾":item.parentId == 2?"干垃圾":item.parentId == 3?"可回收物":"有害垃圾"}}</text>
+      <!-- <text>{{item.isRegenerant == 1 ? "拾尚包可回收" : ""}}</text> -->
+    </view>
+  </scroll-view>
+</view>

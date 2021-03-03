@@ -1,0 +1,207 @@
+<view class="page">
+  <view class="waitingSorting" a:if="{{orderInfo.recycleState==1&&orderInfo.reciveState == 0}}">
+    <view class="orderFlag">
+      <image class="flagImg" style="width:116rpx" mode="widthFix" src="{{imgUrl}}order/waitingSorting.png"/>
+      <view class="flagText">等待分拣ing</view>
+    </view>
+    <view>
+      <view class="order_box">
+        <view class="order_title">
+          <view class="order_num">订单编号：{{orderInfo.orderCode}}</view>
+          <view class="order_flag">待分拣</view>
+        </view>
+        <view class="departmentName" a:if="{{orderInfo.departmentName}}">部门：{{orderInfo.departmentName}}</view>
+        <view class="order_text">
+          <view>等待进入分拣中心...</view>
+          <view>预称重：{{orderInfo.totalWeighed}}kg</view>
+        </view>
+      </view>
+      <view class="steps_box">
+        <view class="steps">
+          <text class="round"></text>
+          <text class="r_text">创建时间</text>
+          <text class="r_time">{{orderInfo.createDate}}</text>
+          <view class="line"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="startSorting" a:if="{{(orderInfo.recycleState==1&&orderInfo.reciveState == 1)||orderInfo.recycleState==2}}">
+    <view class="orderFlag">
+      <image class="flagImg" style="width:103rpx" mode="widthFix" src="{{imgUrl}}order/sorting.png"/>
+      <view class="flagText">开始分拣啦！</view>
+    </view>
+    <view>
+      <view class="order_box">
+        <view class="order_title">
+          <view class="order_num">订单编号：{{orderInfo.orderCode}}</view>
+          <view class="order_flag">待分拣</view>
+        </view>
+        <view class="departmentName" a:if="{{orderInfo.departmentName}}">部门：{{orderInfo.departmentName}}</view>
+        <view class="order_text">
+          <view>已经进入分拣中心...</view>
+          <view>预称重：{{orderInfo.totalWeighed}}kg</view>
+        </view>
+      </view>
+      <view class="steps_box">
+        <view class="steps">
+          <text class="round"></text>
+          <text class="r_text">创建时间</text>
+          <text class="r_time">{{orderInfo.createDate}}</text>
+          <view class="line"></view>
+        </view>
+        <view class="steps">
+          <text class="round"></text>
+          <text class="r_text">分拣接收</text>
+          <text class="r_time">{{orderInfo.sortReciveDate}}</text>
+          <view class="line"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="finishSorting" a:if="{{orderInfo.recycleState==3}}">
+    <view class="order_box">
+      <view class="order_title">
+        <view class="order_num">订单编号：{{orderInfo.orderCode}}</view>
+        <view class="order_flag" style="color:#74d92b">已完成</view>
+      </view>
+      <view class="departmentName" a:if="{{orderInfo.departmentName}}">部门：{{orderInfo.departmentName}}</view>
+      <view class="order_text">
+        <view>分拣已完成！</view>
+        <view>预称重：{{orderInfo.totalWeighed}}kg</view>
+      </view>
+      <view class="mayi_text" onTap="goSenlin" a:if="{{orderInfo.greenEnergy!=0}}">
+        <view>环保回收得 <text>{{orderInfo.greenEnergy}}g</text> 蚂蚁森林能量</view>
+      </view>
+    </view>
+    <view class="steps_box">
+      <view class="steps">
+        <text class="round"></text>
+        <text class="r_text">创建时间</text>
+        <text class="r_time">{{orderInfo.createDate}}</text>
+        <view class="line"></view>
+      </view>
+      <view class="steps">
+        <text class="round"></text>
+        <text class="r_text">分拣接收</text>
+        <text class="r_time">{{orderInfo.sortReciveDate}}</text>
+        <view class="line"></view>
+      </view>
+      <view class="steps">
+        <text class="round"></text>
+        <text class="r_text">分拣完成</text>
+        <text class="r_time">{{orderInfo.successDate}}</text>
+        <view class="line"></view>
+      </view>
+    </view>
+    <!-- 使用券的种类 -->
+    <view class="smq2" a:if="{{orderInfo.vouchers}}">
+     <text a:for="{{orderInfo.vouchers}}" a:key="{{index}}" data-data="{{item}}">{{item}}</text>
+    </view>
+    <view class="evaluation" a:if="{{orderInfo.recycleFlag == 2 && !orderInfo.isComm}}">
+      <view class="driver_title">
+        <image class="driver_t" mode="widthFix" src="{{imgUrl}}order/driver.png"/>
+        <view class="driver_name">驻点:{{orderInfo.operationName}}</view>
+        <view class="radio_box" onTap="ponintRadioChange">
+          <image class="radio1" mode="widthFix" src="{{pointChecked?imgUrl+'order/radio.png':imgUrl+'order/radio_f.png'}}"/>
+          <text class="{{pointChecked?'radio_text':'radio_text_f'}}">匿名评价</text>
+        </view>
+      </view>
+      <view class="evaluationBox">
+        <view class="evaluation_box" onTap="pointEvaluation" data-flag=1>
+          <image class="evaluation_img" mode="widthFix" src="{{imgUrl}}order/{{pointEvaluation==1?'poor_t.png':'poor.png'}}"/>
+          <view class="{{pointEvaluation==1?'evaluation_text_t1':'evaluation_text'}}">非常差</view>
+        </view>
+        <view class="evaluation_box" onTap="pointEvaluation" data-flag=2>
+          <image class="evaluation_img" mode="widthFix" src="{{imgUrl}}order/{{pointEvaluation==2?'general_t.png':'general.png'}}"/>
+          <view class="{{pointEvaluation==2?'evaluation_text_t2':'evaluation_text'}}">一般</view>
+        </view>
+        <view class="evaluation_box" onTap="pointEvaluation" data-flag=3>
+          <image class="evaluation_img" mode="widthFix" src="{{imgUrl}}order/{{pointEvaluation==3?'praise_t.png':'praise.png'}}"/>
+          <view class="{{pointEvaluation==3?'evaluation_text_t3':'evaluation_text'}}">超赞</view>
+        </view>
+      </view>
+      <textarea value="{{pointText}}" onInput="pointInput" placeholder-style="placeholder" placeholder="感谢您对我们的支持，您的宝贵意见是我们前行的动力" maxlength="200"/>
+      <view class="submit" onTap="pointComments">提交</view>
+    </view>
+    <view a:for="{{recycleDetailVo}}" a:key="{{key}}">
+      <view class="table"  a:if="{{orderInfo.orderType != 'MAJOR_APPLIANCES'}}">
+        <view class="table_title">
+          <view class="table_num">拾尚包编号：{{item.bagCode}}</view>
+          <view class="delivery">
+            <view>预估重量 <text>(仅供参考)</text></view>
+            <view>
+              <text style="color:#3aa5ff;font-size:36rpx">{{item.preWeighed}}</text>
+              <text style="margin-left:7rpx">kg</text>
+            </view>
+          </view>
+          <view class="delivery">
+            <view>正确投递总重量：</view>
+            <view>
+              <text style="color:#3aa5ff;font-size:36rpx">{{item.effectiveWeight}}</text>
+              <text style="margin-left:7rpx">kg</text>
+            </view>
+          </view>
+          <view class="delivery">
+            <view>错误投递总重量：</view>
+            <view>
+              <text style="color:#f16c1b;font-size:36rpx">{{item.errorWeight}}</text>
+              <text style="margin-left:7rpx">kg</text>
+            </view>
+          </view>
+        </view>
+        <view class="table_line"></view>
+        <view class="table_content">
+          <view class="table_row" a:for="{{item.listJson}}" a:for-item="listItem" a:for-index="listIndex">
+            <image class="table_row_img" mode="widthFix" src="{{listItem.pic}}"/>
+            <view class="table_row_type">{{listItem.name}}</view>
+            <view class="table_row_referencePrice">{{listItem.weight}}kg*{{listItem.price}}/{{listItem.unit}}</view>
+            <view class="table_row_price">
+              <text style="font-size:36rpx;font-weight:700;">{{listItem.totalPrice}}</text>
+              <text style="margin-left:7rpx">拾尚币</text>
+            </view>
+          </view>
+        </view>
+        <view class="table_line" a:if="{{item.errorUrl}}"></view>
+        <view class="wrong_delivery" a:if="{{item.errorUrl}}">
+          <view class="wrong_delivery_title">
+          错误投递
+          </view>
+          <view>
+            <image class="wrong_delivery_img" onTap="previewImage" a:for="{{item.errorUrl}}" a:for-item="errorUrlItem" data-index="{{index}}" data-errorUrl="{{item.errorUrl}}" mode="aspectFill" src="{{errorUrlItem}}"/>
+          </view>
+          <view class="wrong_delivery_describe">
+            <view class="text_1">错误投递描述:</view>
+            <view class="text_2">{{item.remark||'无'}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="evaluation" a:if="{{item.isComm == 0}}">
+        <view class="driver_title">
+          <image class="driver_t" mode="widthFix" src="{{imgUrl}}order/driver.png"/>
+          <view class="driver_name">分拣员:{{item.operationName}}</view>
+          <view class="radio_box" onTap="radioChange" data-index="{{index}}">
+            <!--<text class="{{checked?'radio':'radio_f'}}">✓</text> -->
+            <image class="radio1" mode="widthFix" src="{{checked[index]?imgUrl+'order/radio.png':imgUrl+'order/radio_f.png'}}"/>
+            <text class="{{checked[index]?'radio_text':'radio_text_f'}}">匿名评价</text>
+          </view>
+        </view>
+        <view class="evaluationBox">
+          <view class="evaluation_box" onTap="evaluation" data-index="{{index}}" data-flag=1>
+            <image class="evaluation_img" mode="widthFix" src="{{imgUrl}}order/{{evaluation[index]==1?'poor_t.png':'poor.png'}}"/>
+            <view class="{{evaluation[index]==1?'evaluation_text_t1':'evaluation_text'}}">非常差</view>
+          </view>
+          <view class="evaluation_box" onTap="evaluation" data-index="{{index}}" data-flag=2>
+            <image class="evaluation_img" mode="widthFix" src="{{imgUrl}}order/{{evaluation[index]==2?'general_t.png':'general.png'}}"/>
+            <view class="{{evaluation[index]==2?'evaluation_text_t2':'evaluation_text'}}">一般</view>
+          </view>
+          <view class="evaluation_box" onTap="evaluation" data-index="{{index}}" data-flag=3>
+            <image class="evaluation_img" mode="widthFix" src="{{imgUrl}}order/{{evaluation[index]==3?'praise_t.png':'praise.png'}}"/>
+            <view class="{{evaluation[index]==3?'evaluation_text_t3':'evaluation_text'}}">超赞</view>
+          </view>
+        </view>
+        <textarea value="{{text[index]}}" data-index="{{index}}" onInput="input" placeholder-style="placeholder" placeholder="感谢您对我们的支持，您的宝贵意见是我们前行的动力" maxlength="200"/>
+        <view class="submit" onTap="comments" data-item="{{item}}" data-index="{{index}}">提交</view>
+      </view>
+    </view>
+  </view>

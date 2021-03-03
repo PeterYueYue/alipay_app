@@ -1,0 +1,44 @@
+<view class="vouchers">
+  <view class="union">
+    <image mode="widthFix" src="{{imgUrl1}}yy/vouchers/company1.png" alt=""/>
+    <image mode="widthFix" src="{{imgUrl1}}yy/vouchers/company2.png" alt=""/>
+  </view>
+  <image class="c1" mode="widthFix" src="{{imgUrl1}}yy/vouchers/c1.png" alt=""/>
+  <view class="c2">
+    <image class="c3" mode="widthFix" src="{{imgUrl1}}yy/vouchers/c3.png" alt=""/>
+    <image class="gift" mode="widthFix" src="{{imgUrl1}}yy/vouchers/company_gift.png" alt=""/>
+    <!-- 选择后地址 -->
+    <view class="add1" a:if="{{addressStatus}}" onTap="toAddress">
+      <image style="width:29.6rpx;height:35.6rpx" src="{{imgUrl1}}image/15.png"/>
+      <view class="fl2">
+        <text class="name inlineBlock ell">{{add.userName}}</text>
+        <text class="fa fa-angle-right r" aria-hidden="true"></text>
+        <text class="mobile r">{{add.userMobile}}</text>
+      </view>
+      <view class="adds ell">{{add.provinceName + add.cityName + add.areaName + add.address}}</view>
+    </view>
+    <!-- 选择前地址 -->
+    <view class="address" a:else onTap="toAddress">请填写收件地址</view>
+  </view>
+  <view class="get">
+    <button a:if="{{once}}" onTap="open"  data-status="2">前往绿色账户</button>
+    <button loading a:else>前往绿色账户</button>
+  </view>
+</view>
+<!-- 蒙版 -->
+<!-- <view class="mask_" a:if="{{!userInfo.userMobile}}">
+  <view class="btn btns">
+    <button size="default"  open-type="getAuthorize"  onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'  a:if="{{autoDisplay}}">支付宝自动登录</button>
+    <button size="default" loading  type="primary" a:if="{{!autoDisplay}}">支付宝自动登录</button>
+  </view>
+</view> -->
+<!-- 蒙版授权登录 -->
+<view class="mask" a:if="{{!userInfo.userMobile}}">
+    <view class="success_content">
+      <image class="bgmain" mode="widthFix" src="{{imgUrlNew}}yy/member/success2.png" alt="" />
+      <view class="p1">拾尚回收小程序申请获得以下权限</view>
+      <view class="p2">获得您的手机号码</view>
+      <button size="default"  open-type="getAuthorize"  onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'  a:if="{{autoDisplay}}">支付宝自动登录</button>
+      <button size="default" loading  type="primary" a:if="{{!autoDisplay}}">支付宝自动登录</button>
+    </view>
+</view>

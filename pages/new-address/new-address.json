@@ -1,0 +1,7 @@
+{ 
+  "component": true,
+  "defaultTitle": "新建地址",
+  "usingComponents": {
+    "multi-select": "/common/component/select/index"
+  }
+}

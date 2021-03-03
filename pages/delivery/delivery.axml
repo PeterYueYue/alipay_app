@@ -1,0 +1,18 @@
+<view>
+  <view class="hint" a:if="{{status == 1}}">
+    <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+    <text>没有错误投递记录</text></view>
+  <!-- 前面的图片 -->
+  <view class="page" a:for="{{user}}" a:key="{{index}}" onTap="toDetail" data-status='{{item.recycleState}}' data-id='{{item.id}}' data-name='回收'>
+    <image mode="widthFix" src="{{imgUrl+'order/25.png'}}" class="img"/>
+    <!-- 文字部分 -->
+    <view class="text1">
+      <view class="num">回收订单编号：{{item.orderCode}}</view>
+      <view class="time">绑定时间：   {{item.createDate}}</view>
+      <text class="kg">错误投递总量：{{item.errorWeight}}公斤</text></view>
+    <view class="more">查看详情</view></view>
+  <!--<scroll-view class="order_box" scroll-y="{{true}}"><view class="order" a:for="{{user}}"><view>
+        拾尚包：{{user.bagCode}}</view><view>绑定时间：</view><view>投递时间：</view><view>错误投递：</view><view class="line"></view><view><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/></view><view>错误投递描述：无</view></view><view class="order"><view>
+        拾尚包：shs</view><view>绑定时间：</view><view>投递时间：</view><view>错误投递：</view><view class="line"></view><view><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/></view><view>错误投递描述：无</view></view><view class="order"><view>
+        拾尚包：shs</view><view>绑定时间：</view><view>投递时间：</view><view>错误投递：</view><view class="line"></view><view><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/><image class="wrong_delivery_img" mode="aspectFill" src="/image/abc.png"/></view><view>错误投递描述：无</view></view></scroll-view> -->
+</view>

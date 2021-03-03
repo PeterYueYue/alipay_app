@@ -1,0 +1,83 @@
+<view class="page">
+  <view class="headtop"></view>
+  <view style="background: url({{imgUrlNew+'yy/shop/signIn/img1.png'}}) no-repeat;" class="head ">
+    <image a:if="{{!signInData.today}}" class="signInIcon" onTap="onTopBtnTap" src="{{imgUrlNew+'yy/shop/signIn/img3.png'}}"></image>
+    <image a:else class="signInIcon1" src="{{imgUrlNew+'yy/shop/signIn/img8.png'}}"></image>
+    <view class="signRule" onTap="goRule">签到规则</view>
+  </view>
+  <!-- weekBox  start -->
+  <view class="weekBox">
+    <view class="tips">每周一重置</view>
+    <view class="dayList">
+      <view a:for="{{7}}" a:key="index" class="dayItem">
+        <view class="award">
+          <image a:if="{{index == 2 || index ==6  }}" src="{{imgUrlNew+'yy/shop/signIn/img2.png'}}" />
+          <!--<image a:if="{{index == 1}}" src="{{imgUrlNew+'yy/shop/signIn/img5.png'}}" /> -->
+          <image a:if="{{ index < signInData.count }}" src="{{imgUrlNew+'yy/shop/signIn/img6.png'}}" />
+          <image a:if="{{index < signInData.count&&index == 2}}" src="{{imgUrlNew+'yy/shop/signIn/img7.png'}}" />
+          <image a:if="{{index < signInData.count&&index == 6}}" src="{{imgUrlNew+'yy/shop/signIn/img7.png'}}" />
+          <text>+1</text>
+        </view>
+        <view class="days">{{index+1}}天</view>
+      </view>
+    </view>
+  </view>
+  <!-- weekBox  end -->
+  <!-- content start -->
+  <view class="content">
+    <view class="headTitle">
+      <view class="line"></view>
+      <view>赚拾尚币</view>
+    </view>
+    <view class="box2" onTap="appointment">
+      <view class="left">
+        <image src="{{imgUrlNew+'yy/shop/signIn/img4.png'}}"></image>
+        <view class="titleBox">
+          <view class="title">预约回收</view>
+          <view class="title2">完成回收1kg+50拾尚币</view>
+        </view>
+      </view>
+      <view class="right"> 去完成</view>
+    </view>
+    <view class="headTitle">
+      <view class="line"></view>
+      <view>热门商品</view>
+    </view>
+    <view class="list">
+      <view a:for="{{hotProduct}}" a:key="index" onTap="goDetails" data-item="{{item}}" class="subItem">
+        <view class="picBox">
+          <!--<view class="tag">热卖</view> -->
+          <image class="pic" src="{{item.mainPic}}" />
+          <view class="titleBox" a:if="{{item.remark}}">
+            <view class="title">{{item.remark}}</view>
+          </view>
+          <image class="over"  a:if="{{item.stock==0}}" src="{{imgUrlNew+'yy/shop/over.png'}}" />
+        </view>
+        <view class="name">{{item.name}}</view>
+        <view class="jifen">
+          <image src="{{imgUrlNew+'yy/shop/bi2.png'}}" />
+          <text>{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- content end -->
+</view>
+<!-- 弹出层 -->
+<view class="popup" a:if="{{showTop}}" onTap="onPopupClose">
+  <view animation='{{animationData}}' class="box">
+    <view>签到
+      <text>{{signInData.count}}</text>天</view>
+    <view>恭喜获得
+      <text>{{point}}</text>拾尚币</view>
+    <image class="bi" src="{{imgUrlNew+'yy/shop/signIn/bi.png'}}"></image>
+    <image class="delete" src="{{imgUrlNew+'yy/shop/signIn/delete.png'}}"></image>
+  </view>
+</view>
+
+
+<!--无上门券提示 -->
+<view class="mask_" a:if="{{show_door}}">
+  <image onTap="getdoor"  class="img" mode="widthFix" src="{{imgUrlNew}}yy/shop/check_door.png" />
+  <image onTap="closemask_"  class="close" mode="widthFix" src="{{imgUrlNew}}yy/x.png" />
+</view>

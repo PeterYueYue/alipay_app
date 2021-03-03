@@ -1,0 +1,195 @@
+.page {
+  background-color: #fff;
+}
+
+.bag {
+  width: 100%;
+  text-align: center;
+}
+
+.bag image {
+  width: 454rpx;
+  /* margin-top: 18rpx; */
+}
+
+.h5 {
+  font-size: 36rpx;
+  color: rgba(51, 51, 51, 1);
+  width: 642rpx;
+  margin: 69rpx auto 0;
+}
+
+.p1 {
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 36rpx;
+  width: 642rpx;
+  margin: 28rpx auto 0;
+}
+
+.money {
+  font-size: 40rpx;
+  color: rgba(57, 166, 255, 1);
+  width: 642rpx;
+  margin: 28rpx auto 0;
+}
+
+.address1 {
+  width: 681rpx;
+  height: 160rpx;
+  margin: 50rpx auto 0;
+  background: rgba(250, 250, 250, 1);
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.address1>view:nth-child(1) {
+  width: 100rpx;
+  text-align: center;
+}
+.address1>view:nth-child(2) {
+  min-width: 500rpx;
+}
+.address1 image:nth-child(1) {
+  width: 36rpx;
+}
+
+.address1 image:nth-child(2) {
+  width: 26rpx;
+  margin-right: 54rpx;
+}
+
+.word view:nth-child(1) {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 1);
+}
+.nickname {
+  margin-right: 42rpx;
+}
+.word view:nth-child(2) {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-top: 27rpx;
+}
+
+/*  */
+
+.bag-name {
+  font-size: 38rpx;
+  color: #1A1A1A;
+  margin-top: 40rpx;
+  line-height: 40rpx;
+  text-indent: 34rpx;
+}
+
+.bag-p {
+  font-size: 26rpx;
+  color: #999;
+  line-height: 40rpx;
+  text-indent: 34rpx;
+  margin-top: 10rpx;
+}
+
+/* 收货地址 */
+
+.address {
+  margin: 40rpx 34rpx 0;
+  background-color: rgb(251, 251, 251);
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+}
+
+.address image {
+  width: 30rpx;
+  margin: 0 25rpx;
+}
+
+.address view {
+  display: inline-block;
+  width: 80%;
+  font-size: 34rpx;
+  color: #4D4D4D;
+}
+
+.address text {
+  font-size: 40rpx;
+  float: right;
+  margin-right: 0;
+}
+
+.btn {
+  width: 640rpx;
+  margin: 30rpx auto 40rpx;
+}
+
+.btn button {
+  border-radius: 8rpx;
+}
+
+/* 选择地址后 */
+
+.add1 {
+  background: #fafafa;
+  width: 686rpx;
+  height: 200rpx;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 26rpx 45rpx 50rpx 92rpx;
+  position: relative;
+  margin-bottom: 40rpx;
+  margin-top: 40rpx;
+}
+
+.add1 image {
+  position: absolute;
+  top: 88rpx;
+  left: 34rpx;
+  width: 30rpx;
+}
+
+.fl1>text {
+  font-size: 40rpx;
+  float: right;
+  margin-right: 0;
+}
+
+.fl2 {
+  font-weight: 600;
+  font-size: 34rpx;
+  color: #1A1A1A;
+  margin-top: 35rpx
+}
+
+.fl3 {
+  font-weight: 600;
+  font-size: 34rpx;
+  color: #1A1A1A;
+  margin-top: 14rpx
+}
+
+.fl2>text:nth-child(2) {
+  font-size: 30rpx;
+  padding-left: 68rpx
+}
+
+.fl2 .fa {
+  font-size: 40rpx
+}
+
+.adds {
+  margin-top: 20rpx;
+}
+
+.name {
+  display: inline-block;
+  width: 200rpx;
+  font-size: 34rpx;
+}
+
+.mobile {
+  font-size: 30rpx;
+}

@@ -1,0 +1,191 @@
+<view class="page">
+  <tabs tabs="{{tabs}}" activeTab="{{activeTab}}" onTabClick="handleTabClick" onChange="handleTabChange"
+    activeCls="tabClick" tabBarCls="tabs" tabBarActiveTextColor="#1A1A1A">
+    <block a:for="{{tabs}}">
+      <tab-content key="{{index}}">
+        <!-- <view class="tab-content">
+          <view a:if="{{activeTab == 0}}">
+            <view class="hint" a:if="{{list1.length == 0}}">
+              <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+              <text>没有数据</text>
+            </view>
+            <view a:else a:for="{{list1}}" class="order">
+              <view class="orderTop">
+                <view class="orderTopLeft">
+                  <cover-image style="width:44rpx;height:44rpx" src="{{imgUrl}}11.png"/>
+                </view>
+                <view class="orderTopRight">
+                  <view class="tr1">
+                    提现金额
+                    <text>{{item.withdrawMoney}}元</text>
+                  </view>
+                  <view class="tr2">
+                    <text>申请时间：{{item.createDate}}</text>
+                    <text class="blue">待审批</text>
+                  </view>
+                  <view class="tr3">
+                    <text>申请部门：{{item.departmentName}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="orderBottom">
+                <view onTap="approve" data-type="1" data-id = "{{item.id}}">通过</view>
+                <view onTap="approve" data-type="2" data-id = "{{item.id}}">不通过</view>
+              </view>
+            </view>
+          </view>
+          <view a:elif="{{activeTab == 1}}">
+            <view class="hint" a:if="{{list2.length == 0}}">
+              <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+              <text>没有数据</text>
+            </view>
+            <view a:else a:for="{{list2}}" class="order borderBottom">
+              <view class="orderTop">
+                <view class="orderTopLeft">
+                  <cover-image style="width:44rpx;height:44rpx" src="{{imgUrl}}11.png"/>
+                </view>
+                <view class="orderTopRight">
+                  <view class="tr1">
+                    提现金额
+                    <text>{{item.withdrawMoney}}元</text>
+                  </view>
+                  <view class="tr2">
+                    <text>申请时间：{{item.createDate}}</text>
+                    <text a:if="{{item.companyState==2}}" class="blue">通过</text>
+                    <text a:elif="{{item.companyState==3}}" class="gray">不通过</text>
+                  </view>
+                  <view class="tr3">
+                    <text>申请部门：{{item.departmentName}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view a:else>
+            <view class="hint" a:if="{{list3.length == 0}}">
+              <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+              <text>没有数据</text>
+            </view>
+            <view a:else a:for="{{list3}}" class="order {{item.companyState==1?'':'borderBottom'}}">
+              <view class="orderTop">
+                <view class="orderTopLeft">
+                  <cover-image style="width:44rpx;height:44rpx" src="{{imgUrl}}11.png"/>
+                </view>
+                <view class="orderTopRight">
+                  <view class="tr1">
+                    提现金额
+                    <text>{{item.withdrawMoney}}元</text>
+                  </view>
+                  <view class="tr2">
+                    <text>申请时间：{{item.createDate}}</text>
+                    <text a:if="{{item.companyState==1}}" class="blue">待审批</text>
+                    <text a:elif="{{item.companyState==2}}" class="blue">通过</text>
+                    <text a:elif="{{item.companyState==3}}" class="gray">不通过</text>
+                  </view>
+                  <view class="tr3">
+                    <text>申请部门：{{item.departmentName}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="orderBottom" a:if="{{item.companyState==1}}">
+                <view>查看</view>
+                <view>删除</view>
+              </view>
+            </view>
+          </view>
+        </view> -->
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower" class="tab-content">
+          <view a:if="{{activeTab == 0}}">
+            <view class="hint" a:if="{{list1Length == 1}}">
+              <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+              <text>没有数据</text>
+            </view>
+            <view a:else a:for="{{list1}}" class="order">
+              <view class="orderTop">
+                <view class="orderTopLeft">
+                  <cover-image style="width:44rpx;height:44rpx" src="{{imgUrl}}11.png" />
+                </view>
+                <view class="orderTopRight">
+                  <view class="tr1">
+                    提现金额
+                    <text>{{item.withdrawMoney}}元</text>
+                  </view>
+                  <view class="tr2">
+                    <text>申请时间：{{item.createDate}}</text>
+                    <text class="blue">待审批</text>
+                  </view>
+                  <view class="tr3">
+                    <text>申请部门：{{item.departmentName}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="orderBottom">
+                <view onTap="approve" data-type="1" data-id="{{item.id}}">通过</view>
+                <view onTap="approve" data-type="2" data-id="{{item.id}}">不通过</view>
+              </view>
+            </view>
+          </view>
+          <view a:elif="{{activeTab == 1}}">
+            <view class="hint" a:if="{{list2Length == 1}}">
+              <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+              <text>没有数据</text>
+            </view>
+            <view a:else a:for="{{list2}}" class="order borderBottom">
+              <view class="orderTop">
+                <view class="orderTopLeft">
+                  <cover-image style="width:44rpx;height:44rpx" src="{{imgUrl}}11.png" />
+                </view>
+                <view class="orderTopRight">
+                  <view class="tr1">
+                    提现金额
+                    <text>{{item.withdrawMoney}}元</text>
+                  </view>
+                  <view class="tr2">
+                    <text>申请时间：{{item.createDate}}</text>
+                    <text a:if="{{item.companyState==2}}" class="blue">通过</text>
+                    <text a:elif="{{item.companyState==3}}" class="gray">不通过</text>
+                  </view>
+                  <view class="tr3">
+                    <text>申请部门：{{item.departmentName}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view a:else>
+            <view class="hint" a:if="{{list3Length == 1}}">
+              <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+              <text>没有数据</text>
+            </view>
+            <view a:else a:for="{{list3}}" class="order {{item.companyState==1?'':'borderBottom'}}">
+              <view class="orderTop">
+                <view class="orderTopLeft">
+                  <cover-image style="width:44rpx;height:44rpx" src="{{imgUrl}}11.png" />
+                </view>
+                <view class="orderTopRight">
+                  <view class="tr1">
+                    提现金额
+                    <text>{{item.withdrawMoney}}元</text>
+                  </view>
+                  <view class="tr2">
+                    <text>申请时间：{{item.createDate}}</text>
+                    <text a:if="{{item.companyState==1}}" class="blue">待审批</text>
+                    <text a:elif="{{item.companyState==2}}" class="blue">通过</text>
+                    <text a:elif="{{item.companyState==3}}" class="gray">不通过</text>
+                  </view>
+                  <view class="tr3">
+                    <text>申请部门：{{item.departmentName}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="orderBottom" a:if="{{item.companyState==1}}">
+                <view>查看</view>
+                <view>删除</view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </tab-content>
+    </block>
+  </tabs>
+</view>

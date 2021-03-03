@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "年度账单",
+  "pullRefresh": false,
+  "transparentTitle": "auto",
+  "disableScroll": true,
+  "component": true,
+  "usingComponents": {
+    "pie": "/common/component/pie/index"
+  }
+}

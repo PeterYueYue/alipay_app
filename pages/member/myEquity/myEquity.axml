@@ -1,0 +1,27 @@
+<view class="page">
+  <!-- 我的权益 -->
+  <view class="bg">
+    <swiper class="sswiper" interval='3000' duration='500' onChange='onChange' current="{{current}}" circular='true' previous-margin="10rpx" next-margin='10rpx'
+  >
+      <swiper-item a:for="{{banner}}" a:index="index">
+        <image class="{{index==current?'imageBanner':'imageBanner_small'}}" data-index="{{index}}" data-item="item" src="{{item.src}}" mode="widthFix"></image>
+        <view a:if={{current==index}}>{{item.name}}</view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 等级 -->
+  <view class="card">
+    <view class="card-left">
+      <view class="title"><text class="blue"></text>{{intro.title}}</view>
+      <view class="desc">{{intro.desc}}</view>
+    </view>
+    <button type="primary" onTap="go" data-name="{{intro.btn}}" a:if={{intro.btn}}>{{intro.btn}}</button>
+  </view>
+  <!-- 说明 -->
+  <view class="explain">
+     <view class="title"><text class="blue"></text>权益说明</view>
+     <view class="p" a:for={{intro.detail}} a:key="index">
+      {{item}}
+     </view>
+  </view>
+</view>

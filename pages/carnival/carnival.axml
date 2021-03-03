@@ -1,0 +1,159 @@
+<view>
+  <scroll-view class="sview" scroll-top="{{scrollTop}}" scroll-y="{{flag}}">
+    <view class="page" style="background-image: url({{imgUrl}}carnival/bg.png);">
+      <view class="rules" onTap="torules">
+    规则
+      </view>
+      <view class="information clear">
+        <view class="notice l">
+          <image mode="widthFix" src="{{imgUrl}}carnival/laba.png"/>
+          <swiper style="height:100%;" indicator-dots="{{false}}" autoplay="{{true}}" vertical="{{true}}" interval="3000" disable-touch="{{true}}" circular="{{true}}">
+            <block a:if="{{noPushList}}">
+              <swiper-item key="index">
+                <view class="swiper-item ell">暂无数据</view>
+              </swiper-item>
+            </block>
+            <block a:for="{{pushList}}">
+              <swiper-item key="index">
+                <view class="swiper-item ell">{{item.title}}</view>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view class="list r" onTap="totop">
+      排行榜
+        </view>
+      </view>
+      <view class="sign">
+        <view class="dayone">累计访问
+          <text a:if="{{info.days<=3}}">3</text>
+          <text a:if="{{info.days>=4}}">7</text>
+          天即可抽取
+          <text>iPhone11Pro</text>
+        </view>
+        <view class="daytwo">
+      已经累计访问
+          <text a:if="{{info.days>7}}">7</text>
+          <text a:if="{{info.days<=7}}">{{info.days?info.days:0}}</text>
+      天
+        </view>
+        <view class="article" style="background-image: url({{imgUrl}}carnival/di.png);">
+          <image class="progress" style="width:{{width}}%" mode="aspectFill" src="{{imgUrl}}carnival/tiao.png"/>
+          <view class="point one"></view>
+          <view class="point two"></view>
+          <view class="point three"></view>
+          <view class="point four"></view>
+          <image class="box boxone" mode="widthFix" src="{{info.days >= 3? imgUrl+'carnival/dajiang.png': imgUrl+'carnival/box.png'}}"/>
+          <image class="box boxtwo" mode="widthFix" src="{{info.days == 7? imgUrl+'carnival/dajiang.png': imgUrl+'carnival/box.png'}}"/>
+        </view>
+        <image class="tipL" mode="widthFix" src="{{imgUrl}}carnival/3.png"/>
+        <image class="tipR" mode="widthFix" src="{{imgUrl}}carnival/7.png"/>
+        <view class="day">
+          <text>1天</text>
+          <text>2天</text>
+          <text>3天</text>
+          <text>4天</text>
+          <text>5天</text>
+          <text>6天</text>
+          <text>7天</text>
+        </view>
+      </view>
+      <view class="lucky">
+        <view class="number">今日可翻牌次数：
+          <text>{{drawTimes}}</text>
+      次
+        </view>
+        <view class="tap" onTap="tap">点击获得更多翻牌次数</view>
+        <view class="record" onTap="examine">我的中奖纪录》</view>
+        <image class="gold" mode="widthFix" src="{{imgUrl}}carnival/jinbi.png"/>
+      </view>
+      <view class="card">
+        <flipdraw a:if="{{flipFlag}}" cardNum="{{cardNum}}" cardBgImg="{{cardBgImg}}" cardHeight="{{cardHeight}}" prizeList="{{prizeList}}" prizeName="{{prizeName}}" isDrawing="{{isDrawing}}" flipAllCards="{{flipAllCards}}" onFlipStart="onFlipStart" />
+      </view>
+      <view class="task">
+        <image mode="widthFix" style="width:51rpx;margin-right:10rpx;" src="{{imgUrl}}carnival/left.png"/>
+    完成任务获得更多翻牌次数
+        <image mode="widthFix" style="width:49rpx;margin-left:10rpx;" src="{{imgUrl}}carnival/ri.png"/>
+      </view>
+      <scroll-view scroll-y="{{true}}" style="height:500rpx">
+        <view class="renwu" a:for="{{info.gameTaskList}}">
+          <view class="tubiao">
+            <image mode="widthFix" src="{{imgUrl}}task/{{item.taskCode}}.png"/>
+          </view>
+          <view class="wenzi">
+            <view>{{item.taskName}}</view>
+            <text>翻牌次数+{{item.num}}</text>
+          </view>
+          <view class="btn2" a:if="{{!item.userId&&item.taskName == '转发活动海报'}}">
+            <button open-type="share" data-info="{{item}}">
+              去完成
+            </button>
+          </view>
+          <view class="btn1" a:if="{{!item.userId&&item.taskName!='转发活动海报'}}" onTap="task" data-info="{{item}}">
+            <view>去完成</view>
+          </view>
+          <view class="btn" a:if="{{item.userId}}">
+            <view>已完成</view>
+          </view>
+        </view>
+        <view a:if="{{info.days>7}}" class="finish">您已做完全部任务</view>
+      </scroll-view>
+      <view class="mask" a:if="{{maskFlag}}" onTap="close" catchTouchMove="defaultTouchMove">
+        <view>
+          <view class="luckybg" catchTap="default" style="background-image: url({{imgUrl}}carnival/luckyBg.png);">
+            <image mode="widthFix" src="{{img}}"/>
+            <view class="jixu" onTap="continue" style="background-image: url({{imgUrl}}carnival/jixu.png);"></view>
+            <view class="chakan" onTap="examine" style="background-image: url({{imgUrl}}carnival/jiangli.png);"></view>
+          </view>
+          <view class="luckyClose" catchTap="close" style="background-image: url({{imgUrl}}carnival/X.png);"></view>
+        </view>
+      </view>
+      <view class="mask" a:if="{{rluesFlag}}" onTap="closerlues" catchTouchMove="defaultTouchMove">
+        <view>
+          <view class="rulesbg" catchTap="default" style="background-image: url({{imgUrl}}carnival/rulesBg.png);">
+            <view class="huodong">活动规则</view>
+            <scroll-view class="details" scroll-y="{{true}}">
+              <view class="title">一. 活动区域</view>
+              <view class="content">该活动仅限上海地区用户参与。</view>
+              <view class="title">二. 活动时间</view>
+              <view class="content">2019年11月02日-2019年12月31日，活动持续30天，每位用户可参与7天。</view>
+              <view class="title">三. 玩法</view>
+              <view class="content">
+                <view>1.每位用户每天都有1次翻牌机会，百分百中奖，奖品随机，包括：iPhone11Pro，AirPods Pro,富士拍立得，Bruno多功能料理锅，现金红包。</view>
+                <view>2.完成相应任务后，可增加额外的翻牌机会，但需要在当日使用完毕。每位用户每天至多增加3次翻牌机会。</view>
+                <view>3.iPhone11Pro手机大奖将会在每位用户累计访问的第3天和第7天出现在抽奖活动中。</view>
+                <view>4.温馨提示：抽中奖品的用户，请在地址簿填写正确的收件信息，如因收件信息错误导致奖品无法发放到用户手中，视为用户过失，不再补发奖品。</view>
+                <view>5.活动一切解释权权，归拾尚包所有，若有疑问，可直接联系拾尚包在线客服。</view>
+              </view>
+            </scroll-view>
+          </view>
+          <view class="close" catchTap="closerlues" style="background-image: url({{imgUrl}}carnival/X.png);"></view>
+        </view>
+      </view>
+      <view class="mask" a:if="{{recordFlag}}" onTap='closelist' catchTouchMove="defaultTouchMove">
+        <view class="recordbox" catchTap="default">
+          <image mode="widthFix" class="li" src="{{imgUrl}}carnival/l.png"/>
+          <image mode="widthFix" class="ci" src="{{imgUrl}}carnival/c.png"/>
+          <image mode="widthFix" class="ri" src="{{imgUrl}}carnival/r.png"/>
+          <view class="closelist" onTap="closelist" style="background-image: url({{imgUrl}}carnival/X.png);"></view>
+          <scroll-view scroll-y="{{true}}" class="luckyList">
+            <view class="no" a:if="{{noLuckyList}}">暂无中奖记录</view>
+            <view class="listitem" a:for="{{luckyList}}" a:key="{{index}}">
+              <view>
+                <view class="items">{{item.prizeName}}</view>
+                <view class="date">{{item.winningDate}}</view>
+              </view>
+              <view class="state">已存入拾尚包账户中</view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+      <view class="mask" a:if="{{FollwersFlag}}" onTap="closeLifestyle" catchTouchMove="defaultTouchMove">
+        <view class="lifestyle" catchTap="default">
+          <lifestyle publicId="2019091767448436" onFollow="onFollow"/>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!--<button size="default" onTap="clean" type="primary">清数据</button> -->
+</view>

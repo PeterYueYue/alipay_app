@@ -1,0 +1,14 @@
+{
+    "defaultTitle": "拾尚回收",
+    "pullRefresh": true,
+    "transparentTitle": "auto",
+    "disableScroll": false,
+    "usingComponents": {
+        "tab_index":"/common/component/index/index",
+        "tab_bao":"/common/component/bao/bao",
+        "tab_order":"/common/component/order/order",
+        "tab_home":"/common/component/home/home",
+        "tab_self":"/common/component/self/self",
+        "tab_shop":"/common/component/shopIndex/shopIndex"
+    }
+}

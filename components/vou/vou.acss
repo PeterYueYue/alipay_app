@@ -1,0 +1,111 @@
+.voucherList{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+.voucherList .main{
+  width: 600rpx;
+  height: 857rpx;
+  background-color: #FFFFFF;
+  border-radius:20rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 999999;
+}
+.voucherList .gbicon{
+  position: absolute;
+  right: 12rpx;
+  top: 12rpx;
+  width: 28rpx;
+  height: 30rpx;
+}
+.voucherList .vouhead{
+  font-size: 34rpx;
+  color: #333333;
+  text-align: center;
+  margin-top: 32rpx;
+}
+.voucherList .content{
+  flex: 1;
+  height: 650rpx;
+  overflow-y: scroll;
+  position: relative;
+}
+.voucherList .footbtn{
+  width: 600rpx;
+  height: 80rpx;
+  background-color: #3AA5FF;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  text-align: center;
+  
+}
+.vouItem {
+  width: 528rpx;
+  background-color: #ffffff;
+  box-shadow:0px 1px 16rpx 0rpx rgba(95,49,0,0.17);
+  border-radius:10rpx;
+  font-size: 22rpx;
+  color: #999;
+  margin: 20rpx 10rpx 0;
+  padding-right: 20rpx;
+  box-sizing:border-box;
+}
+.vouItem .sign{
+  display: flex;
+  /* min-height: 182rpx; */
+  align-items: center;
+  padding: 20rpx 0;
+  
+}
+.vouItem .tips {
+  margin-bottom: 15rpx;
+  font-size: 16rpx;
+}
+.vouItem .tips image {
+  width: 16rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.vouItem .stateIcon{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+  margin-left: 20rpx;
+}
+.vouItem .pic{
+  width: 92rpx;
+  height: 92rpx;
+  margin-right: 30rpx;
+}
+.vouItem .info{
+  flex: 1;
+}
+.vouItem .title{
+  font-size: 34rpx;
+  color: #FF9626;
+  margin-bottom: 10rpx;
+}
+.voucherList button {
+  margin-bottom: 30rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 99;
+}

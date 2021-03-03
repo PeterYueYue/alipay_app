@@ -1,0 +1,45 @@
+<!-- 小程序收藏组件，更多高级用法请参考文档：https://docs.alipay.com/mini/component/component-favorite -->
+<view class="page">
+  <view style="background:url({{imgUrls}});background-size:100% 100%" class="head">
+    <view class="headTop">
+      <text>{{name}}订单编号：</text>
+      <text>{{status}}</text>
+    </view>
+    <view class="orderNum">
+      <text>{{list.orderCode}}</text>
+    </view>
+    <cover-image a:if="{{((name=='回收'||name=='预约')&&type==1)||(name=='回收'&&type==2)}}" style="width:75.2rpx;height:83.4rpx" src="{{imgUrl}}order/9.png"/>
+    <cover-image a:elif="{{(name=='回收'||name=='预约')&&type==3}}" style="width:80rpx;height:80rpx" src="{{imgUrl}}order/5.png"/>
+    <cover-image a:else style="width:82rpx;height:70rpx" src="{{imgUrl}}order/7.png"/>
+  </view>
+  <view>
+    <steps direction="vertical" activeIndex="{{activeIndex}}" items="{{items}}" class="steps" size=10></steps>
+  </view>
+  <view a:if="{{name=='回收'&&type=='3'}}">
+    <view class="titles">回收总收益：{{totalAmount}}元</view>
+    <view a:for="{{recycleDetailVo}}" a:key="{{index}}">
+      <view class="profitDetail">
+        <view class="total">袋子编号：{{item.bagCode}}</view>
+        <view a:for="{{item.listJson}}" class="totalDetail">
+          <view class="totalDetail1">{{item.name}}</view>
+          <view class="totalDetail2">{{item.weight}}{{item.unit}}*{{item.price}}/{{item.unit}}</view>
+          <view class="totalDetail3">{{item.totalPrice}}元</view>
+        </view>
+      </view>
+      <view class="weight">
+        <view>投递总重量：{{item.totalWeighed}}公斤</view>
+        <view>正确投递重量：{{item.effectiveWeight}}公斤</view>
+        <view>错误投递重量：{{item.errorWeight}}公斤</view>
+      </view>
+      <view a:if="{{item.errorUrl}}">
+        <view class="errTitle">错误投递照片</view>
+        <view class="errImgs">
+          <image mode = "aspectFill" a:for="{{item.errorUrl}}" src="{{item}}"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tWeight" a:if="{{totalWeighed}}">预称重重量：{{totalWeighed}}公斤</view>
+  <button a:if="{{((name=='回收'&&type=='3')||(name=='预约'&&type=='2'))&&delBtn == 0}}" data-id="{{list.id}}" data-name="{{name}}" onTap="del" class="del">删除</button>
+  <button a:elif="{{name=='预约'&&type=='1'}}" class="del" data-id="{{list.id}}" onTap="cancel">取消预约</button>
+</view>

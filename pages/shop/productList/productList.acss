@@ -1,0 +1,109 @@
+.page{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex: 1;
+  background:rgba(245,245,245,1);
+  padding: 32rpx 25rpx;
+  box-sizing: border-box;
+}
+.head{
+  width: 700rpx;
+  height: 280rpx;
+}
+.head .pic{
+  width: 100%;
+  height: 100%;
+}
+
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.subItem .picBox{
+  margin-top: 30rpx;
+  width: 340rpx;
+  height: 339rpx;
+  position: relative;
+  border-radius:20rpx 20rpx 0 0;
+  overflow: hidden;
+  text-align: center;
+
+}
+.subItem .over {
+  position: absolute;
+  width: 60%;
+  height:  60%;
+  left: 20%;
+  top: 20%;
+  z-index: 2;
+}
+.picBox .tag{
+  width: 92rpx;
+  height: 22px;
+  background:rgba(255,115,31,1);
+  border-radius:20rpx 0px 20rpx 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  font-size: 12px;
+  color: #fff;
+  line-height: 22px;
+}
+.subItem .pic{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.subItem .titleBox{
+  
+  width: 100%;
+  background:rgba(255,115,31,0.6);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 22rpx;
+  color: #fff;
+  
+}
+.subItem .titleBox .title{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.subItem .name{
+  width: 340rpx;
+  font-size: 28rpx;
+  margin-top: 9rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 60rpx;
+}
+.subItem .jifen{
+  font-size: 38rpx;
+  color: #FF7200;
+  margin-top: 5rpx;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.subItem .jifen image{
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 7rpx;
+}
+.footer{
+  font-size: 26rpx;
+  color: #666666;
+  text-align: center;
+  margin-top: 56rpx;
+}

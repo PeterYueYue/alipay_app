@@ -1,0 +1,5 @@
+<!-- 兑换成功 -->
+<view class="page">
+  <image mode="scaleToFill" src=""/>
+  <button type="primary" onTap="get">立即提现</button>
+</view>

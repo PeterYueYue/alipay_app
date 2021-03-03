@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "服务商",
+  "usingComponents":{
+    "modal": "mini-antui/es/modal/index"
+  },
+  "pullRefresh": true
+}

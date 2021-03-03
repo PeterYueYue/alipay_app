@@ -1,0 +1,60 @@
+<!-- 问卷调查 -->
+<view class="page">
+  <view class="send">
+    这是关于“拾尚回收”小程序的用户画像调研项目，为确保数据合理真实，请根据您的实际情况填写问卷。本次调研的结果将仅作为项目研究数据参考，不会用于任何其他用途。我们承诺您的个人信息将会被完全保密。完成答题我们将赠送您10个拾尚币。
+  </view>
+  <view a:for="{{datas}}" a:key="{{index}}" class="list">
+    <view class="question" data-number="{{item.number}}">
+      {{item.question}}
+    </view>
+    <radio-group class="radio-group" onChange="radioChange" data-number="{{item.number}}" data-question="{{item.question}}">
+      <label class="radio" a:for="{{item.answer}}" a:key="{{index}}" >
+        <radio value="{{item}}" a:for-index="{{index}}" checked="{{item.checked}}" />{{item}}
+      </label>
+    </radio-group>
+    <input class="reason" a:if="{{item.reason}}" placeholder="请填写" onInput="change" data-number="{{item.number}}" />
+  </view>
+  <!-- 参加过拾尚回收 -->
+  <view a:if="{{que==1}}">
+    <view a:for="{{datay}}" a:key="{{index}}" class="list" >
+      <view class="question" data-number="{{item.number}}">
+        {{item.question}}
+      </view>
+      <radio-group class="radio-group" onChange="radioChange" data-number="{{item.number}}" data-question="{{item.question}}">
+        <label class="radio" a:for="{{item.answer}}" a:key="{{index}}" >
+          <radio value="{{item}}" a:for-index="{{index}}" checked="{{item.checked}}" />{{item}}
+        </label>
+      </radio-group>
+      <input class="reason" a:if="{{item.reason}}" placeholder="请填写" onInput="change" data-number="{{item.number}}" />
+    </view>
+  </view>
+  <!-- 拾尚回收缺点 -->
+  <view a:if="{{dis}}">
+    <view a:for="{{datal}}" a:key="{{index}}" class="list" >
+      <view class="question" data-number="{{item.number}}">
+        {{item.question}}
+      </view>
+      <checkbox-group onChange="radioChange" name="libs" data-number="{{item.number}}" data-question="{{item.question}}">
+          <label class="checkbox" a:for="{{item.answer}}" a:key="{{index}}">
+            <checkbox value="{{item}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />{{item}}
+          </label>
+        </checkbox-group>
+      <input class="reason" a:if="{{item.reason}}" placeholder="请填写" onInput="change" data-number="{{item.number}}" />
+    </view>
+  </view>
+  <!-- 未参加过拾尚回收 -->
+  <view a:if="{{que==2}}">
+    <view a:for="{{dataf}}" a:key="{{index}}" class="list">
+      <view class="question" data-number="{{item.number}}">
+        {{item.question}}
+      </view>
+      <radio-group class="radio-group" onChange="radioChange" data-number="{{item.number}}" data-question="{{item.question}}">
+        <label class="radio" a:for="{{item.answer}}" a:key="{{index}}" >
+          <radio value="{{item}}" a:for-index="{{index}}" checked="{{item.checked}}" />{{item}}
+        </label>
+      </radio-group>
+      <input class="reason" a:if="{{item.reason}}" placeholder="请填写" onInput="change" data-number="{{item.number}}" />
+    </view>
+  </view>
+  <button type="primary" onTap="submit">提交</button>
+</view>

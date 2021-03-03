@@ -1,0 +1,115 @@
+.page{
+  padding-top: 1rpx;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  padding-bottom: 160rpx;
+  box-sizing: border-box;
+}
+.father{
+  height: 180rpx;
+  border-bottom: #EDEDED 1rpx solid;
+  position: relative;
+}
+.name{
+  font-size: 34rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+  position: absolute;
+  top: 42rpx;
+  left: 32rpx;
+  width: 150rpx;
+}
+.phone{
+  font-size: 30rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+  position: absolute;
+  left: 202rpx;
+  top: 46rpx;
+  }
+.add{
+  font-size: 26rpx;
+  color: #808080;
+  position: absolute;
+  left: 32rpx;
+  bottom: 42rpx;
+  width: 500rpx;
+}
+.edit {
+  height: 100%;
+  width: 100rpx;
+  position: absolute;
+  right: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delete {
+  height: 100%;
+  width: 100rpx;
+  position: absolute;
+  right: 0rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.edit image,.delete image {
+  width: 24rpx;
+}
+.new-add{
+  background: #3AA5FF;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 34rpx;
+  /* margin:0rpx 54rpx;
+  position: fixed;
+  left: 54rpx;
+  bottom: 80rpx; */
+  width: 642rpx;
+}
+.btn{
+  position: fixed;
+  height: 160rpx;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hint {
+  height: calc(100vh - 161rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hint>image {
+  width: 108rpx;
+  margin-bottom: 10rpx;
+}
+.isDefault{
+  font-size: 26rpx;
+  color: #808080;
+  position: absolute;
+  left: 32rpx;
+  bottom: 30rpx;
+  width: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #3AA5FF;
+  text-align: center;
+  border: 1rpx solid #3AA5FF;
+  border-radius: 8rpx;
+}
+.add1{
+  font-size: 26rpx;
+  color: #808080;
+  position: absolute;
+  left: 130rpx;
+  bottom: 42rpx;
+  width: 500rpx;
+}

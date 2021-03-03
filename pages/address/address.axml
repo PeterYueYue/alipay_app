@@ -1,0 +1,77 @@
+<view class="page">
+  <view a:if="{{status==1}}">
+    <view class="hint" a:if="{{status1 == 1}}">
+      <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+      <text>没有地址信息</text>
+    </view>
+    <view a:else class="father" a:for="{{addList}}" a:key="{{index}}">
+      <block a:if="{{item.isDefault == 0}}">
+        <block>
+          <text class="name ell">{{item.userName}}</text>
+          <text class="phone">{{item.userMobile}}</text>
+          <text class="add ell">{{item.provinceName + item.cityName + item.areaName + item.address}}</text>
+        </block>
+        <view catchTap="edit" class="edit" data-add="{{item}}">
+          <image mode="widthFix" src="{{imgUrl+'address/4.png'}}" />
+        </view>
+        <view catchTap="delete" class="delete" data-delId="{{item.id}}">
+          <image mode="widthFix" src="{{imgUrl+'address/del.png'}}" />
+        </view>
+      </block>
+      <block a:if="{{item.isDefault == 1}}">
+        <block>
+          <text class="name ell">{{item.userName}}</text>
+          <text class="phone">{{item.userMobile}}</text>
+          <text class="isDefault">默认</text>
+          <text class="add1 ell">{{item.provinceName + item.cityName + item.areaName + item.address}}</text>
+        </block>
+        <view catchTap="edit" class="edit" data-add="{{item}}">
+          <image mode="widthFix" src="{{imgUrl+'address/4.png'}}" />
+        </view>
+        <view catchTap="delete" class="delete" data-delId="{{item.id}}">
+          <image mode="widthFix" src="{{imgUrl+'address/del.png'}}" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <view a:elif="{{status==2}}">
+    <view class="hint" a:if="{{status1 == 1}}">
+      <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+      <text>没有地址信息</text>
+    </view>
+    <view class="father" a:else a:for="{{addList}}" a:key="{{index}}" onTap="goBack" data-add="{{item}}">
+      <block a:if="{{item.isDefault == 0}}">
+        <block>
+          <text class="name ell">{{item.userName}}</text>
+          <text class="phone">{{item.userMobile}}</text>
+          <text class="add ell">{{item.provinceName + item.cityName + item.areaName + item.address}}</text>
+        </block>
+        <view catchTap="edit" class="edit" data-add="{{item}}">
+          <image mode="widthFix" src="{{imgUrl+'address/4.png'}}" />
+        </view>
+        <view catchTap="delete" class="delete" data-delId="{{item.id}}">
+          <image mode="widthFix" src="{{imgUrl+'address/del.png'}}" />
+        </view>
+      </block>
+      <block a:if="{{item.isDefault == 1}}">
+        <block>
+          <text class="name ell">{{item.userName}}</text>
+          <text class="phone">{{item.userMobile}}</text>
+          <text class="isDefault">默认</text>
+          <text class="add1 ell">{{item.provinceName + item.cityName + item.areaName + item.address}}</text>
+        </block>
+        <view catchTap="edit" class="edit" data-add="{{item}}">
+          <image mode="widthFix" src="{{imgUrl+'address/4.png'}}" />
+        </view>
+        <view catchTap="delete" class="delete" data-delId="{{item.id}}">
+          <image mode="widthFix" src="{{imgUrl+'address/del.png'}}" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 新建地址 -->
+  <!--<button class="new-add" onTap="goToNewAddress">新建地址</button> -->
+  <view class="btn">
+    <button class="new-add" onTap="goToNewAddress">新建地址</button>
+  </view>
+</view>

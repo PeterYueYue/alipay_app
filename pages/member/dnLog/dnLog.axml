@@ -1,0 +1,12 @@
+<view class="page">
+  <image class="ballR" src="{{imgUrlNew}}yy/dnPic/ballR.png"></image>
+  <view class="head">
+    <image class="yuan" src="{{imgUrlNew}}yy/dnPic/yuan.png"></image>
+    <image class="logo" src="{{imgUrlNew}}yy/dnPic/logo.png"></image>
+    <image class="ballL" src="{{imgUrlNew}}yy/dnPic/ballL.png"></image>
+    <image class="title" src="{{imgUrlNew}}yy/dnPic/title.png"></image>
+  </view>
+  <image class="pic1" src="{{imgUrlNew}}yy/dnPic/new.png" onTap="goMember"></image>
+  <image class="pic2" onTap="goMdActivety" src="{{imgUrlNew}}yy/dnPic/bag.png"></image>
+  <image class="pic3" onTap="goMdActivety" src="{{imgUrlNew}}yy/dnPic/dn.png"></image>
+</view>

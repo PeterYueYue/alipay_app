@@ -1,0 +1,91 @@
+.page{
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.head{
+  background-color: #fff;
+  padding: 30rpx 40rpx 50rpx 40rpx;
+  font-size: 30rpx;
+  box-shadow: -1px 4rpx 9rpx 0px rgba(8, 31, 88, 0.16);
+  border-radius: 10rpx;
+}
+.title{
+  font-size: 34rpx;
+  color: #3AA5FF;
+}
+.headItem{
+  margin-top: 20rpx;
+}
+.content{
+  box-shadow: -1px 4rpx 9rpx 0px rgba(8, 31, 88, 0.16);
+  border-radius: 10rpx;
+  background-color: #fff;
+  padding: 30rpx 40rpx 50rpx 40rpx;
+  font-size: 30rpx;
+  margin-top: 22rpx;
+}
+.fundraiser{
+  margin-bottom: 40rpx;
+}
+.fundraiser .item{
+
+  border-bottom: 1px solid #DCDCDC;
+  padding: 40rpx 0 20rpx 0;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.fundraiser input{
+  font-size: 26rpx;
+  flex: 1;
+}
+.suppliesListing .item{
+  border-bottom: 1px solid #DCDCDC;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 40rpx 0 20rpx 0;
+  box-sizing: border-box;
+}
+.suppliesListing input{
+  font-size: 26rpx;
+  flex: 1;
+}
+.product{
+  display: flex;
+  width:100%;
+  justify-content: space-between;
+}
+.product .point{
+  width: 10rpx;
+  height: 10rpx;
+  background: #3AA5FF;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.product .left{
+  display: flex;
+  align-items: center;
+}
+.product .difCor{
+   color: #FF731F;
+}
+.subItem{
+  margin-top: 30rpx;
+}
+.btn{
+  width: 441rpx;
+  height: 100rpx;
+  background: #3AA5FF;
+  border-radius: 50rpx;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 50rpx auto 50rpx auto;
+}
+.btnhover{
+  opacity: 0.6;
+}

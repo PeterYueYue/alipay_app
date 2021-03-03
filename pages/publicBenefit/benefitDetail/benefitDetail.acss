@@ -1,0 +1,210 @@
+.page{
+  min-height: 100vh;
+  background-color: #F0F0F0;
+  padding-bottom: 60rpx;
+}
+.head{
+  height: 500rpx;
+}
+.headBg{
+  height: 100%;
+  width: 100%;
+}
+.dataBlock{
+  padding: 30rpx 40rpx;
+  background-color: #fff;
+}
+.dataBlock .title{
+  font-size: 34rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.progress{
+  display: flex;
+  width: 100%;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #3AA5FF;
+  align-items: center;
+  justify-content: space-between;
+}
+.progress .box{
+  width: 600rpx;
+  height: 18rpx;
+  border-radius: 9rpx;
+  background-color: #F5EDE8;
+}
+.progress .box .line{
+  height: 100%;
+  width: 60%;
+  background: linear-gradient(173deg, #3AA5FF, #0066FF);
+  border-radius: 9rpx;
+}
+.dataBlock .list{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.dataBlock .list .item{
+  text-align: center;
+  font-size: 30rpx;
+  color: #3AA5FF;
+}
+.dataBlock .list .title2{
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+.content{
+  /* margin-top: 20rpx;
+  padding: 40rpx;
+  background-color: #fff; */
+
+}
+.content image{
+  width: 663rpx;
+  margin-top: 20rpx;
+}
+.pro_list{
+  margin-top: 20rpx;
+  padding: 40rpx;
+  background-color: #fff;
+}
+.pro_list .title{
+  font-size: 34rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.supplies{
+  padding: 30rpx 40rpx;
+  background-color: #F8FCFF;
+  margin-top: 20rpx;
+}
+.supplies .item{
+  display: flex;
+  width: 100%;
+  font-size: 26rpx;
+  color: #333333;
+  justify-content: space-between;
+  line-height: 100rpx;
+}
+.supplies .item .name{
+  width: 200rpx;
+}
+.supplies .item .need{
+  width: 150rpx;
+}
+.supplies .item .count{
+  color: #FF731F;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 36rpx 0 50rpx;
+  box-sizing: border-box;
+}
+.footer .icons{
+  display: flex;
+  font-size: 16rpx;
+  color: #666666;
+  flex: 1;
+  justify-content: center;
+}
+.footer .icons .item{
+  text-align: center;
+  margin-right: 50rpx;
+  position: relative;
+}
+.footer .item button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.footer .icons .icon{
+  width: 41rpx;
+  height: 41rpx;
+  
+}
+.footer .btn{
+  width: 441rpx;
+  height: 76rpx;
+  background: #3AA5FF;
+  border-radius: 38rpx;
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 76rpx;
+}
+.integralBox{
+  width: 100%;
+  height: 700rpx;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+}
+.integral{
+  font-size: 70rpx;
+  color: #3AA5FF;
+  text-align: center;
+  margin-top: 50rpx;
+}
+.subtitle{
+  font-size: 32rpx;
+  color: #3AA5FF;
+  text-align: center;
+}
+.integralBox .main{
+  padding: 0 58rpx;
+}
+.integralBox .list{
+  display: flex;
+  flex: 4;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -25rpx;
+  padding-top: 10rpx;
+}
+.integralBox .item{
+  width: 140rpx;
+  height:56rpx;
+  text-align: center;
+  line-height: 56rpx;
+  border: 1px solid #E5E5E5;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  margin-top: 35rpx;
+}
+.integralBox .active{
+  border: 1px solid #3AA5FF;
+  color: #3AA5FF;
+  transition:0.3s;
+}
+.integralBox .disable{
+  border: 1px solid #F1F1F1;
+  color: #999999;
+  background-color: #F1F1F1;
+}
+.qrbtn{
+  width: 441rpx;
+  height: 100rpx;
+  background: #3AA5FF;
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  line-height: 100rpx;
+  text-align: center;
+  margin: 70rpx auto 0 auto;
+}
+.btnhover{
+  opacity: 0.6;
+}

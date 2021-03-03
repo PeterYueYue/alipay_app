@@ -1,0 +1,87 @@
+/* required by usingComponents */
+
+.page {
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.search-wrap {
+  width: 686rpx;
+  height: 90rpx;
+  border: 2rpx solid #E6E6E6;
+  border-radius: 90rpx;
+  margin: 0 auto 40rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.search-wrap input {
+  width: 500rpx;
+  margin-left: 50rpx;
+}
+
+.search-wrap image {
+  width: 32rpx;
+  float: right;
+  margin-right: 20rpx;
+}
+
+.list{
+  height: calc(100vh - 170rpx);
+}
+
+.detail {
+  margin: auto;
+  width: 686rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #1A1A1A;
+  box-sizing: border-box;
+  padding-left: 36rpx;
+  border-bottom: 1rpx solid #f9f9f9
+}
+
+.page>view:nth-child(2) {
+  border-top: 1rpx solid #f9f9f9;
+  margin-top: 40rpx
+}
+
+.detail>text:nth-child(2) {
+  font-size: 20rpx;
+  /* color: #3AA5FF; */
+  padding-left: 28rpx
+}
+
+.detail>text:nth-child(3) {
+  font-size: 20rpx;
+  color: #3AA5FF;
+  padding-left: 28rpx
+}
+
+/* 新增css */
+
+.search-wrap {
+  width: 686rpx;
+  height: 90rpx;
+  border: 2rpx solid #E6E6E6;
+  border-radius: 90rpx;
+  margin: 20rpx auto 40rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.search-wrap input {
+  width: 500rpx;
+  margin-left: 50rpx;
+}
+
+.search-wrap image {
+  width: 32rpx;
+  float: right;
+  margin-right: 20rpx;
+}

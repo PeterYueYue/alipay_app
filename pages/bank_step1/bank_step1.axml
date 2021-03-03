@@ -1,0 +1,44 @@
+<view class="page">
+  <view class="title">
+    <image mode="scaleToFill" src="{{imgUrl+'bank/2.png'}}" class="card"/>
+    <text class="cardText">添加银行卡</text>
+  </view>
+  <view class="form">
+    <text class="form-name">持卡人</text>
+    <view class="form-inp">
+      <input class="input" type="text" placeholder="请输入持卡人" placeholder-class="placeholder" onInput="change" data-id="1" />
+    </view>
+  </view>
+  <view class="form">
+    <text class="form-name">银行卡号</text>
+    <view class="form-inp ">
+      <input class="input cardNum" maxlength="18" type="digit" placeholder="请输入银行卡号" onInput="change" placeholder-class="placeholder" data-id="2"/>
+      <!--<view class="carRight" onTap="getCard"><image mode="scaleToFill" src="{{imgUrl}}bank/1.png" class="camera"/></view> -->
+    </view>
+  </view>
+  <view class="card_picture">
+    <view class="card_positive">银行卡正面</view>
+    <view>
+      <view class='ui_uploader_cell'>
+        <view class='ui_uploader_item' a:for="{{uploaderList1}}">
+          <view class='ui_uploader_item_icon' onTap="clearImg" data-index="1">
+            <icon class="ui_icon" type="cancel" size="20" color="red"/></view>
+          <image onTap='showImg' mode="aspectFill" data-index="1" src='{{item}}'></image></view>
+        <view class='ui_uploader' onTap='upload' data-index="1" a:if="{{showUpload1}}"></view></view>
+    </view>
+  </view>
+  <view class="card_picture">
+    <view class="card_positive">银行卡背面</view>
+    <view>
+      <view class='ui_uploader_cell'>
+        <view class='ui_uploader_item' a:for="{{uploaderList2}}">
+          <view class='ui_uploader_item_icon' onTap="clearImg" data-index="2">
+            <icon class="ui_icon" type="cancel" size="20" color="red"/></view>
+          <image onTap='showImg' mode="aspectFill" data-index="2" src='{{item}}'></image></view>
+        <view class='ui_uploader' onTap='upload' data-index="2" a:if="{{showUpload2}}"></view></view>
+    </view>
+  </view>
+  <!--<button style="margin-top:200rpx" class="new-add" onTap="upload1">上传</button> -->
+  <view class="tips">当前仅支持绑定兴业银行借记卡</view>
+  <button class="new-add" onTap="push">绑定</button>
+</view>

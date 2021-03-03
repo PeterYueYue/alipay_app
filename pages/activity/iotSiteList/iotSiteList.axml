@@ -1,0 +1,26 @@
+<view class="page">
+
+
+  <view class="list">
+
+    <view a:for="{{iotSitList}}" onTap="toMap" data-item="{{item}}"  a:key="index" class="item">
+
+      <view class="content">
+        <image class="pic" src="{{imgUrlNew}}yy/family/machine.png"></image>
+        <view class="info">
+          <view class="title">{{item.branchName}}</view>
+          <view class="time">开放时间：10:00-22:00</view>
+          <view class="distance">{{item.distance}}km</view>
+        </view>
+      </view>
+      <view class="foot">
+        <view class="address">{{item.address}}</view>
+        <view class="arrow"></view>
+      </view>
+
+
+    </view>
+  </view>
+
+
+</view>

@@ -1,0 +1,20 @@
+<!-- 小程序收藏组件，更多高级用法请参考文档：https://docs.alipay.com/mini/component/component-favorite -->
+<view class="page">
+  <view class="search-wrap" onTap="search">
+    <input placeholder="搜索垃圾  查看分类" placeholder-class="placeholder"/>
+    <image mode="widthFix" src="{{imgUrl}}bag/search.png"/>
+  </view>
+  <view class="cate_container">
+    <!-- 左侧 菜单 -->
+    <scroll-view scroll-y="{{true}}" class="left_menu">
+      <view class="menu_item {{index===currentIndex?'active':''}}" a:for="{{leftMenuList}}"  onTap="handleMenuChange" data-index="{{index}}">{{item.title}}</view>
+    </scroll-view>
+    <!-- 右侧垃圾分类内容 -->
+    <scroll-view scroll-y="{{true}}" class="right_content"  scroll-top="{{scrollTop}}" onScrollToLower="lower" onScroll="scroll">
+      <view class="detail" a:for="{{rightList[currentIndex].content}}">
+        <text>{{item.categoryName}}</text>
+        <!-- <text>{{item.isRegenerant == 1 ? "拾尚包可回收" : ""}}</text> -->
+      </view>
+    </scroll-view>
+  </view>
+</view>

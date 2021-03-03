@@ -1,0 +1,111 @@
+<view class="page">
+  <!-- 选择后地址 -->
+  <view class="address1" a:if="{{addressStatus}}" onTap="toAddress">
+    <view class="word">
+      <view>
+        <text class="nickname ell">{{add.userName}}</text>
+        <text class="phone ell">{{add.userMobile}}</text></view>
+      <view class="detail ell">{{add.provinceName+ ' ' + add.cityName+ ' ' + add.areaName + add.address}}</view>
+    </view>
+    <view>
+      <image mode="widthFix" src="{{imgUrlNew}}yy/member/next.png"></image>
+    </view>
+  </view>
+  <!-- 选择地址 -->
+  <view a:else class="address clear" onTap="toAddress">
+    <image src="{{imgUrl}}bag/5.png" mode="widthFix" />
+    <view>请选择收货地址</view>
+    <text class="fa fa-angle-right r" aria-hidden="true"></text>
+  </view>
+  <!-- 商品栏 -->
+  <view class="order">
+    <view class="flex">
+      <view>
+        <image class="head" mode="scaleToFill" src="{{productDetails.mainPic}}"></image></view>
+      <view class="flex_right">
+        <view class="desc">
+          <view class="title">{{productDetails.name}}</view>
+        </view>
+        <view class="p1">
+          {{productDetails.remark}}
+        </view>
+        <view class="p1">
+          <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{productDetails.price}}
+        </view>
+      </view>
+    </view>
+    <!-- 详情数据 -->
+    <view class="detail">
+      <view class="list">
+        <text>商品金额</text>
+        <text>
+          <image class="coin" mode="scaleToFill" src="{{imgUrlNew}}yy/shop/ordercoin.png"></image>{{productDetails.price}}</text>
+      </view>
+      <view class="list" onTap="check" a:if="{{userInfoMore.residueMoney!=0 && productDetails.price!=0}}">
+        <text class="{{selected?'blue':'gray'}}">使用{{coin}}拾尚币抵用</text>
+        <text>
+          <image class="img" a:if="{{selected}}" src="{{imgUrlNew}}yy/vouchers/xzicon.png"/>
+          <image class="img" a:else src="{{imgUrlNew}}yy/vouchers/wxzicon.png"/>
+        </text>
+      </view>
+      <view class="list">
+        <text>运费
+          <text class="little">(不可使用拾尚币抵扣)</text></text>
+        <text> {{productDetails.freight==0?'免邮费': '¥'+productDetails.freight}}</text>
+      </view>
+    </view>
+    <!-- 卡券 -->
+    <view a:if="{{true}}" class="vouchers">
+      <view class="address">
+        <image src="{{imgUrlNew}}yy/appointment/coupons.png" mode="widthFix" />
+        <view class="title">可用权益</view>
+        <view onTap="{{vou.length>0?'openVouList':''}}" class="usenum">
+          <text>{{vou.length>0?'您有权益可用':'无可用'}}</text>
+          <image a:if="{{vou.length>0}}" class="icon" src="{{imgUrlNew}}yy/appointment/jt.png">
+          </image>
+        </view>
+      </view>
+      <view class="line"></view>
+      <view class="yixuan">
+        <text>已选</text>
+        <view class="yxz">
+          <view class="smq"></view>
+          <view class="smq" a:if="{{weightId==1}}"></view>
+          <view class="smq2" a:if="{{vouChoosed}}" onTap="delVou">
+            <text>{{vouChoosed.couponName}}</text>
+            <image onTap="delVou" src="{{imgUrlNew}}yy/appointment/closeicon.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btns">
+    <text>合计: ¥ {{money}}</text>
+    <button class="btn" onTap="order" a:if="{{status}}">提交订单</button>
+    <button class="btn" loading="true" a:else>提交订单</button>
+  </view>
+</view>
+<!-- 选择权益优惠券 -->
+<view a:if="{{isShowVouList}}" class="voucherList">
+  <view class="main">
+    <image onTap="closeVouList" class="gbicon" src="{{imgUrlNew}}yy/vouchers/gbicon.png"></image>
+    <view class="vouhead">
+        选择权益
+    </view>
+    <view class="content">
+      <view a:for="{{vou}}" a:key="index" class="vouItem" onTap="chooseVou" data-index="{{index}}">
+        <view class="sign">
+          <image a:if="{{item.selected}}" class="stateIcon" src="{{imgUrlNew}}yy/vouchers/xzicon.png"/>
+          <image a:else class="stateIcon" src="{{imgUrlNew}}yy/vouchers/wxzicon.png"/>
+          <image class="pic" src="{{item.pic}}"/>
+          <view class="info">
+            <view class="title">{{item.couponName}}</view>
+            <view class="title2">·{{item.remark}}</view>
+            <view class="title2">·{{item.endDate}} 过期</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view onTap="closeVouList" class="footbtn">确认使用</view>
+  </view>
+</view>

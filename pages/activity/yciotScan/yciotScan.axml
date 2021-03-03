@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="box box1">
+    <image   mode="widthFix" class="img1" src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/dnActivity/bg13.png" alt=""/>
+    <view onTap="openVoucherDetail" class="btnbox1" >
+    </view>
+  </view>
+  <!-- <button type="primary" onTap="openVoucherDetail">打开券详情</button> -->
+  <view class="box box2">
+    <image class="img2" src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/dnActivity/bg14.png" alt=""/>
+    <view class="btnbox2"></view>
+    <button  onTap="goMember" class="btnbox2">领取脉动限量拾尚包</button>
+  </view>
+
+ 
+</view>
+
+<!-- 领取成功 -->
+<!-- <view class="mask_" onTap="closemask_" a:if="{{issuccess}}">
+  <image class="pic" onTap="goVouList" src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/dnActivity/success.png"></image>
+</view> -->
+

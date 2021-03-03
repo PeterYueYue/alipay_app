@@ -1,0 +1,4 @@
+<!-- 关于时尚包 -->
+<view class="page">
+  <image mode="widthFix" src="{{imgUrl}}share.png"/>
+</view>

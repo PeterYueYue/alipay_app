@@ -1,0 +1,15 @@
+<view class="page">
+  <view class="list">
+    <view a:for="{{qlist}}" class="item">
+      <view class="line"></view>
+      <view class="right">
+        <view class="title">{{(index+1)}}、{{item.questionStem.text}}</view>
+        <view   class="options">
+          <view a:for="{{item.optionList}}" class="optItem {{item.isCorrect?'active':''}}">
+            {{item.text}} <text a:if="{{item.isCorrect}}" class="dh"></text> 
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

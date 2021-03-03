@@ -1,0 +1,20 @@
+<!-- li -->
+<view class="hint" a:if="{{status == 1}}">
+  <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+  <text>没有抽奖记录</text></view>
+<scroll-view scroll-y="{{true}}" a:else onScrollToLower="lower">
+  <!--<view class="page" a:for="{{user}}" key="{{index}}">{{item.recycleState==1?"待分拣":item.recycleState==2?"已分拣":"完成"}}</view></view> -->
+  <view class="order" a:for="{{user}}" data-status='{{item.earningFlag}}' data-data='{{item}}' onTap="goDetail">
+    <view class="orderIop">
+      <view class="amount">{{item.giftName}} </view>
+      <view class="name_box">
+        <view class="earnings_name">{{item.earningFlag}}</view>
+        <view class="date">{{item.createDate}}</view>
+      </view>
+    </view>
+    <view class="bottom" >
+        <view a:if={{item.type==1}}>账号:{{item.voucherCode}}  密码:{{item.password}}</view>
+        <view a:if={{item.type==2}}>{{item.price}}个</view>
+    </view>
+  </view>
+</scroll-view>

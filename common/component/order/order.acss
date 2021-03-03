@@ -1,0 +1,358 @@
+.order_page {
+  width: 100%;
+  min-height: calc(100vh - 100rpx);
+  background-color: #f5f5f5;
+}
+
+.order_page .tabs {
+  width: 100%;
+  height: 76rpx;
+  display: flex;
+  justify-content: space-around;
+  font-size: 32rpx;
+  color: #333;
+  background-color: #fff;
+}
+
+.order_page .tabs>view {
+  height: 100%;
+  box-sizing: border-box;
+  line-height: 76rpx;
+  position: relative;
+}
+
+.order_page .tab_active {
+  font-weight: 700;
+  /* border-bottom: 10rpx solid #3aa5ff; */
+}
+
+.order_page swiper {
+  height: calc(100vh - 324rpx) !important;
+  box-sizing: border-box;
+  padding-bottom: 100rpx;
+}
+
+.order_page .swiper-wrap {
+  padding-bottom: 0rpx;
+}
+.order_page .tab_active:before {
+  content: '';
+  position: absolute;
+  left: calc(50% - 50rpx);
+  bottom: 0;
+  height: 10rpx;
+  width: 100rpx;
+  background-color: #3aa5ff;
+}
+
+.order_page swiper-item>scroll-view {
+  padding-top: 28rpx;
+  height: calc(100vh - 404rpx);
+  background-color: #f5f5f5;
+  border-radius: 10rpx;
+  
+}
+.order_page swiper-item>scroll-view>view {
+  padding-bottom: 150rpx;
+}
+
+.order_page .order {
+  background: #ffffff;
+  margin-bottom: 28rpx;
+  width: 710rpx;
+  margin-left: 20rpx;
+  /* height: 214rpx; */
+  box-sizing: border-box;
+  padding: 35rpx 28rpx;
+  border-radius: 10rpx;
+}
+
+.order_page .ordernum {
+  font-size: 34rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order_page .ordernum text:nth-child(1) {
+  display: inline-block;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.order_page .ordertime {
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 28rpx;
+}
+
+.order_page .departmentName {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #666;
+  margin-top: 29rpx;
+}
+
+.order_page .orderflag {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  margin-top: 29rpx;
+}
+
+.order_page .del {
+  width: 140rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #3aa5ff;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  float: right;
+}
+
+.order_page .orderbottom {
+  display: flex;
+  margin-top: 34rpx;
+  justify-content: space-between;
+}
+
+.order_page .weight {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+  margin-right: 12rpx;
+}
+
+.order_page .remind {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.order_page .btn {
+  width: 140rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  color: #333;
+  text-align: center;
+  line-height: 50rpx;
+  border: solid 1px #3aa5ff;
+  border-radius: 10rpx;
+}
+
+.order_page .comments {
+  margin-right: 17rpx;
+  position: relative;
+}
+
+.order_page .point {
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #ff7031;
+  border-radius: 50%;
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+}
+
+.order_page .orderflag1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order_page .map_title {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: 600;
+  margin-top: 28rpx;
+  margin-bottom: 19rpx;
+}
+
+.order_page .map_box {
+  width: 656rpx;
+  height: 180rpx;
+  position: relative;
+}
+
+.order_page .radius1 {
+  background-color: rgba(0, 0, 0, 0);
+  width: 10rpx;
+  height: 10rpx;
+  display: block;
+  text-align: center;
+  background-image: radial-gradient( 20rpx at right top, rgba(0, 0, 0, 0) 10rpx, #fff 10rpx);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.order_page .radius2 {
+  background-color: rgba(0, 0, 0, 0);
+  width: 10rpx;
+  height: 10rpx;
+  display: block;
+  text-align: center;
+  background-image: radial-gradient( 20rpx at left top, rgba(0, 0, 0, 0) 10rpx, #fff 10rpx);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.order_page .radius3 {
+  background-color: rgba(0, 0, 0, 0);
+  width: 10rpx;
+  height: 10rpx;
+  line-height: 40rpx;
+  display: block;
+  text-align: center;
+  background-image: radial-gradient( 20rpx at right bottom, rgba(0, 0, 0, 0) 10rpx, #fff 10rpx);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.order_page .radius4 {
+  background-color: rgba(0, 0, 0, 0);
+  width: 10rpx;
+  height: 10rpx;
+  display: block;
+  text-align: center;
+  background-image: radial-gradient( 20rpx at left bottom, rgba(0, 0, 0, 0) 10rpx, #fff 10rpx);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.order_page .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  top: 0;
+  left: 0;
+}
+
+.order_page .cover>view {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.order_page .hint {
+  height: calc(100vh - 404rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.order_page .hint>image {
+  width: 108rpx;
+  margin-bottom: 10rpx;
+}
+
+.order_page .clear:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0
+}
+
+.order_page .clear {
+  zoom: 1
+}
+.mask_ {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99999999;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mask_ .box2{
+  width:650rpx;
+  height:760rpx;
+  background:rgba(255,255,255,1);
+  border-radius:20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.cancelBox{
+  margin: -85rpx auto 0 auto;
+  font-size: 38rpx;
+  color: #3AA5FF;
+  text-align: center;
+}
+.box2 .cancel{
+  width: 142rpx;
+  height: 142rpx;
+  margin-bottom: 10rpx;
+}
+.titleBox{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: 36rpx;
+  color: #333333;
+  align-items: center;
+  margin-top: 10rpx;
+
+
+}
+.titleBox .line{
+  width:6rpx;
+  height:32rpx;
+  background:rgba(58,165,255,1);
+  border-radius:3rpx;
+  margin-left: 60rpx;
+  margin-right: 22rpx;
+}
+.mask_ .item{
+  display: flex;
+  flex-direction: row;
+  font-size: 32rpx;
+  color: #333333;
+  align-items: center;
+  margin-left: 89rpx;
+  height: 30rpx;
+  margin-top: 48rpx;
+}
+.mask_ .item .icon{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 30rpx;
+}
+.mask_ .btns{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 45rpx;
+
+}
+.mask_ .butn{
+  width: 230rpx;
+  height: 90rpx;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 45rpx;
+  border:1px solid rgba(58,165,255,1);
+  line-height: 90rpx;
+}
+.agree{
+  background-color: #3AA5FF;
+  color: #FFFFFF;
+}
+.consider{
+  
+  color: #3AA5FF;
+}

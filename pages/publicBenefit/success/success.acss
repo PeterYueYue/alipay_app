@@ -1,0 +1,114 @@
+.page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.bg1{
+  width: 100%;
+  height: 970rpx;
+  background: url("https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/publicBenefit/bg1.png") no-repeat;
+  background-size: 100% 100%;
+
+}
+.content{
+  position: absolute;
+  top: 890rpx;
+  left: 0;
+  width: 100%;
+  padding: 0 75rpx;
+  box-sizing: border-box;
+}
+.text{
+  font-size: 23rpx;
+  color: #333333;
+  line-height: 44rpx;
+}
+.tips{
+  font-size: 18rpx;
+  color: #FF6757;
+  line-height: 30rpx;
+}
+.bg2{
+  width: 100%;
+  height: 332rpx;
+  background: url("https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/publicBenefit/bg2.png") no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-bottom: 50rpx;
+  box-sizing: border-box;
+}
+.btn1{
+  width: 300rpx;
+  height: 100rpx;
+  background: #FFFFFF;
+  box-shadow: 4rpx 6rpx 21rpx 0px rgba(0, 54, 152, 0.28);
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  color: #3AA5FF;
+  text-align: center;
+  line-height: 100rpx;
+  
+}
+.btn2 {
+  width: 300rpx;
+  height: 100rpx;
+  background: linear-gradient(173deg, #3AA5FF, #0066FF);
+  box-shadow: 4rpx 6rpx 21rpx 0px rgba(0, 54, 152, 0.28);
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 100rpx;
+  text-shadow: 3rpx 3rpx 3rpx #005BDB;
+}
+.mainbox{
+  width: 750rpx;
+  height: 362rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+.mainbox .tips{
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.mainbox .btn{
+  width: 300rpx;
+  height: 100rpx;
+  background: #3AA5FF;
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 100rpx;
+  margin-top: 30rpx;
+}
+.canvasBox{
+  width: 580rpx;
+  height: 850rpx;
+  margin-top: -728rpx;
+  position: relative;
+}
+.canvas-hide {
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+.canvasimage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 580rpx;
+  height: 850rpx;
+  z-index: 2000;
+}
+

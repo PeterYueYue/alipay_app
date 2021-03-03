@@ -1,0 +1,159 @@
+<view class="page">
+  <view class="waitingRecycling" a:if="{{orderInfo.reserveState == 1}}">
+    <view class="orderFlag">
+      <image class="flagImg" mode="widthFix" src="{{imgUrl}}order/waiting.png"/>
+      <view class="flagText">等待回收ing</view>
+    </view>
+    <view class="order_box">
+      <view class="order_title">
+        <view class="order_num">订单编号：{{orderInfo.orderCode}}</view>
+        <view class="order_flag">待回收</view>
+      </view>
+      <view class="time">创建时间：{{orderInfo.createDate}}</view>
+      <view class="time">服务内容：{{orderInfo.orderTypeCN}}</view>
+      <view class="order_text">正在安排小哥上门回收哦～</view>
+    </view>
+    <view class="steps_box">
+      <view class="steps"  a:if="{{orderInfo.allotFlag!==3}}">
+        <text class="round"></text>
+        <text class="r_text">绑定时间</text>
+        <text class="r_time">{{orderInfo.bdDate}}</text>
+        <view class="line"></view>
+      </view>
+      <view class="steps">
+        <text class="round"></text>
+        <text class="r_text">预约时间</text>
+        <text class="r_time">{{orderInfo.reserveTime}}</text>
+        <view class="line"></view>
+      </view>
+    </view>
+    <view class="btn" onTap="cancel" data-id="{{orderInfo.id}}">取消预约</view>
+  </view>
+  <view class="cancelOrder" a:if="{{orderInfo.reserveState == 2}}">
+    <view class="orderFlag">
+      <image class="flagImg" mode="widthFix" src="{{imgUrl}}order/cancel.png"/>
+      <view class="flagText">订单取消啦！</view>
+    </view>
+    <view class="order_box">
+      <view class="order_title">
+        <view class="order_num">订单编号：{{orderInfo.orderCode}}</view>
+        <view class="order_flag" style="color:#999">已取消</view>
+      </view>
+      <view class="time">创建时间：{{orderInfo.createDate}}</view>
+      <view class="time">服务内容：{{orderInfo.orderTypeCN}}</view>
+    </view>
+    <view class="steps_box">
+      <view class="steps"  a:if="{{orderInfo.allotFlag!==3}}">
+        <text class="round"></text>
+        <text class="r_text">绑定时间</text>
+        <text class="r_time">{{orderInfo.bdDate}}</text>
+        <view class="line"></view>
+      </view>
+      <view class="steps">
+        <text class="round"></text>
+        <text class="r_text">预约时间</text>
+        <text class="r_time">{{orderInfo.reserveTime}}</text>
+        <view class="line"></view>
+      </view>
+      <view class="steps">
+        <text class="round"></text>
+        <text class="r_text">取消时间</text>
+        <text class="r_time">{{orderInfo.cancelDate}}</text>
+        <view class="line"></view>
+      </view>
+    </view>
+    <view class="btn" onTap="del" data-id="{{orderInfo.id}}">删除订单</view>
+  </view>
+  <view class="orderFinish" a:if="{{orderInfo.reserveState == 3}}">
+    <view class="order_box" style="height:230rpx;margin-bottom: 40rpx;">
+      <view class="order_title">
+        <view class="order_num">订单编号：{{orderInfo.orderCode}}</view>
+        <view class="order_flag" style="color:#74d92b">已完成</view>
+      </view>
+      <view class="time">创建时间：{{orderInfo.createDate}}</view>
+      <view class="time">服务内容：{{orderInfo.orderTypeCN}}</view>
+      <view class="weight_box">
+        <view class="weight" a:if="{{orderInfo.totalWeighed>0}}">预称重：{{orderInfo.totalWeighed}}kg</view>
+        <view class="weight" a:else></view>
+        <view class="del" onTap="del" data-id="{{orderInfo.id}}">删除订单</view>
+      </view>
+    </view>
+    <view class="steps_box">
+      <view class="steps" a:if="{{orderInfo.allotFlag!==3}}">
+        <text class="round"></text>
+        <text class="r_text">绑定时间</text>
+        <text class="r_time">{{orderInfo.bdDate}}</text>
+        <view class="line"></view>
+      </view>
+      <view class="steps">
+        <text class="round"></text>
+        <text class="r_text">预约时间</text>
+        <text class="r_time">{{orderInfo.reserveTime}}</text>
+        <view class="line"></view>
+      </view>
+      <view class="steps">
+        <text class="round"></text>
+        <text class="r_text">完成时间</text>
+        <text class="r_time">{{orderInfo.successDate}}</text>
+        <view class="line"></view>
+      </view>
+    </view>
+    <view class="evaluation" a:if="{{orderInfo.isComm == 0}}">
+      <view class="driver_title">
+        <image class="driver_t" mode="widthFix" src="{{imgUrl}}order/driver.png"/>
+        <view class="driver_name">收运司机:{{orderInfo.operationName}}</view>
+        <view class="radio_box" onTap="radioChange">
+          <!--<text class="{{checked?'radio':'radio_f'}}">✓</text> -->
+          <image class="radio1" mode="widthFix" src="{{checked?imgUrl+'order/radio.png':imgUrl+'order/radio_f.png'}}"/>
+          <text class="{{checked?'radio_text':'radio_text_f'}}">匿名评价</text>
+        </view>
+      </view>
+      <view class="evaluationBox">
+        <view class="evaluation_box" onTap="evaluation" data-flag=1>
+          <image class="evaluation_img" mode="widthFix" src="{{imgUrl}}order/{{evaluation==1?'poor_t.png':'poor.png'}}"/>
+          <view class="{{evaluation==1?'evaluation_text_t1':'evaluation_text'}}">非常差</view>
+        </view>
+        <view class="evaluation_box" onTap="evaluation" data-flag=2>
+          <image class="evaluation_img" mode="widthFix" src="{{imgUrl}}order/{{evaluation==2?'general_t.png':'general.png'}}"/>
+          <view class="{{evaluation==2?'evaluation_text_t2':'evaluation_text'}}">一般</view>
+        </view>
+        <view class="evaluation_box" onTap="evaluation" data-flag=3>
+          <image class="evaluation_img" mode="widthFix" src="{{imgUrl}}order/{{evaluation==3?'praise_t.png':'praise.png'}}"/>
+          <view class="{{evaluation==3?'evaluation_text_t3':'evaluation_text'}}">超赞</view>
+        </view>
+      </view>
+      <textarea value="{{text}}" onInput="input" placeholder-style="placeholder" placeholder="感谢您对我们的支持，您的宝贵意见是我们前行的动力" maxlength="200"/>
+      <view class="submit" onTap="comments">提交</view>
+    </view>
+  </view>
+
+
+
+  <!-- 取消订单弹窗 -->
+<view class="mask_"  a:if="{{cancelMask}}" >
+  <view class="box2">
+    <view class="cancelBox">
+      <image class="cancel" src="{{imgUrl}}provider/cancel.png"></image>
+      <view>取消预约</view>
+    </view>
+    <view class="titleBox">
+      <view class="line1"></view>
+      <view>取消原因：</view>
+    </view>
+    <view class="list">
+      <view a:for="{{cancelReasonEnumList}}"
+        onTap="changeChecked" 
+        data-data="{{index}}" 
+        a:key="{{index}}" 
+        class="item">
+        <image class="icon"  src="{{imgUrlNew}}yy/vouchers/{{item.checked?'xzicon':'wxzicon'}}.png" 
+        ></image>
+        <view>{{item.title}}</view>
+      </view>
+    </view>
+    <view class="btns">
+      <view onTap="agree" class="butn agree">确定</view>
+      <view onTap="closemask_" class="butn consider">再考虑一下</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,128 @@
+<view class="page">
+  <!-- 背景图 图片尺寸兼容 -->
+  <view class="member {{current==0||current==1?'blue':'gold'}}"></view>
+  <!-- 轮播图 -->
+  <swiper class='bannerSwiper' previous-margin="30rpx" next-margin='30rpx' indicator-dots="true" interval='3000' duration='500' onChange='onChange' current="{{current}}" circular='true'>
+    <block a:for="{{banner}}">
+      <swiper-item>
+        <image class="{{index==current?'imageBanner':'imageBanner_small'}}" data-index="{{index}}" data-item="item" src="{{item.src}}"></image>
+        <view a:if="{{current==1}}" class="btns aa3">
+          <button a:if="{{!userInfoMore.hasSendDoorVoucher}}"  open-type="getAuthorize" onGetAuthorize="onGetAuthorize" scope='userInfo'>免费注册 ></button>
+          <button a:else >已注册</button>
+        </view>
+        <view a:if="{{current==2}}" class="btns d5b">
+          <button a:if="{{userInfoMore.userLevel==0||userInfoMore.userLevel==1}}"  onTap="pay">限时99元开通</button>
+          <button a:else >已是PLUS会员</button>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 内测体验官 -->
+  <view class="grayMember" a:if="{{current==0}}">
+    <view class="gray-head">
+      <text class="text-span"></text>
+      <text class="head-title">内测体验官专享</text>
+      <text class="head-send">赠送物品价值:
+        <text>113</text>元</text>
+    </view>
+    <view class="flex">
+      <view>
+        <image mode="widthFix" src="{{imgUrlNew}}yy/member/bemember/gray1.png" />
+        <view class="flex-name">专属回收袋</view>
+        <view class="flex-num">拾尚包1个</view>
+      </view>
+      <view>
+        <image mode="widthFix" src="{{imgUrlNew}}yy/member/bemember/gray2.png" />
+        <view class="flex-name">卡券赠礼</view>
+        <view class="flex-num">回收券3张</view>
+      </view>
+      <view>
+        <image mode="widthFix" src="{{imgUrlNew}}yy/member/bemember/gray3.png" />
+        <view class="flex-name">专人回收</view>
+        <view class="flex-num">30kg以上专人回收</view>
+      </view>
+    </view>
+    <view class="tips">2019年10月-2020年5月，拾尚回收首批体验用户，享受30kg以上专人回收服务。</view>
+  </view>
+  <!-- 普通会员 -->
+  <view class="grayMember" a:if="{{current==1}}">
+    <view class="gray-head">
+      <text class="text-span bgblue"></text>
+      <text class="head-title">普通会员专享</text>
+      <text class="head-send ff7">赠送物品价值:
+        <text>113</text>元</text>
+    </view>
+    <view class="flex">
+      <view>
+        <image mode="widthFix" src="{{imgUrlNew}}yy/member/bemember/blue3.png" />
+        <view class="flex-name">专属回收袋</view>
+        <view class="flex-num">拾尚包1个</view>
+      </view>
+      <view>
+        <image mode="widthFix" src="{{imgUrlNew}}yy/member/bemember/blue1.png" />
+        <view class="flex-name">卡券赠礼</view>
+        <view class="flex-num">回收券3张</view>
+      </view>
+      <!-- <view>
+        <image mode="widthFix" src="{{imgUrlNew}}yy/member/bemember/blue2.png" />
+        <view class="flex-name">专人回收</view>
+        <view class="flex-num">30kg以上专人回收</view>
+      </view> -->
+    </view>
+    <view class="tips"> 2020年8月起，登录拾尚回收的用户可注册成为普通会员，每位用户可免费领取一个拾尚包，预约回收每次限重30kg，如实际交投重量超过30kg，超出部分运费需自理。</view>
+  </view>
+  <!-- PLUS会员 -->
+  <view class="grayMember" a:if="{{current==2}}">
+    <view class="gray-head">
+      <text class="text-span bgd5b"></text>
+      <text class="head-title">拾尚PLUS尊享</text>
+      <text class="head-send ff7">赠送物品价值:
+        <text>233</text>元</text>
+    </view>
+    <view class="flex">
+      <view>
+        <image mode="widthFix" src="{{imgUrlNew}}yy/member/bemember/gold1.png" />
+        <view class="flex-name">专属回收袋</view>
+        <view class="flex-num">拾尚包1个</view>
+      </view>
+      <view>
+        <image mode="widthFix" src="{{imgUrlNew}}yy/member/bemember/gold2.png" />
+        <view class="flex-name">展示架</view>
+        <view class="flex-num">拾尚包展示架1个</view>
+      </view>
+      <view>
+        <image mode="widthFix" src="{{imgUrlNew}}yy/member/bemember/gold3.png" />
+        <view class="flex-name">卡券赠礼</view>
+        <view class="flex-num">各类券
+          <text class="d5b">10</text>张</view>
+      </view>
+      <!-- <view>
+        <image mode="widthFix" src="{{imgUrlNew}}yy/member/bemember/gold4.png" />
+        <view class="flex-name">专人回收</view>
+        <view class="flex-num">30kg以上专人回收</view>
+      </view> -->
+    </view>
+    <view class="tips">2020年8月起，登录拾尚回收的用户可升级成为拾尚PLUS，每位用户可免费领取一个拾尚包和展示架，预约回收每次限重30kg，如实际交投重量超过30kg，超出部分运费需自理。</view>
+  </view>
+  <!-- 报名企业 -->
+  <view class="already">这些企业已加入环保行动</view>
+  <scroll-view scroll-x="{{true}}" class="companys">
+    <view a:for="{{list}}" a:key="{{index}}" class="imagebox">
+      <image mode="scaleToFill" src="http://sbag.oss-cn-huhehaote.aliyuncs.com/upload/img/server/{{item.picPath}}"></image>
+    </view>
+  </scroll-view>
+</view>
+<!-- 普通会员注册蒙版 -->
+<!-- <view class="mask" a:if="{{normal}}">
+  <view class="nomal_content">
+    <image class="new_n" mode="widthFix" src="{{imgUrlNew}}yy/member/buysend.png"></image>
+    <view class="h5">
+      <image mode="widthFix" src="{{imgUrlNew}}yy/member/check_n.png"></image>
+      注册成功
+    </view>
+    <view class="buttons">
+      <button onTap="goNomal">免费预约回收</button>
+      <button onTap="goSure">查看优惠详情</button>
+    </view>
+  </view>
+</view> -->

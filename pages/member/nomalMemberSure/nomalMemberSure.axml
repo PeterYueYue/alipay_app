@@ -1,0 +1,45 @@
+<!-- 小程序收藏组件，更多高级用法请参考文档：https://docs.alipay.com/mini/component/component-favorite -->
+<!-- 购买拾尚包 -->
+<view class="page">
+  <view class="bag">
+    <image src="{{imgUrlNew}}yy/member/new_n.png" mode="widthFix" />
+  </view>
+  <view class="choose">
+    <view>
+      <view class="bag-name">拾尚包（回收袋）</view>
+      <view class="bag-p">相当于30个塑料袋制成</view>
+    </view>
+    <view class="tianjia">
+      <view class="count"> 数量 :<text decode="{{true}}">&nbsp;&nbsp;</text> </view>
+      <view class="rdu" onTap="rdu">
+        <image a:if="{{num==1}}" src="{{imgUrlNew}}yy/member/jian.png" mode="widthFix" />
+        <image a:else src="{{imgUrlNew}}yy/member/reduce.png" mode="widthFix" />
+      </view>
+      <input type="number" value="{{num}}" onInput="change" disabled="disabled" />
+      <view class="add" onTap="add">
+        <image src="{{imgUrlNew}}yy/member/plus.png" mode="widthFix" />
+      </view>
+    </view>
+  </view>
+  <view class="p3"><text>¥ {{total}} 元</text>  首次注册专享 <text>¥50元</text></view>
+   <!-- 选择后地址 -->
+  <view class="address1" a:if="{{addressStatus}}" onTap="toAddress">
+    <view><image mode="widthFix" src="{{imgUrlNew}}yy/member/mark.png"></image></view>
+    <view class="word">
+      <view><text class="nickname ell">{{add.userName}}</text><text class="phone ell">{{add.userMobile}}</text></view>
+      <view  class="detail ell">{{add.provinceName + add.cityName + add.areaName + add.address}}</view>
+    </view>
+    <view><image mode="widthFix" src="{{imgUrlNew}}yy/member/next.png"></image></view>
+  </view>
+  <!-- 选择地址 -->
+  <view a:else class="address clear" onTap="toAddress">
+    <image src="{{imgUrl}}bag/5.png" mode="widthFix" />
+    <view>请选择收货地址</view>
+    <text class="fa fa-angle-right r" aria-hidden="true"></text>
+  </view>
+  <view class="btn">
+    <button size="default" type="primary" a:if="{{status && userInfo.userMobile!=''}}" onTap="buy">立即购买</button>
+    <button size="default" type="primary" a:if="{{status && userInfo.userMobile==''}}" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'> 立即购买</button>
+    <button size="default" loading type="primary" a:if="{{!status}}">立即购买</button>  
+  </view>
+</view>

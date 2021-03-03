@@ -1,0 +1,21 @@
+<!-- 交易订单详情 -->
+<view class="page">
+   <view class="head" style="background:url({{imgUrls}});background-size:100% 100%">
+    <view class="headTop">
+      <text>交易订单编号：</text>
+      <text>{{status}}</text>
+    </view>
+    <view class="orderNum">
+      <text>{{list.orderCode}}</text>
+    </view>
+    <cover-image a:if="{{type==1}}" style="width:87.2rpx;height:71.6rpx" src="{{imgUrl}}order/14.png"/>
+    <cover-image a:else style="width:87.2rpx;height:71.6rpx" src="{{imgUrl}}order/11.png"/>
+  </view>
+  <view>
+    <steps direction="vertical" activeIndex="{{activeIndex}}"items="{{items}}" class="steps" size=10></steps>
+  </view>
+  <view class="foot" style="background:url({{imgUrl}}order/16.png);background-size:100% 100%">
+    <view class="title">获取方式：</view>
+    <view class="ways">{{list.sendFlag == 1 ? "现场领取": list.sendFlag == 2 ? "邮寄方式":list.sendFlag == 3 ? "购买获得":""}}</view>
+  </view>
+</view>

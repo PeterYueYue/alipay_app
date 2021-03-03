@@ -1,0 +1,59 @@
+.page {
+  width: 100%;
+  height:100vh;
+  position: relative;
+}
+#map {
+  width: 100%;
+  height:100vh;
+}
+/* 服务范围切换 */
+.btnBox{
+  width: 100%;
+  position: absolute;
+  bottom: 73rpx;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 10000000;
+}
+.btnBox2{
+  width:640rpx;
+  height:96rpx;
+  background:rgba(242,242,242,1);
+  box-shadow:3rpx 3rpx 14rpx 2rpx rgba(0, 0, 0, 0.27);
+  border-radius:48rpx;
+  position: relative;
+}
+.textbox{
+  font-size: 30rpx;
+  color: #666666;
+  line-height: 96rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+.textbox .text1{
+  margin-left: 53rpx;
+}
+.textbox .text2{
+  margin-right: 40rpx;
+}
+.btnBox2 .bg{
+  width: 330rpx;
+  height: 100%;
+  background:rgba(58,165,255,1);
+  border:3rpx solid rgba(242,242,242,1);
+  box-sizing: border-box;
+  border-radius:48rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+.textbox .active{
+  color: #FFFFFF;
+  font-size: 30rpx;
+}

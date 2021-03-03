@@ -1,0 +1,39 @@
+<view class="page" style="background:url('{{imgUrl}}b/bg.png') no-repeat;background-size: 750rpx 1334rpx;">
+  <view class="top_tab">TOP20企业月榜</view>
+  <view>
+    <view class="despite">
+      <view class="one" style="background: url('{{imgUrl}}b/one.png') no-repeat;background-size: 203rpx 210rpx;">
+        <image class="one_img" mode="aspectFill" src="{{list1a[0].headPortrait}}"/>
+      </view>
+      <view class="two" style="background: url('{{imgUrl}}b/two.png') no-repeat;background-size: 154rpx 160rpx;">
+        <image class="two_img" mode="aspectFill" src="{{list1a[1].headPortrait}}"/>
+      </view>
+      <view class="three" style="background: url('{{imgUrl}}b/three.png') no-repeat;background-size: 128rpx 135rpx;">
+        <image class="three_img" mode="aspectFill" src="{{list1a[2].headPortrait}}"/>
+      </view>
+      <view class="base" style="background: url('{{imgUrl}}b/di.png') no-repeat;background-size: 677rpx 352rpx;">
+        <view class="two_text">
+          <view class="base_name">{{list1a[1].introduction}}</view>
+          <view class="base_weight">{{list1a[1].totalWeight}} kg</view>
+        </view>
+        <view class="one_text">
+          <view class="base_name">{{list1a[0].introduction}}</view>
+          <view class="base_weight">{{list1a[0].totalWeight}} kg</view>
+        </view>
+        <view class="three_text">
+          <view class="base_name">{{list1a[2].introduction}}</view>
+          <view class="base_weight">{{list1a[2].totalWeight}} kg</view>
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-y="{{true}}" class="top_list">
+      <view class="top_list_row" a:for="{{list1b}}">
+        <view class="top_list_num">{{index+4}}</view>
+        <image class="top_list_img" mode="aspectFill" src="{{item.headPortrait}}"/>
+        <view class="top_list_name">{{item.introduction}}</view>
+        <view class="top_list_weight">{{item.totalWeight}} kg</view>
+      </view>
+      <!--<view class="top_list_row"><view class="top_list_num">4</view><image class="top_list_img" mode="widthFix" src="/image/b/tou.jpg"/><view class="top_list_name">一二三小学</view><view class="top_list_weight">1115255.8 kg</view></view><view class="top_list_row"><view class="top_list_num">4</view><image class="top_list_img" mode="widthFix" src="/image/b/tou.jpg"/><view class="top_list_name">一二三小学</view><view class="top_list_weight">1115255.8 kg</view></view><view class="top_list_row"><view class="top_list_num">4</view><image class="top_list_img" mode="widthFix" src="/image/b/tou.jpg"/><view class="top_list_name">一二三小学</view><view class="top_list_weight">1115255.8 kg</view></view><view class="top_list_row"><view class="top_list_num">4</view><image class="top_list_img" mode="widthFix" src="/image/b/tou.jpg"/><view class="top_list_name">一二三小学</view><view class="top_list_weight">1115255.8 kg</view></view><view class="top_list_row"><view class="top_list_num">4</view><image class="top_list_img" mode="widthFix" src="/image/b/tou.jpg"/><view class="top_list_name">一二三小学</view><view class="top_list_weight">1115255.8 kg</view></view><view class="top_list_row"><view class="top_list_num">4</view><image class="top_list_img" mode="widthFix" src="/image/b/tou.jpg"/><view class="top_list_name">一二三小学</view><view class="top_list_weight">1115255.8 kg</view></view> -->
+    </scroll-view>
+  </view>
+</view>

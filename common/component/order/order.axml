@@ -1,0 +1,157 @@
+<view class="order_page">
+  <view style="height: 160rpx;background-color: #fff;"></view>
+  <view class="tabs">
+    <view class="{{activeTab==0?'tab_active':''}}" data-index=0 onTap="tab">回收订单</view>
+    <view class="{{activeTab==1?'tab_active':''}}" data-index=1 onTap="tab">预约订单</view>
+    <view class="{{activeTab==2?'tab_active':''}}" data-index=2 onTap="tab">交易订单</view>
+  </view>
+  <view class="swiper-wrap">
+    <swiper
+        indicator-dots = "{{false}}" class="swiper" current="{{current}}" onChange="onChange" previousMargin="0px" nextMargin="0px" autoplay="{{false}}" vertical="{{false}}" circular="{{false}}">
+      <!-- 回收订单 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+          <view>
+            <view a:if="{{list1Length== 1}}" class="hint">
+              <image mode="widthFix" src="{{imgUrl}}bao/10.png"></image>
+              <text>没有回收订单</text>
+            </view>
+            <view a:else class="order" a:for="{{list1}}" catchTap="recoveryDetail" data-orderId="{{item.id}}" data-userId="{{userId}}">
+              <view class="ordernum">
+                <text style="color:#1a1a1a;font-weight:600">订单编号：{{item.orderCode}}</text>
+                <text a:if="{{item.recycleState==1||item.recycleState==2}}" style="color:#3aa5ff;font-weight:600">待分拣</text>
+                <text a:else style="color:#74d92b;font-weight:600">已完成</text>
+              </view>
+              <!-- <view class="ordertime">创建时间：{{item.createDate}}</view> -->
+              <view class="ordertime">服务内容：{{item.orderTypeCN}}</view>
+              <view class="departmentName" a:if="{{item.departmentName}}">部门：{{item.departmentName}}</view>
+              <view class="orderflag" a:if="{{item.recycleState==1&&item.reciveState==0}}">等待进入分拣中心...</view>
+              <view class="orderflag" a:if="{{item.recycleState==1&&item.reciveState==1}}">已经进入分拣中心...</view>
+              <view class="orderflag" a:if="{{item.recycleState==2}}">
+                <text>已经进入分拣中心...</text>
+                <image class="remind" a:if="{{item.isAbnormal}}" src="{{imgUrl}}order/remind.png"></image>
+              </view>
+              <view class="orderbottom" a:if="{{item.recycleState==3}}">
+                <view style="width:358rpx;display:flex;">
+                  <view class="weight">预称重： {{item.totalWeighed}}kg</view>
+                  <image class="remind" a:if="{{item.isAbnormal}}" src="{{imgUrl}}order/remind.png"></image>
+                </view>
+                <view class="btn comments" catchTap="recoveryDetail" data-orderId="{{item.id}}" data-userId="{{userId}}">
+                  服务评价
+                  <view class="point" a:if="{{!item.isComm}}"></view>
+                </view>
+                <view class="btn" catchTap="del1" data-id="{{item.id}}">删除订单</view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      
+      <!-- 预约订单 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+          <view>
+            <view a:if="{{list2Length == 1}}" class="hint">
+              <image mode="widthFix" src="{{imgUrl}}bao/10.png"></image>
+              <text>没有预约订单</text>
+            </view>
+            <view a:else a:for="{{list2}}" catchTap="bookingDetail" data-id="{{item.id}}" data-item="{{item}}" class="order">
+              <view class="ordernum">
+                <text style="color:#1a1a1a;font-weight:600">订单编号：{{item.orderCode}}</text>
+                <text a:if="{{item.reserveState==1}}" style="color:#3aa5ff;font-weight:600">待回收</text>
+                <text a:elif="{{item.reserveState==2}}" style="color:#999999;font-weight:600">已取消</text>
+                <text a:else style="color:#74d92b;font-weight:600">已完成</text>
+              </view>
+              <!-- <view class="ordertime">创建时间：{{item.createDate}}</view> -->
+              <view class="ordertime">服务内容：{{item.orderTypeCN}}</view> 
+              <view a:if="{{item.reserveState==1&&item.ghState == 2}}" class="orderflag orderflag1">
+                <text>正在安排小哥上门回收哦～</text>
+                <!-- <view a:if="{{item.driveMobile}}" class="del" style="margin-right:16rpx;" catchTap="call" data-call="{{item.driveMobile}}">联系小哥</view> -->
+                <view class="btn" catchTap="cancel1" data-id="{{item.id}}" style="font-size:26rpx;color:#333;font-weight:normal">取消预约</view>
+              </view>
+              <view a:if="{{item.reserveState==3}}" class="orderbottom">
+                <view style="width:358rpx;display:flex;">
+                  <view class="weight" a:if="{{item.totalWeighed}}">预称重：{{item.totalWeighed}} kg</view>
+                </view>
+                <view class="btn comments" catchTap="bookingDetail" data-id="{{item.id}}" data-item="{{item}}">
+                  服务评价
+                  <view class="point" a:if="{{item.isComm == 0}}"></view>
+                </view>
+                <view class="btn" catchTap="del2" data-id="{{item.id}}">删除订单</view>
+              </view>
+              <view a:if="{{item.reserveState==2}}" class="orderbottom">
+                <view>
+                </view>
+                <view class="btn" catchTap="del2" data-id="{{item.id}}">删除订单</view>
+              </view>
+              <!-- allotFlag区分德邦展示信息 -->
+              <view class="map clear" a:if="{{item.reserveState==1&&item.ghState == 1}}">
+                <view class="map_title" a:if="{{item.allotFlag!==3}}">
+                  您目前位于第
+                  <text style="color:#3aa5ff">{{item.number}}</text>位，点击下方地图可查看小哥当前位置
+                </view>
+                <view class="map_box" a:if="{{item.allotFlag!==3 &&item.orderType!=='MAJOR_APPLIANCES'}}">
+                  <map onTap="toMap" data-index="5" id="{{item.id}}" setting="{{setting}}" include-points="{{item.includePoints}}" include-padding="{{includePadding}}" longitude="{{item.longitude}}" latitude="{{item.latitude}}" style="width:656rpx;height:180rpx;" markers="{{item.markers}}">
+                  </map>
+                  <!--<cover-view class="cover"><view catchTap="bookingDetail" data-id="{{item.id}}" data-item="{{item}}"></view></cover-view> -->
+                </view>
+                <view class="del" catchTap="cancel1" data-id="{{item.id}}">取消预约</view>
+                <view class="del" style="margin-right:16rpx;" catchTap="call" data-call="{{item.driveMobile}}"  a:if="{{item.driveMobile!='000000'}}">联系小哥</view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+      <!-- 交易订单 -->
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrollToLower="lower">
+          <view>
+            <view a:if="{{list3Length == 1}}" class="hint">
+              <image mode="widthFix" src="{{imgUrl}}bao/10.png"></image>
+              <text>没有交易订单</text>
+            </view>
+            <view a:else a:for="{{list3}}" class="order clear" onTap="checkDetail" data-id="{{item.id}}" data-status="{{item.state}}">
+              <view class="ordernum">
+                <text style="color:#1a1a1a;font-weight:600">订单编号：{{item.orderCode}}</text>
+                <text a:if="{{item.state==1}}" style="color:#3aa5ff;font-weight:600">待发货</text>
+                <text a:else style="color:#74d92b;font-weight:600">已发货</text>
+              </view>
+              <view class="ordertime">创建时间：{{item.createDate}}</view>
+              <view a:if="{{item.state!=1}}" data-id="{{item.id}}" catchTap="del" class="del">删除订单</view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+
+<!-- 取消订单弹窗 -->
+<view class="mask_"  a:if="{{cancelMask}}" >
+  <view class="box2">
+    <view class="cancelBox">
+      <image class="cancel" src="{{imgUrl}}provider/cancel.png"></image>
+      <view>取消预约</view>
+    </view>
+    <view class="titleBox">
+      <view class="line"></view>
+      <view>取消原因：</view>
+    </view>
+    <view class="list">
+      <view a:for="{{cancelReasonEnumList}}"
+        onTap="changeChecked" 
+        data-data="{{index}}" 
+        a:key="{{index}}" 
+        class="item">
+        <image class="icon"  src="{{imgUrlNew}}yy/vouchers/{{item.checked?'xzicon':'wxzicon'}}.png" 
+        ></image>
+        <view>{{item.title}}</view>
+      </view>
+    </view>
+    <view class="btns">
+      <view onTap="agree" class="butn agree">确定</view>
+      <view onTap="closemask_" class="butn consider">再考虑一下</view>
+    </view>
+  </view>
+</view>

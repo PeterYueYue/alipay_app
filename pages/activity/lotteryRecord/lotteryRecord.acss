@@ -1,0 +1,120 @@
+.page {
+  height: 244rpx;
+  border-bottom: 1rpx solid #ededed;
+  position: relative;
+  background-color: #fff;
+}
+
+page {
+  background-color: #f5f5f5;
+}
+
+.img {
+  position: absolute;
+  width: 84rpx;
+  top: 80rpx;
+  left: 34rpx;
+}
+
+.text1 {
+  top: 44rpx;
+  left: 144rpx;
+  position: absolute;
+}
+
+.num {
+  font-size: 30rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+}
+
+.time {
+  font-size: 26rpx;
+  color: #B3B3B3;
+  margin-top: 12rpx;
+  margin-bottom: 26rpx;
+}
+
+.kg {
+  font-size: 26rpx;
+  color: #1A1A1A;
+}
+
+.more {
+  position: absolute;
+  font-size: 28rpx;
+  color: #3AA5FF;
+  top: 102rpx;
+  right: 32rpx;
+}
+
+/* 清除浮动 */
+
+.clearfix:after, .clearfix:before {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.hint {
+  height: calc(100vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.hint>image {
+  width: 108rpx;
+  margin-bottom: 10rpx;
+}
+
+scroll-view {
+  height: calc(100vh);
+  background-color: #f5f5f5;
+}
+
+.order {
+  background: #ffffff;
+  width: 710rpx;
+  margin: 20rpx auto 0;
+  min-height: 100rpx;
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+  border-radius: 10rpx;
+}
+
+.orderIop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom{
+  margin-top: 20rpx;
+}
+
+.order_img {
+  width: 84rpx;
+}
+
+.amount {
+  width: 300rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.earnings_name {
+  font-size: 30rpx;
+  font-weight: 600;
+  text-align: right;
+}
+
+.date {
+  text-align: right;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}

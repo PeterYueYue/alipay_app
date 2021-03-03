@@ -1,0 +1,67 @@
+.page{
+  width: 100%;
+  height: 100vh;
+  background: url("https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/dnActivity/bg15.png") no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}
+
+
+.box{
+  position: relative;
+  width: 590rpx;
+  height: 300rpx;
+  z-index: 999;
+  
+}
+.btnbox1{
+  width: 400rpx;
+  height: 120rpx;
+  position: absolute;
+  bottom: 70rpx;
+  left: 100rpx;
+  opacity: 0;
+}
+.btnbox2{
+  width: 400rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 80rpx;
+  left: 100rpx;
+  opacity: 0;
+}
+
+image{
+  width: 600rpx;
+  height: 234rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.box1{
+  width: 600rpx;
+  height: 804rpx;
+}
+.box2{
+  margin-top: 54rpx;
+}
+
+
+
+.mask_ .pic{
+  width: 500rpx;
+  height: 560rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  
+  
+
+}

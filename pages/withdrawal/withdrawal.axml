@@ -1,0 +1,70 @@
+<view class="page">
+  <!-- <view class="top">
+    <view class="redBag">(其中{{userInfoMore.redResidueMoney}}元仅可提现至兴业银行卡)
+    </view>
+    <image class="bgc" mode="widthFix" src="{{imgUrl+'withdrawal/5.png'}}"/>
+    <view class="num">
+      <view class="num-num">{{userInfoMore.residueMoney}}元</view>
+      <view class="num-text">可提现金额</view>
+    </view>
+    <view class="earnings">
+      <view class="earnings-num">{{userInfoMore.totalMoney}}  元</view>
+      <view class="earnings-text">累计收益</view>
+    </view>
+    <view class="earnings kg">
+      <view class="earnings-num">{{userInfoMore.totalWeight}}  公斤</view>
+      <view class="earnings-text">累计投递</view>
+    </view>
+    <view class="hint">
+      <image class="hint-img" mode="widthFix" src="{{imgUrl+'withdrawal/4.png'}}"/>
+      <view class="hint-text">提示信息：为保障用户利益，我们每天会对用户投递的物品进行分拣，称重，确保您投放无误，收益在您投递完成72小时可提现。</view>
+    </view>
+  </view>
+  <view class="withdraw">
+    <view class="money">提现金额
+      <text a:if="{{limitFlag}}" class="money-text">（{{userInfoMore.withDrawPrice}}元起提）</text>
+      <text class="money-text" a:else>（0.00元起提）</text>
+    </view>
+    <view class="flex">
+      <view class="flex_money_box">
+        <text class="flex_money">￥</text>
+      </view>
+      <text class="flex_money_num">{{value}}</text>
+    </view> -->
+    <view class="bg">
+      <view class="h5">{{userInfoMore.residueMoney}}</view>
+      <view class="p1">可兑换拾尚币</view>
+      <!-- <view class="p2">（其中{{userInfoMore.redResidueMoney}}拾尚币仅可兑换至银行卡）</view> -->
+      <view class="p3">提示信息：为保障用户利益，我们每天会对用户投递的物品进行分拣、</view>
+      <view class="p3">称重，确保您投放无误，收益在您投递完成72小时后可兑换。</view>
+    </view>
+
+    <!-- 下半部分 -->
+    <view class="under">
+      <view class="exchange">
+        <text></text>
+        <text>兑换拾尚币</text> 
+        <text>(100拾尚币起兑)</text>
+      </view>
+      <!-- <input class="coin_input" disabled="true" placeholder="拾尚币数量不足" placeholder-class="p_calss" value="{{userInfoMore.residueMoney*100}}" /> -->
+      <view class="coin_input">{{userInfoMore.residueMoney}}</view>
+      <view class="desc">100拾尚币=1元</view>
+      <view class="defaultAdd">
+        <radio-group onChange="onChange">
+          <view class="zfb">
+            <radio id="zfb" value="zfb" checked="{{checked==1}}"/>
+            <label for="zfb">兑换至支付宝</label>
+          </view>
+          <view class="yhk">
+            <radio id="card" value="card" checked="{{checked==2}}"/>
+            <label for="card">兑换至兴业银行卡</label>
+          </view>
+        </radio-group>
+      </view>
+      <button id="new-add" onTap="push" a:if="{{status}}"> 兑换</button>
+      <button id="new-add" a:else loading>兑换</button>
+    </view>
+    <!-- <view class="fanxian" onTap="fanxian">
+      <image mode="widthFix" src="{{imgUrl}}bag/fanxian.png"/>
+    </view> -->
+</view>

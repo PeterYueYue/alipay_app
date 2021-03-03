@@ -1,0 +1,25 @@
+<view>
+  <view class="hint" a:if="{{status == 1}}">
+    <image mode="widthFix" src="{{imgUrl}}bao/10.png" />
+    <text>没有提现记录</text></view>
+  <!-- 审核中 -->
+  <!--<view class="page" a:else a:for="{{user}}" key="{{index}}"><image mode="widthFix" src="{{imgUrl}}tiXianHistory/1.png" class="img"/><view class="money"><text>提现金额</text><text class="moneyNum">{{item.withdrawMoney}}元</text></view><text class="time">提现时间: {{item.createDate}}</text><view a:if="{{userInfo.userFlag==1 || userInfo.userFlag==2}}"><view class="state audit" a:if="{{item.state==1}}">审核中</view><view class="state" a:if="{{item.state==2}}">驳回</view><view class="state red" a:if="{{item.state==3}}">已完成</view></view><view a:else><view a:if="{{item.companyState == 2}}"><view class="state audit" a:if="{{item.state==1}}">审核中</view><view class="state" a:if="{{item.state==2}}">驳回</view><view class="state red" a:if="{{item.state==3}}">已完成</view></view><view a:else><view class="state audit" a:if="{{item.companyState==1}}">待审核</view><view class="state" a:if="{{item.companyState==3}}">不通过</view></view></view></view> -->
+  <scroll-view class="order_box" scroll-y="{{true}}" a:else onScrollToLower="lower">
+    <view class="order" a:for="{{user}}">
+      <view>
+        提现时间：{{item.createDate}}
+      </view>
+      <view>提现金额：{{item.withdrawMoney4Page}}拾尚币</view>
+      <view a:if="{{userInfo.userFlag==1 || userInfo.userFlag==2}}">提现状态：{{item.state==1?'审核中':item.state==2?'驳回':'已完成'}}</view>
+      <view a:if="{{userInfo.userFlag==3&&item.companyState == 2}}">提现状态：{{item.state==1?'审核中':item.state==2?'驳回':'已完成'}}</view>
+      <view a:if="{{item.companyState==1}}">提现状态：待审核</view>
+      <view a:if="{{item.companyState==3}}">提现状态：不通过</view>
+      <view class="line"></view>
+      <view>明细：</view>
+      <view>拾尚包收益：{{item.bagMoney}}拾尚币</view>
+      <view>兴业返现：{{item.returnMoney}}拾尚币</view>
+      <view>活动获得：{{item.redMoney}}拾尚币</view>
+      <view>红包获得：{{item.redEnvelopeMoney}}拾尚币</view>
+    </view>
+  </scroll-view>
+</view>

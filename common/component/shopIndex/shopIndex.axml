@@ -1,0 +1,75 @@
+<view class="shopIndex">
+  <!-- head start -->
+  <view style="background: url({{imgUrlNew+'yy/shop/bg1.png'}}) no-repeat;" class="head">
+    <view class="title">{{userInfoMore.residueMoney}}</view>
+    <view class="title1">我的拾尚币</view>
+    <!-- <view class="changeBox">
+      <image src="{{imgUrlNew+'yy/shop/bi.png'}}"/>
+      <text>拾尚币兑换</text>
+      <view onTap="onClick" data-name="兑换" class="btn">兑换</view>
+    </view> -->
+  </view>
+  <!-- head end-->
+  <!-- navBox start -->
+  <view class="navBox">
+    <view onTap="onClick" data-name="我的订单" class="item">
+      <image src="{{imgUrlNew+'yy/shop/order.png'}}" />
+      <text>我的订单</text>
+    </view>
+    <view onTap="onClick" data-name="券码兑换" class="item">
+      <image src="{{imgUrlNew+'yy/shop/duihuan.png'}}" />
+      <text>券码兑换</text>
+    </view>
+  </view>
+  <!-- navBox end -->
+  <!-- content start -->
+  <view class="content">
+    <!-- 轮播图 -->
+    <view class="swiper-wrap" a:if="{{activity_30}}">
+      <swiper indicator-dots="{{true}}" style="height:150px" class="swiper" previousMargin="0px" nextMargin="0px" autoplay="{{true}}" vertical="{{false}}" interval="{{3000}}" circular="{{true}}">
+        <swiper-item a:key="index">
+          <view class="swiper-item"  data-url="{{item.url}}" data-id="{{item.id}}" data-flag="{{item.bannerFlag}}">
+            <image mode="widthFix" src="{{imgUrlNew}}yy/shop/cashbackbanner.png" onTap="onClick" data-name="返回30" />
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <!-- 兑换中心 -->
+    <view class="changeCoin" onTap="onClick" data-name="拾尚币">
+      <image  mode="widthFix" src="{{imgUrlNew}}yy/index/changeCoinNew.png"  />
+    </view>
+    <!-- mainList start -->
+    <view class="mainList">
+      <view a:for="{{productList}}" a:key="index" a:if="{{item.productList.length>0}}" class="item">
+        <view class="headBox">
+          <view class="left">
+            <view class="line"></view>
+            <view class="title">{{item.productType.name}}</view>
+          </view>
+          <view onTap="goList" data-item="{{item}}" class="right">
+            <text>查看更多</text>
+            <text class="jiantou">></text>
+          </view>
+        </view>
+        <view class="subList">
+          <view a:for="{{item.productList}}" onTap="goDetails" a:key="index" data-item="{{item}}" class="subItem">
+            <view class="picBox">
+              <view class="tag" a:if="{{item.tag}}">{{item.tag}}</view>
+              <image class="pic" src="{{item.mainPic}}" />
+              <view class="titleBox" a:if="{{item.remark}}">
+                <view class="title">{{item.remark}}</view>
+              </view>
+              <image class="over"  a:if="{{item.stock==0}}" src="{{imgUrlNew+'yy/shop/over.png'}}" />
+            </view>
+            <view class="name">{{item.name}}</view>
+            <view class="jifen">
+              <image src="{{imgUrlNew+'yy/shop/bi1.png'}}" />                                                                                                                                                                                     
+              <text>{{item.price}}</text> 
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- content end -->
+</view>

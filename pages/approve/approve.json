@@ -1,0 +1,9 @@
+{
+  "defaultTitle": "审核",
+  "usingComponents":{
+    "list": "/common/component/list/list",
+    "tabs": "mini-antui/es/tabs/index",
+    "tab-content": "mini-antui/es/tabs/tab-content/index"
+  },
+   "pullRefresh": true
+}

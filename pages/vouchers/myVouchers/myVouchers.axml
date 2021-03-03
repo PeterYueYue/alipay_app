@@ -1,0 +1,175 @@
+<!--pages/vouchers/timelogin/timelogin.wxml-->
+<view class="timelogin">
+
+  <view class="tabs">
+    <view class="{{activeTab==0?'tab_active':''}}" data-index='0' onTap="tab">未使用</view>
+    <view class="{{activeTab==1?'tab_active':''}}" data-index='1' onTap="tab">已使用</view>
+    <view class="{{activeTab==2?'tab_active':''}}" data-index='2' onTap="tab">已过期</view>
+  </view>
+  <view class="swiper-wrap">
+    <swiper indicator-dots="{{false}}" class="swiper" current="{{current}}" onChange="onChange" previous-margin="0px" next-margin="0px" autoplay="{{false}}" vertical="{{false}}" circular="{{false}}">
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrolltolower="lower">
+          <view>
+            <view a:if="{{list1Length == 0}}" 
+                    a:key="item.id" 
+                    class="hint"
+                    style="height: calc(100vh - 104rpx);display: flex;align-items: center;justify-content: center;flex-direction: column;background-color: #ffffff;"
+            >
+              <image mode="widthFix" style="width: 108rpx;margin-bottom: 10rpx;" src="{{imgUrl}}bao/10.png"></image>
+              <text>没有优惠券</text>
+            </view>
+            <view class="listBox" a:else>
+              <view  a:for="{{list1}}" a:key="id"   >
+                <view class="item">
+                  <image class="pic" src="{{item.pic}}"></image>
+                  <view class="right">
+                    <view class="info">
+                      <!-- <view class="title">{{item.voucherName}}</view> -->
+                      <view class="title">{{vouType == 'voucherList'?item.voucherName:item.couponName}}</view>
+                      <view class="subtitle">{{item.description}}</view>
+                      <view class="subtitle">{{item.endDate}} 过期</view>
+                      
+                    
+                    </view>
+                    <button open-type="share" a:if="{{vouType == 'voucherList'}}"  data-data="{{item}}" class="btns">赠送</button>
+
+                    <view onTap="changeDetails" data-data="{{index}}" class="lookde">
+                      <view class="title2">卡券详情</view>
+                      <image class="icon" 
+                      src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/{{item.active?'zk':'hq'}}.png"></image>
+                    </view>
+                    
+                  </view>
+                  <!-- <image class="newicon" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/newicon.png"></image> -->
+                  <view class="zsbox">{{item.number}}张</view>
+                </view>
+                <view a:if="{{item.active}}" class="cardDe">
+                  {{item.remark}}
+                </view>
+              
+              
+              </view>
+              
+              
+
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrolltolower="lower">
+          <view>
+            <view a:if="{{list2Length == 0}}" 
+                    a:key="item.id" 
+                    class="hint"
+                    style="height: calc(100vh - 104rpx);display: flex;align-items: center;justify-content: center;flex-direction: column;background-color: #ffffff;"
+            >
+              <image mode="widthFix" style="width: 108rpx;margin-bottom: 10rpx;" src="{{imgUrl}}bao/10.png"></image>
+              <text>没有优惠券</text>
+            </view>
+            <view class="listBox" a:else>
+              <view  a:for="{{list2}}" a:key="id"    >
+                <view class="item">
+                  <image class="pic" src="{{item.pic}}"></image>
+                  <view class="right">
+                    <view class="info">
+                      <!-- <view class="title">{{item.voucherName}}</view> -->
+                      <view class="title">{{vouType == 'voucherList'?item.voucherName:item.couponName}}</view>
+                      <view class="subtitle">{{item.description}}</view>
+                      <view class="subtitle">{{item.endDate}} 过期</view>
+                      
+                    
+                    </view>
+                    <!-- <view class="btns">赠送</view> -->
+
+                    <view onTap="changeDetails" data-data="{{index}}" class="lookde">
+                      <view class="title2">卡券详情</view>
+                      <image class="icon" 
+                      src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/{{item.active?'zk':'hq'}}.png"
+                      ></image>
+                    </view>
+                    
+                  </view>
+                  <!-- <image class="newicon" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/newicon.png"></image> -->
+                  <view class="zsbox">{{item.number}}张</view>
+                </view>
+                <view a:if="{{item.active}}" class="cardDe">
+                  {{item.remark}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" onScrolltolower="lower">
+          <view>
+            <view a:if="{{list3Length == 0}}" 
+                    a:key="item.id" 
+                    class="hint"
+                    style="height: calc(100vh - 104rpx);display: flex;align-items: center;justify-content: center;flex-direction: column;background-color: #ffffff;"
+            >
+              <image mode="widthFix" style="width: 108rpx;margin-bottom: 10rpx;" src="{{imgUrl}}bao/10.png"></image>
+              <text>没有优惠券</text>
+            </view>
+            <view class="listBox" a:else>
+              <view  a:for="{{list3}}" a:key="id"   >
+                <view class="item">
+                  <image class="pic" src="{{item.pic}}"></image>
+                  <view class="right">
+                    <view class="info">
+                      <!-- <view class="title">{{item.voucherName}}</view> -->
+                      <view class="title">{{vouType == 'voucherList'?item.voucherName:item.couponName}}</view>
+                      <view class="subtitle">{{item.description}}</view>
+                      <view class="subtitle">{{item.endDate}} 过期</view>
+                      
+                    
+                    </view>
+                    <!-- <view class="btns">赠送</view> -->
+
+                    <view onTap="changeDetails" data-data="{{index}}" class="lookde">
+                      <view class="title2">卡券详情</view>
+                      <image class="icon" 
+                      src="https://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/{{item.active?'zk':'hq'}}.png"
+                      ></image>
+                    </view>
+                    
+                  </view>
+                  <!-- <image class="newicon" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/newicon.png"></image> -->
+                  <view class="zsbox">{{item.number}}张</view>
+                </view>
+                <view a:if="{{item.active}}" class="cardDe">
+                  {{item.remark}}
+                </view>
+              
+              
+              </view>
+              
+              
+
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- <view class="box2">
+    
+  </view> -->
+  <view class="lifestyle" catchTap="default">
+    <lifestyle publicId="2019091767448436" onFollow="onFollow"/>
+  </view>
+  
+</view>
+
+
+ <!-- 新手教程蒙版 -->
+<!-- <view class="mask_" onTap="closemask_" a:if="{{newUser.myVoucher}}">
+  <image class="invite"  mode="widthFix" src="{{imgUrlNew}}yy/newUser/get_home_coupon.png" />
+  <view class="dialog_index">
+    各种权益<text>\n</text>可通过好友赠送获得哦～
+  </view>
+  <view class="know" onTap="closemask_">我知道了</view>
+</view> -->

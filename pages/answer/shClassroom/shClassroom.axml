@@ -1,0 +1,38 @@
+<view class="page">
+  <!-- nav_bar -->
+  <view class='nav {{navColorState?"bg-white":""}} ' style='height:{{navH}}px'>
+    <view class='nav-title'>
+      <text a:if="{{navColorState}}" >拾尚回收</text>
+      <view onTap="goback" class="backBtn {{navColorState?'':'color-white'}} "></view>
+    </view>
+  </view>
+  <!-- content -->
+  <view class="content" >
+    <image src="{{imgUrlNew}}yy/answer/btn1.png" onTap="goLibrary" class="btn1"></image>
+    <image src="{{imgUrlNew}}yy/answer/btn2.png" onTap="changeMask" class="btn2"></image>
+    <image src="{{imgUrlNew}}yy/answer/btn3.png" onTap="goEpa" class="btn3"></image>
+    <image src="{{imgUrlNew}}yy/answer/icon1.png" class="icon1"></image>
+    <image src="{{imgUrlNew}}yy/answer/icon2.png" class="icon2"></image>
+    <image src="{{imgUrlNew}}yy/answer/icon3.png" class="icon3"></image>
+    <image src="{{imgUrlNew}}yy/answer/icon4.png" class="icon4"></image>
+  </view>
+
+</view>
+
+<!-- 答题规则 -->
+
+<view a:if="{{mask}}" class="mask">
+  <view class="box">
+    <image class="titleImage" src="{{imgUrlNew}}yy/answer/btn2.png" alt=""/>
+    <view class="title">
+      <text>欢迎参加拾尚回收转正测试,</text>
+      <text>通过本次测试就可以成为正式用户</text>
+      <text>并免费领取拾尚包一个</text>
+    </view>
+    <view class="rule">答题规则：每次测试随机展示3道题目，全部答对即可成为正式会员领取拾尚包一个。</view>
+    <view onTap="changeMask" class="btn">我知道了</view>
+  </view>
+
+
+
+</view>

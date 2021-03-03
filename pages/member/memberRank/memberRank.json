@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "环保推广人排名",
+  "usingComponents": {
+      "canvas-share":"/common/component/canvas-share/index"
+  }
+}

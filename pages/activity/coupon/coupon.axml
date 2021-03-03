@@ -1,0 +1,5 @@
+<!-- 领券界面 -->
+<view class="page">
+  <image mode="scaleToFill" src=""/>
+  <button type="primary" onTap="get">领取环保奖励金</button>
+</view>

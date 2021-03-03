@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "环保账单",
+  "pullRefresh": true,
+  "transparentTitle": "auto",
+  "disableScroll": false,
+  "component": true,
+  "usingComponents": {
+    "pie": "/common/component/pie/index"
+  }
+}

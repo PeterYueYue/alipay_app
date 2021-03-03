@@ -1,0 +1,22 @@
+<view class="vouchers">
+ 
+  <view class="c2">
+    
+    <!-- 选择后地址 -->
+    <view class="add1" a:if="{{addressStatus}}" onTap="toAddress">
+      <image style="width:29.6rpx;height:35.6rpx" src="{{imgUrl1}}image/15.png"/>
+      <view class="fl2">
+        <text class="name inlineBlock ell">{{add.userName}}</text>
+        <text class="fa fa-angle-right r" aria-hidden="true"></text>
+        <text class="mobile r">{{add.userMobile}}</text>
+      </view>
+      <view class="adds ell">{{add.provinceName + add.cityName + add.areaName + add.address}}</view>
+    </view>
+    <!-- 选择前地址 -->
+    <view class="address" a:else onTap="toAddress">请填写收件地址</view>
+  </view>
+  <view class="get">
+    <button a:if="{{once}}" onTap="freeGet"  data-status="2">免费邮寄</button>
+    <button loading a:else>免费邮寄</button>
+  </view>
+</view>

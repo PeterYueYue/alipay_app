@@ -1,0 +1,5 @@
+<view class="vouchers">
+  <image class="bghead" mode="widthFix" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/h5/bghead.png" alt=""/>
+	<image class="bgmain" mode="widthFix" src="http://sbag-small.oss-cn-huhehaote.aliyuncs.com/upload/img/web/yy/vouchers/h5/bgmain.png" alt=""/>
+  <view class="box1" onTap="get">领取红包</view>
+</view>
